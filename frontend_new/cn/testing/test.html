@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>compile-demo</title>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/art-template-master/lib/template-web.js"></script>
+
+</head>
+<body>
+<div id="content"></div>
+<script type="text/javascript">
+    $(function () {
+        var obj = {
+            title: '模板页获取例子2',
+            isAdmin: true,
+            list: ['文艺s', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+        };
+        var html=$.get('template-me.html',function (data) {
+            var render = template.compile(data);
+            var str = render(obj);
+
+            document.getElementById('content').innerHTML = str;
+        })
+    });
+</script>
+</body>
+</html>

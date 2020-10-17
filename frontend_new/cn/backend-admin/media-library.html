@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="">
+    <meta charset="utf-8">
+    <title>19com | 後端管理系統</title>
+    <meta name="description" content="Latest updates and statistic charts">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--begin::Fonts -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
+
+    <!--end::Fonts -->
+
+    <!--begin::Page Vendors Styles(used by this page) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css"
+          rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css"/>
+
+    <!--end::Page Vendors Styles -->
+
+    <!--begin::Global Theme Styles(used by all pages) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.css" rel="stylesheet"
+          type="text/css">
+    <link href="../../assets/template/metronic/demo12/assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+
+    <!--end::Global Theme Styles -->
+
+    <!--begin::Layout Skins(used by all pages) -->
+
+    <!--end::Layout Skins -->
+    <link rel="shortcut icon" href="../../assets/branding/favicon.ico">
+
+</head>
+
+<style>
+    .demo-gallery > ul > li a:hover > img {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    .demo-gallery > ul > li a:hover .demo-gallery-poster > img {
+        opacity: 1;
+    }
+
+    .demo-gallery > ul > li a .demo-gallery-poster {
+        background-color: rgba(0, 0, 0, 0.1);
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        -webkit-transition: background-color 0.15s ease 0s;
+        -o-transition: background-color 0.15s ease 0s;
+        transition: background-color 0.15s ease 0s;
+    }
+
+    .demo-gallery > ul > li a .demo-gallery-poster > img {
+        left: 50%;
+        margin-left: -10px;
+        margin-top: -10px;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        -webkit-transition: opacity 0.3s ease 0s;
+        -o-transition: opacity 0.3s ease 0s;
+        transition: opacity 0.3s ease 0s;
+    }
+
+    .demo-gallery > ul > li a:hover .demo-gallery-poster {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .demo-gallery .justified-gallery > a > img {
+        -webkit-transition: -webkit-transform 0.15s ease 0s;
+        -moz-transition: -moz-transform 0.15s ease 0s;
+        -o-transition: -o-transform 0.15s ease 0s;
+        transition: transform 0.15s ease 0s;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        height: 100%;
+        width: 100%;
+    }
+
+    .demo-gallery .justified-gallery > a:hover > img {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    .demo-gallery .justified-gallery > a:hover .demo-gallery-poster > img {
+        opacity: 1;
+    }
+
+    .demo-gallery .justified-gallery > a .demo-gallery-poster {
+        background-color: rgba(0, 0, 0, 0.1);
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        -webkit-transition: background-color 0.15s ease 0s;
+        -o-transition: background-color 0.15s ease 0s;
+        transition: background-color 0.15s ease 0s;
+    }
+
+    .demo-gallery .justified-gallery > a .demo-gallery-poster > img {
+        left: 50%;
+        margin-left: -10px;
+        margin-top: -10px;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        -webkit-transition: opacity 0.3s ease 0s;
+        -o-transition: opacity 0.3s ease 0s;
+        transition: opacity 0.3s ease 0s;
+    }
+
+    .demo-gallery .justified-gallery > a:hover .demo-gallery-poster {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .demo-gallery .video .demo-gallery-poster img {
+        height: 48px;
+        margin-left: -24px;
+        margin-top: -24px;
+        opacity: 0.8;
+        width: 48px;
+    }
+
+    .demo-gallery.dark > ul > li a {
+        border: 3px solid #04070a;
+    }
+</style>
+
+<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
+
+<!-- begin:: Header Mobile -->
+<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+    <div class="kt-header-mobile__logo">
+        <a href="index.html">
+            <img id="branding_mobile" style="width: 82px;" alt="Logo" src="../../assets/branding/logo.png">
+        </a>
+    </div>
+    <div class="kt-header-mobile__toolbar">
+        <button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left"
+                id="kt_aside_mobile_toggler">
+            <span></span>
+        </button>
+        <button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler">
+            <i class="flaticon-more"></i>
+        </button>
+    </div>
+</div>
+<!-- end:: Header Mobile -->
+
+<div class="kt-grid kt-grid--hor kt-grid--root">
+
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+        <!-- begin:: Aside -->
+
+        <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop"
+             id="kt_aside">
+
+            <!-- begin:: Aside -->
+
+            <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
+
+            <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand" kt-hidden-height="65" style="">
+                <div class="kt-aside__brand-logo">
+                    <a href="index.html">
+                        <img id="branding_pc" style="width: 112px;" alt="Logo" src="../../assets/branding/logo.png">
+                    </a>
+                </div>
+                <div class="kt-aside__brand-tools">
+                    <button class="kt-aside__brand-aside-toggler" id="kt_aside_toggler"><span></span></button>
+                </div>
+            </div>
+
+            <!-- end:: Aside -->
+
+            <!-- begin:: SideNav -->
+
+            <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+                <div id="kt_aside_menu" class="kt-aside-menu kt-scroll ps ps--active-y" data-ktmenu-vertical="1"
+                     data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500" style="height: 512px; overflow: hidden;">
+                    <ul class="kt-menu__nav"></ul>
+                </div>
+            </div>
+
+            <!-- end:: SideNav -->
+
+        </div>
+
+        <!-- end:: Aside -->
+
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+            <!-- begin:: Header -->
+
+            <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed">
+
+                <!-- begin: Header Menu -->
+
+                <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn">
+                    <i class="la la-close"></i>
+                </button>
+                <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper"></div>
+
+                <!-- end: Header Menu -->
+
+                <div class="kt-header__topbar">
+
+                    <!--begin: Language bar -->
+
+                    <div id="kt-language" class="kt-header__topbar-item kt-header__topbar-item--langs"></div>
+
+                    <!--end: Language bar -->
+
+                    <!--begin: User Bar -->
+
+                    <div class="kt-header__topbar-item kt-header__topbar-item--user">
+                        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+                            <div id="kt-user" class="kt-header__topbar-user"></div>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+
+                            <!--begin: Head -->
+                            <div id="kt-user-dropdown"
+                                 class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
+                                 style="background-image: url(../../assets/template/metronic/demo12/assets/media/misc/bg-1.jpg)">
+                            </div>
+                            <!--end: Head -->
+
+                            <!--begin: Navigation -->
+                            <div class="kt-notification">
+                                <div class="kt-notification__custom kt-space-between">
+                                    <a href="../auth/logout.html"
+                                       class="btn btn-label btn-label-brand btn-sm btn-bold">
+                                        登出
+                                    </a>
+                                </div>
+                            </div>
+                            <!--end: Navigation -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- end:: Header -->
+
+            <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+                <!-- begin:: Subheader -->
+
+                <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                    <div class="kt-container  kt-container--fluid ">
+                        <div class="kt-subheader__main">
+                            <h3 class="kt-subheader__title">
+                                媒體庫
+                            </h3>
+                            <span class="kt-subheader__separator kt-hidden"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end:: Subheader -->
+
+                <!-- begin:: Content -->
+
+                <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+
+                    <!-- begin:: Dynamic Content -->
+
+                    <div class="row">
+
+                        <div class="col-12">
+
+                            <div class="kt-portlet">
+                                <div class="kt-portlet__head">
+                                    <div class="kt-portlet__head-label">
+                                        <span class="kt-portlet__head-icon">
+                                            <i class="fa fa-cloud-upload-alt"></i>
+                                        </span>
+                                        <h3 class="kt-portlet__head-title font-weight-bold">
+                                            媒體庫
+                                            <small>Media Library</small>
+                                        </h3>
+                                    </div>
+                                    <div class="kt-portlet__head-toolbar">
+                                        <div class="dropdown dropdown-inline">
+                                            <a href="javascript:;" class="btn btn-primary"
+                                               aria-haspopup="true" aria-expanded="false" data-toggle="modal"
+                                               data-target="#upload_modal">
+                                                <i class="fa fa-plus"></i>
+                                                上載媒體
+                                            </a>
+                                            <a href="#" class="btn btn-default btn-icon" data-toggle="dropdown"
+                                               aria-haspopup="true" aria-expanded="false">
+                                                <i class="flaticon-more-1"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right" style="">
+                                                <ul class="kt-nav">
+                                                    <li class="kt-nav__item">
+                                                        <a href="javascript:;"
+                                                           onclick="getChecked()"
+                                                           class="kt-nav__link">
+                                                            <i class="kt-nav__link-icon flaticon-edit"></i>
+                                                            <span class="kt-nav__link-text">批次修改</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="kt-portlet__body">
+
+                                    <div class="message_output"></div>
+
+                                    <div class="row">
+
+
+                                        <div class="col-md-1">
+                                            <div class="btn-group mr-1" role="group" aria-label="...">
+                                                <button type="button" class="btn btn-primary" data-toggle="kt-tooltip"
+                                                        data-original-title="Tile" id="btn-tile"
+                                                        onclick="changeView(this);">
+                                                    <i class="flaticon-squares-2"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-secondary" data-toggle="kt-tooltip"
+                                                        data-original-title="List" id="btn-list"
+                                                        onclick="changeView(this);">
+                                                    <i class="flaticon-signs-1"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <select class="form-control selectpicker" onchange="filterMedia(this);">
+                                                <option value="ALL" data-filter="ALL" selected>全部媒體</option>
+                                                <option value="image" data-filter="image">圖片</option>
+                                                <option value="video" data-filter="video">視頻</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <select class="form-control selectpicker" onchange="filterCategory(this);">
+                                                <option value="ALL" data-filter="ALL" selected>全部类型</option>
+                                                <option value="1" data-filter="1">Category 1</option>
+                                                <option value="2" data-filter="2">Category 2</option>
+                                                <option value="3" data-filter="3">Category 3</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div class="kt-searchbar">
+                                                <div class="kt-input-icon kt-input-icon--right">
+                                                    <input type="text" class="form-control" placeholder="Search"
+
+                                                           id="generalSearch">
+
+                                                    <span class="kt-input-icon__icon kt-input-icon__icon--right">
+															<span>
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                     width="24px" height="24px" viewBox="0 0 24 24"
+                                                                     version="1.1" class="kt-svg-icon">
+																	<g stroke="none" stroke-width="1" fill="none"
+                                                                       fill-rule="evenodd">
+																		<rect x="0" y="0" width="24" height="24"></rect>
+																		<path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
+                                                                              fill="#000000" fill-rule="nonzero"
+                                                                              opacity="0.3"></path>
+																		<path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
+                                                                              fill="#000000" fill-rule="nonzero"></path>
+																	</g>
+																</svg>
+                                                            </span>
+														</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <br><br><br>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <div class="lightgallery-wrapper" id="gallery-tile-wrapper">
+                                                <!--                                                <a href="../../upload/2020-02-24_a_375.png" data-sub-html="#caption-1">-->
+                                                <!--                                                    <img style="width: 180px;" src="../../upload/2020-02-24_a_375.png"-->
+                                                <!--                                                         data-toggle="kt-tooltip" data-original-title="Image 1"-->
+                                                <!--                                                    />-->
+                                                <!--                                                    <div id="caption-1" style="display: none">-->
+                                                <!--                                                    </div>-->
+                                                <!--                                                </a>-->
+                                                <!--                                                <a href="../../upload/2020-0126_a375.jpg" data-sub-html="#caption2">-->
+                                                <!--                                                    <img style="width: 180px;" src="../../upload/2020-0126_a375.jpg"-->
+                                                <!--                                                         data-toggle="kt-tooltip" data-original-title="Image 2"-->
+                                                <!--                                                    />-->
+                                                <!--                                                </a>-->
+                                                <!--                                                <a href="../../upload/2020-0202_a375.jpg" data-sub-html="#caption2">-->
+                                                <!--                                                    <img style="width: 180px;" src="../../upload/2020-0202_a375.jpg"-->
+                                                <!--                                                         data-toggle="kt-tooltip" data-original-title="Image 3"-->
+                                                <!--                                                    />-->
+                                                <!--                                                </a>-->
+                                                <!--                                                <a href="../../upload/2020-0223_a375.jpg" data-sub-html="#caption2">-->
+                                                <!--                                                    <img style="width: 180px;" src="../../upload/2020-0223_a375.jpg"-->
+                                                <!--                                                         data-toggle="kt-tooltip" data-original-title="Image 4"-->
+                                                <!--                                                    />-->
+                                                <!--                                                </a>-->
+                                                <!--                                                <a href="../../upload/2020-0223_a375.jpg" data-sub-html="#caption2">-->
+                                                <!--                                                    <img style="width: 180px;" src="../../upload/2020-0223_a375.jpg"-->
+                                                <!--                                                         data-toggle="kt-tooltip" data-original-title="Image 5"-->
+                                                <!--                                                    />-->
+                                                <!--                                                </a>-->
+                                                <!--                                                <a href="../../upload/2020-0223_a375.jpg" data-sub-html="#caption2">-->
+                                                <!--                                                    <img style="width: 180px;" src="../../upload/2020-0223_a375.jpg"-->
+                                                <!--                                                         data-toggle="kt-tooltip" data-original-title="Image 6"-->
+                                                <!--                                                    />-->
+                                                <!--                                                </a>-->
+                                            </div>
+
+                                            <div class="kt-widget4 lightgallery-wrapper" id="gallery-list-wrapper"
+                                                 style="display: none;">
+                                                <!--                                                <div class="kt-widget4__item item"-->
+                                                <!--                                                     data-src="../../upload/2020-02-24_a_375.png">-->
+                                                <!--                                                    <div class="kt-widget4__pic kt-widget4__pic&#45;&#45;pic">-->
+                                                <!--                                                        <a href="../../upload/2020-02-24_a_375.png"-->
+                                                <!--                                                           data-sub-html="#caption2">-->
+                                                <!--                                                            <img style="width: 100px;"-->
+                                                <!--                                                                 src="../../upload/2020-02-24_a_375.png" alt="">-->
+                                                <!--                                                        </a>-->
+                                                <!--                                                    </div>-->
+                                                <!--                                                    <div class="kt-widget4__info">-->
+                                                <!--                                                        <a href="#" class="kt-widget4__username">-->
+                                                <!--                                                            Image 1-->
+                                                <!--                                                        </a>-->
+                                                <!--                                                        <p class="kt-widget4__text">-->
+                                                <!--                                                            ...-->
+                                                <!--                                                        </p>-->
+                                                <!--                                                    </div>-->
+                                                <!--                                                </div>-->
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="kt-portlet__body kt-portlet__body--fit">
+                                </div>
+
+                                <div class="modal fade" id="upload_modal" tabindex="-1" role="dialog"
+                                     aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">媒體庫 - 上載媒體</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal-message_output"></div>
+
+                                                <form action=""
+                                                      data-redirect="media-library.html"
+                                                      method="POST" id="modal-form">
+
+                                                    <div id="modal-datatable"></div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                        onclick="" data-dismiss="modal">
+                                                    关闭
+                                                </button>
+                                                <button type="button" class="btn btn-success"
+
+                                                        onclick="ajax_submit($('#modal-form'),$('.modal-message_output'));">
+
+                                                    儲存
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- end:: Dynamic Content -->
+
+                </div>
+
+                <!-- end:: Content -->
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- begin::Global Config(global config for global JS sciprts) -->
+<script>
+    var KTAppOptions = {
+        "colors": {
+            "state": {
+                "brand": "#2c77f4",
+                "light": "#ffffff",
+                "dark": "#282a3c",
+                "primary": "#5867dd",
+                "success": "#34bfa3",
+                "info": "#36a3f7",
+                "warning": "#ffb822",
+                "danger": "#fd3995"
+            },
+            "base": {
+                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+            }
+        }
+    };
+</script>
+<!-- end::Global Config -->
+
+<!--begin::Global Theme Bundle(used by all pages) -->
+<script src="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.js"
+        type="text/javascript"></script>
+<script src="../../assets/template/metronic/demo12/assets/js/scripts.bundle.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    document.write("<script type='text/javascript' src='../../assets/js/utility.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/admin-common.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/admin-logic.js?v=" + Date.now() + "'><\/script>");
+</script>
+<!--end::Global Theme Bundle -->
+
+<!--begin::Page Scripts(used by this page) -->
+<script src="../../assets/template/metronic/demo12/assets/js/pages/dashboard.js" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+        integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+<!--end::Page Scripts -->
+
+<script type="text/javascript">
+    // blockUI();
+    var config = {
+        r_url: "/api/admin/get-settings",
+    };
+
+    var sampleResponse = {
+        "status": "success",
+        "code": 1,
+        "datas": [
+            {
+                "type": "image",
+                "category": 1,
+                "name": "2020-02-24_a_375",
+                "path": "../../upload/2020-02-24_a_375.png",
+            },
+            {
+                "type": "image",
+                "category": 2,
+                "name": "2020-0126_a375",
+                "path": "../../upload/2020-0126_a375.jpg",
+            },
+            {
+                "type": "image",
+                "category": 3,
+                "name": "2020-0202_a375",
+                "path": "../../upload/2020-0202_a375.jpg",
+            },
+            {
+                "type": "image",
+                "category": 1,
+                "name": "2020-02-24_a_375",
+                "path": "../../upload/2020-02-24_a_375.png",
+            },
+            {
+                "type": "image",
+                "category": 2,
+                "name": "2020-0126_a375",
+                "path": "../../upload/2020-0126_a375.jpg",
+            },
+            {
+                "type": "image",
+                "category": 3,
+                "name": "2020-0202_a375",
+                "path": "../../upload/2020-0202_a375.jpg",
+            },
+        ]
+    };
+
+    var $grid = $('#gallery-tile-wrapper').isotope({});
+
+    var activeWrapper = "#gallery-tile-wrapper";
+
+    function changeView($obj) {
+        console.log($($obj).attr('data-original-title'));
+        var type = $($obj).attr('data-original-title');
+
+        resetBtn(type);
+        resetView(type);
+    }
+
+    function resetBtn($type) {
+        if ($type == "Tile") {
+            $("#btn-list").removeClass('btn-primary');
+            $("#btn-list").addClass('btn-secondary');
+            $("#btn-tile").removeClass('btn-secondary');
+            $("#btn-tile").addClass('btn-primary');
+        } else {
+            $("#btn-tile").removeClass('btn-primary');
+            $("#btn-tile").addClass('btn-secondary');
+            $("#btn-list").removeClass('btn-secondary');
+            $("#btn-list").addClass('btn-primary');
+        }
+    }
+
+    function resetView($type) {
+        if ($type == "Tile") {
+            $("#gallery-tile-wrapper").css('display', 'inline-block');
+            $("#gallery-list-wrapper").css('display', 'none');
+            activeWrapper = "#gallery-tile-wrapper";
+        } else {
+            $("#gallery-list-wrapper").css('display', 'inline-block');
+            $("#gallery-tile-wrapper").css('display', 'none');
+            activeWrapper = "#gallery-list-wrapper";
+            $("#gallery-tile-wrapper").lightGallery({
+                selector: '.item',
+            });
+        }
+    }
+
+    function filterCategory($obj) {
+        var filterValue = $($obj).val();
+
+        console.log("filterCategory - " + filterValue);
+
+        // $(".lightgallery-wrapper").lightGallery({
+        //     selector: '.item-cat-' + filterValue,
+        // });
+        $(".lightgallery-wrapper").isotope({filter: filterValue});
+        //
+        $(".lightgallery-wrapper").data('lightGallery').destroy(true);
+        $(".lightgallery-wrapper").lightGallery({
+            itemSelector: '.item-cat-' + filterValue,
+            filterValue: filterValue,
+        });
+    }
+
+    function populateMediaLibrary($data) {
+        var tileHTML = "", listHTML = "";
+        $.each($data.datas, function (i, entry) {
+            console.log(entry);
+            // <a href="../../upload/2020-0223_a375.jpg" data-sub-html="#caption2">
+            // <img style="width: 180px;" src="../../upload/2020-0223_a375.jpg"
+            //  data-toggle="kt-tooltip" data-original-title="Image 5"
+            // />
+            // </a>
+            tileHTML += '<a class="g-image item item-cat-' + entry.category + '" href="' + entry.path + '" data-sub-html="#caption2">';
+            tileHTML += '<img style="width: 180px;" src="' + entry.path + '" data-toggle="kt-tooltip" data-original-title="' + entry.name + '">';
+            tileHTML += '</a>';
+            // <div class="kt-widget4__item item"
+            //     data-src="../../upload/2020-02-24_a_375.png">
+            //         <div class="kt-widget4__pic kt-widget4__pic--pic">
+            //         <a href="../../upload/2020-02-24_a_375.png"
+            //     data-sub-html="#caption2">
+            //         <img style="width: 100px;"
+            //     src="../../upload/2020-02-24_a_375.png" alt="">
+            //         </a>
+            //         </div>
+            //         <div class="kt-widget4__info">
+            //         <a href="#" class="kt-widget4__username">
+            //         Image 1
+            //     </a>
+            //     <p class="kt-widget4__text">
+            // ...
+            // </p>
+            //     </div>
+            //     </div>
+            listHTML += '<div class="kt-widget4__item g-image item item-cat-' + entry.category + '" data-src="' + entry.path + '">';
+            listHTML += '<div class="kt-widget4__pic kt-widget4__pic--pic" data-sub-html="#caption2">';
+            listHTML += '<a href="' + entry.path + '">';
+            listHTML += '<img style="width: 100px;" src="' + entry.path + '">';
+            listHTML += '</a>';
+            listHTML += '</div>';
+            listHTML += '<div class="kt-widget4__info">';
+            listHTML += '<a href="#" class="kt-widget4__username">' + entry.name + '</a>';
+            listHTML += '<p class="kt-widget4__text">...</p>';
+            listHTML += '</div>';
+            listHTML += '</div>';
+        });
+        $("#gallery-tile-wrapper").html(tileHTML);
+        $("#gallery-list-wrapper").html(listHTML);
+    }
+
+    $(document).ready(function () {
+        getAlert();
+
+        populateMediaLibrary(sampleResponse);
+
+        $(".lightgallery-wrapper").lightGallery({
+            thumbnail: true,
+            animateThumb: false,
+            showThumbByDefault: false,
+            thumbWidth: 100,
+            thumbHeight: 80,
+            thumbMargin: 10,
+            subHtmlSelectorRelative: true,
+            share: false,
+        });
+
+        // ajax_retrieve_callback(
+        //     config,
+        //     function (response, status, xhr) {
+        //         console.log(response);
+        //         populateForm($("form"), response.data);
+        //         unblockUI();
+        //     }
+        // );
+
+    });
+</script>
+
+</body>
+
+<!-- end::Body -->
+
+</html>

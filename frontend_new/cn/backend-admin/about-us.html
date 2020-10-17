@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="">
+    <meta charset="utf-8">
+    <title>19com | 後端管理系統</title>
+    <meta name="description" content="Latest updates and statistic charts">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--begin::Fonts -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
+
+    <!--end::Fonts -->
+
+    <!--begin::Page Vendors Styles(used by this page) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css"
+          rel="stylesheet" type="text/css">
+
+    <!--end::Page Vendors Styles -->
+
+    <!--begin::Global Theme Styles(used by all pages) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.css" rel="stylesheet"
+          type="text/css">
+    <link href="../../assets/template/metronic/demo12/assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+
+    <!--end::Global Theme Styles -->
+
+    <!--begin::Layout Skins(used by all pages) -->
+
+    <!--end::Layout Skins -->
+    <link rel="shortcut icon" href="../../assets/branding/favicon.ico">
+</head>
+
+<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
+
+<!-- begin:: Header Mobile -->
+<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+    <div class="kt-header-mobile__logo">
+        <a href="index.html">
+            <img id="branding_mobile" style="width: 82px;" alt="Logo" src="../../assets/branding/logo.png">
+        </a>
+    </div>
+    <div class="kt-header-mobile__toolbar">
+        <button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left"
+                id="kt_aside_mobile_toggler">
+            <span></span>
+        </button>
+        <button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler">
+            <i class="flaticon-more"></i>
+        </button>
+    </div>
+</div>
+<!-- end:: Header Mobile -->
+
+<div class="kt-grid kt-grid--hor kt-grid--root">
+
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+        <!-- begin:: Aside -->
+
+        <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop"
+             id="kt_aside">
+
+            <!-- begin:: Aside -->
+
+            <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
+
+            <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand" kt-hidden-height="65" style="">
+                <div class="kt-aside__brand-logo">
+                    <a href="index.html">
+                        <img id="branding_pc" style="width: 112px;" alt="Logo" src="../../assets/branding/logo.png">
+                    </a>
+                </div>
+                <div class="kt-aside__brand-tools">
+                    <button class="kt-aside__brand-aside-toggler" id="kt_aside_toggler"><span></span></button>
+                </div>
+            </div>
+
+            <!-- end:: Aside -->
+
+            <!-- begin:: SideNav -->
+
+            <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+                <div id="kt_aside_menu" class="kt-aside-menu kt-scroll ps ps--active-y" data-ktmenu-vertical="1"
+                     data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500" style="height: 512px; overflow: hidden;">
+                    <ul class="kt-menu__nav"></ul>
+                </div>
+            </div>
+
+            <!-- end:: SideNav -->
+
+        </div>
+
+        <!-- end:: Aside -->
+
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+            <!-- begin:: Header -->
+
+            <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed">
+
+                <!-- begin: Header Menu -->
+
+                <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn">
+                    <i class="la la-close"></i>
+                </button>
+                <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper"></div>
+
+                <!-- end: Header Menu -->
+
+                <div class="kt-header__topbar">
+
+                    <!--begin: Language bar -->
+
+                    <div id="kt-language" class="kt-header__topbar-item kt-header__topbar-item--langs"></div>
+
+                    <!--end: Language bar -->
+
+                    <!--begin: User Bar -->
+
+                    <div class="kt-header__topbar-item kt-header__topbar-item--user">
+                        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+                            <div id="kt-user" class="kt-header__topbar-user"></div>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+
+                            <!--begin: Head -->
+                            <div id="kt-user-dropdown"
+                                 class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
+                                 style="background-image: url(../../assets/template/metronic/demo12/assets/media/misc/bg-1.jpg)">
+                            </div>
+                            <!--end: Head -->
+
+                            <!--begin: Navigation -->
+                            <div class="kt-notification">
+                                <div class="kt-notification__custom kt-space-between">
+                                    <a href="../auth/logout.html"
+                                       class="btn btn-label btn-label-brand btn-sm btn-bold">
+                                        登出
+                                    </a>
+                                </div>
+                            </div>
+                            <!--end: Navigation -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- end:: Header -->
+
+            <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+                <!-- begin:: Subheader -->
+
+                <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                    <div class="kt-container  kt-container--fluid ">
+                        <div class="kt-subheader__main">
+                            <h3 class="kt-subheader__title">
+                                關於我們管理
+                            </h3>
+                            <span class="kt-subheader__separator kt-hidden"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end:: Subheader -->
+
+                <!-- begin:: Content -->
+
+                <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+
+                    <div class="row">
+
+                        <div class="col-12">
+
+                            <div class="kt-portlet">
+                                <div class="kt-portlet__head">
+                                    <div class="kt-portlet__head-label">
+                                        <span class="kt-portlet__head-icon">
+                                            <i class="flaticon2-information"></i>
+                                        </span>
+                                        <h3 class="kt-portlet__head-title font-weight-bold">
+                                            關於我們管理
+                                            <small>Manage About Us</small>
+                                        </h3>
+                                    </div>
+                                    <div class="kt-portlet__head-toolbar">
+                                        <div class="dropdown dropdown-inline">
+                                            <a href="about-us-add.html" class="btn btn-primary"
+                                               aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-plus"></i>
+                                                新增
+                                            </a>
+                                            <a href="#" class="btn btn-default btn-icon" data-toggle="dropdown"
+                                               aria-haspopup="true" aria-expanded="false">
+                                                <i class="flaticon-more-1"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right" style="">
+                                                <ul class="kt-nav">
+                                                    <li class="kt-nav__item">
+                                                        <a href="javascript:;"
+                                                           onclick="getChecked()"
+                                                           class="kt-nav__link">
+                                                            <i class="kt-nav__link-icon flaticon-edit"></i>
+                                                            <span class="kt-nav__link-text">批次修改</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="kt-portlet__body">
+
+                                    <div class="message_output"></div>
+
+                                    <!--begin: Search Form -->
+                                    <div class="kt-form kt-form--label-right kt-margin-t-20 kt-margin-b-10">
+
+                                        <div class="row align-items-center">
+                                            <div class="col-xl-8 order-2 order-xl-1">
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-4 kt-margin-b-20-tablet-and-mobile">
+                                                        <div class="kt-input-icon kt-input-icon--left">
+                                                            <input type="text" class="form-control"
+                                                                   placeholder="搜尋标题..." id="generalSearch">
+                                                            <span class="kt-input-icon__icon kt-input-icon__icon--left">
+																<span><i class="la la-search"></i></span>
+															</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 kt-margin-b-20-tablet-and-mobile">
+                                                        <div class="kt-form__group kt-form__group--inline">
+                                                            <div class="kt-form__label d-inline">
+                                                                <label style="white-space: nowrap;">狀態列:</label>
+                                                            </div>
+                                                            <div class="kt-form__control">
+                                                                <select class="form-control bootstrap-select"
+                                                                        id="form-is_visible">
+                                                                    <option value="">全部</option>
+                                                                    <option value="0">否</option>
+                                                                    <option value="1">顯示</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 order-1 order-xl-2 kt-align-right">
+                                                <a href="#" class="btn btn-default kt-hidden">
+                                                    <i class="la la-cart-plus"></i> New Order
+                                                </a>
+                                                <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg d-xl-none"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--end: Search Form -->
+
+                                    <form id="delete_form" action="/api/admin/delete-aboutus" method="POST"
+                                          data-redirect="about-us.html">
+                                        <input type="hidden" name="id" value="">
+                                    </form>
+
+                                    <form id="visible_form" action="/api/admin/update-aboutus-visible" method="POST"
+                                          data-redirect="about-us.html">
+                                        <input type="hidden" name="id" value="">
+                                    </form>
+
+                                    <!-- end:: Dynamic Content -->
+                                </div>
+                                <div class="kt-portlet__body kt-portlet__body--fit">
+
+                                    <!--begin: Datatable -->
+                                    <div class="kt-datatable" id="main-datatable"></div>
+
+                                    <!--end: Datatable -->
+                                </div>
+
+                                <div class="modal fade" id="batch_edit_modal" tabindex="-1" role="dialog"
+                                     aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog modal-xl" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">關於我們 - 批次修改</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal-message_output"></div>
+                                                <form action="/api/admin/update-aboutus-batch"
+                                                      data-redirect="about-us.html"
+                                                      method="POST" id="modal-form">
+                                                    <input type="hidden" name="ids">
+                                                    <div id="modal-datatable"></div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                        onclick="" data-dismiss="modal">
+                                                    关闭
+                                                </button>
+                                                <button type="button" class="btn btn-success"
+                                                        onclick="ajax_submit($('#modal-form'),$('.modal-message_output'));">
+                                                    儲存
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- end:: Content -->
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- begin::Global Config(global config for global JS sciprts) -->
+<script>
+    var KTAppOptions = {
+        "colors": {
+            "state": {
+                "brand": "#2c77f4",
+                "light": "#ffffff",
+                "dark": "#282a3c",
+                "primary": "#5867dd",
+                "success": "#34bfa3",
+                "info": "#36a3f7",
+                "warning": "#ffb822",
+                "danger": "#fd3995"
+            },
+            "base": {
+                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+            }
+        }
+    };
+</script>
+<!-- end::Global Config -->
+
+<!--begin::Global Theme Bundle(used by all pages) -->
+<script src="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.js"
+        type="text/javascript"></script>
+<script src="../../assets/template/metronic/demo12/assets/js/scripts.bundle.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    document.write("<script type='text/javascript' src='../../assets/js/common/utility.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/admin-component.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-common.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-logic.js?v=" + Date.now() + "'><\/script>");
+</script>
+<!--end::Global Theme Bundle -->
+
+<!--begin::Page Scripts(used by this page) -->
+<script src="../../assets/template/metronic/demo12/assets/js/pages/dashboard.js" type="text/javascript"></script>
+
+<!--end::Page Scripts -->
+
+<script type="text/javascript">
+    var config = {
+        url: "/api/admin/get-aboutus-list",
+        params: {via: "client"},
+        page_size: 50,
+        search_element: '#generalSearch',
+        layout_header: true,
+        columns: [
+            {
+                field: 'id',
+                title: '#',
+                sortable: false,
+                width: 20,
+                type: 'number',
+                selector: {class: 'kt-checkbox--solid'},
+                textAlign: 'center',
+            },
+            {
+                field: 'rank',
+                title: '排序',
+                width: 50,
+            },
+            {
+                field: 'title',
+                title: '標題',
+                autoHide: false,
+            },
+            {
+                field: 'is_visible',
+                title: '狀態列',
+                width: 55,
+                sortable: false,
+                template: function (row) {
+                    var status = {0: {'checked': ''}, 1: {'checked': 'checked="checked"'}};
+
+                    html = '';
+
+                    html += '<span class="kt-switch kt-switch--success">';
+                    html += '<label>';
+                    html += '<input name="is_visible" type="checkbox" onclick="changeVisible(' + row.id + ');" ' + status[row.is_visible].checked + '>';
+                    html += '<span></span>';
+                    html += '</label>';
+
+                    return html;
+                    // return '<span class="kt-badge kt-badge--inline kt-badge--pill kt-badge-dark ' + status[row.is_visible].class + '">' + status[row.is_visible].title + '</span>';
+                }
+            },
+            {
+                field: 'Actions',
+                title: 'Actions',
+                sortable: false,
+                width: 80,
+                overflow: 'visible',
+                autoHide: false,
+                template: function (row) {
+                    btnGroup = '';
+                    btnGroup += '<a href="about-us-edit.html?id=' + row.id + '" class="btn btn-sm btn-clean btn-icon btn-icon-sm" title="修改"><i class="flaticon2-paper"></i></a>&nbsp;&nbsp;&nbsp;';
+                    btnGroup += '<a href="javascript:;" onclick="deleteItem(' + row.id + ');" class="btn btn-sm btn-clean btn-icon btn-icon-sm" title="删除"><i class="text-danger flaticon2-trash"></i></a>&nbsp;&nbsp;&nbsp;';
+                    return btnGroup;
+                }
+            }
+        ]
+    };
+
+    var modalConfig = {
+        url: "/api/admin/get-aboutus-list",
+        params: {
+            ids: ""
+        },
+        method: "POST",
+        columns: [
+            {
+                field: 'index',
+                title: '#',
+                width: 5,
+                template: function (row, index) {
+                    return '<span style="width: 100%">' + (index + 1) + '</span>';
+                }
+            },
+            {
+                field: 'rank',
+                title: '排序',
+                width: 20,
+                template: function (row) {
+                    return '<input name="rank_' + row.id + '" style="width: 100%" class="form-control" type="text" value="' + row.rank + '">';
+                }
+            },
+            {
+                field: 'title',
+                title: '標題',
+                width: 65,
+                template: function (row) {
+                    return '<input name="title_' + row.id + '" style="width: 100%" class="form-control" type="text" value="' + row.title + '">';
+                }
+            },
+            {
+                field: 'is_visible',
+                title: '狀態列',
+                width: 5,
+                template: function (row) {
+                    var is_checked = (row.is_visible) ? 'checked="checked"' : '';
+
+                    var HTML = '';
+                    HTML += '<span class="kt-switch kt-switch--success">';
+                    HTML += '<label>';
+                    HTML += '<input type="checkbox" name="is_visible_' + row.id + '" ' + is_checked + '>';
+                    HTML += '<span></span>';
+                    HTML += '</label>';
+                    HTML += '</span>';
+
+                    return HTML;
+                }
+            },
+        ]
+    };
+
+    function getChecked() {
+        var rows = $(".kt-datatable").find('input[type="checkbox"]').map(function () {
+            if ($(this).val() !== "on") {   // Skip the checkbox on <th>
+                return $(this).prop("checked") ? $(this).val() : null;
+            }
+        });
+
+        clearAlert();
+        if (rows.toArray().length < 1) {
+            showAlert("批次修改需先选择记录。", "info");
+            return;
+        }
+
+        modalConfig.params.ids = rows.toArray().toString();
+
+        buildCustomTable($('#modal-datatable'), modalConfig);
+        $('#batch_edit_modal').modal('show');
+        $('input[name=ids]').val(rows.toArray().toString());
+    }
+
+    $(document).ready(function () {
+        getAlert();
+
+
+        buildDataTable($("#main-datatable"), config);
+        $("#main-datatable").init();
+
+
+        $('#form-is_visible').on('change', function () {
+            $("#main-datatable").KTDatatable().search($(this).val().toLowerCase(), 'is_visible');
+        });
+        $('#form-is_visible').selectpicker();
+    });
+</script>
+
+</body>
+
+<!-- end::Body -->
+
+</html>

@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<table border="1px solid #ccc" style="border-collapse:collapse;" id="table">
+    <tr>
+        <th>姓名</th>
+        <th>证件类型</th>
+        <th>证件号</th>
+        <th>手机号</th>
+        <th>出生日期</th>
+    </tr>
+    <tbody id="content">
+
+    </tbody>
+</table>
+
+<div id="info"  style="border: 1px solid #ccc; text-align: center; display: none;">
+    <h2>编号：111</h2>
+    <p>姓名：<span id="name">张三</span></p>
+    <p>证件类型：<span id="iden">张三</span></p>
+    <p>证件号：1111</p>
+    <p>手机号：<span id="phone">张三</span></p>
+    <p>出生日期：<span id="add">张三</span></p>
+    <p>所在地：北京</p>
+    <p> <span>取消</span> <span id="btn">确定</span></p>
+</div>
+
+
+<script type="text/html" id="test">
+    {{if flag}}
+    {{each orderArray as value}}
+    <tr>
+        <td>{{value.name}}</td>
+        {{each value.identity as v}}
+        {{each v.id_type as vi}}
+        <td>{{vi.name}}</td>
+        {{/each}}
+        <td>{{v.id}}</td>
+        {{/each}}
+        <td>{{value.phone}}</td>
+        <td>{{value.date_of_birth}}</td>
+    </tr>
+    {{/each}}
+    {{/if}}
+</script>
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../js/art-template-master/lib/template-web.js"></script>
+<script>
+    var inputData;
+    //模板引擎使用
+    function getTestData() {
+        // inputData数据
+        inputData = {
+            "flag": true,
+            "orderArray": [{
+                "id": "1",
+                "name": "张三", //用户名
+                "identity": [ //证件类型
+                    {
+                        "id_type": [{
+                            "id": 1,
+                            "name": "身份证"
+                        }],
+                        "id": "110105199408286510"
+                    }
+                ],
+                "phone": "15210329866", //手机号
+                "date_of_birth": "19940828", //出生日期
+                "address": "北京", //地址
+            }, {
+                "id": "2",
+                "name": "赵四",
+                "identity": [{
+                    "id_type": [{
+                        "id": 1,
+                        "name": "身份证"
+                    }],
+                    "id": "110105199508286510"
+                }],
+                "phone": "15210329877",
+                "date_of_birth": "19950828",
+                "address": "北京",
+            }, {
+                "id": "3",
+                "name": "王五",
+                "identity": [{
+                    "id_type": [{
+                        "id": 2,
+                        "name": "护照"
+                    }],
+                    "id": "G49331247"
+                }],
+                "phone": "15210329877",
+                "date_of_birth": "20010124",
+                "address": "上海",
+            }]
+        };
+
+        var html = template('test', inputData);
+        document.getElementById('content').innerHTML = html;
+
+    }
+    //获取数据，搭建表格
+    function clicked(id){
+        var o, i;
+        o = document.getElementById(id).rows;//表格所有行
+        for(i = 0; i < o.length; i++){
+            o[i].ondblclick = function(){ //设置事件
+                var oo,op,oq,or;
+                oo = this.cells[0];
+                op = this.cells[1];
+                oq = this.cells[3];
+                or = this.cells[4];
+//                  alert(oo)
+                document.getElementById('name').innerHTML=oo.innerHTML;
+                document.getElementById('iden').innerHTML=op.innerHTML;
+                document.getElementById('phone').innerHTML=oq.innerHTML;
+                document.getElementById('add').innerHTML=or.innerHTML;
+                document.getElementById('info').style.display='block';
+                document.getElementById('btn').οnclick=function () {
+                    document.getElementById('info').style.display='none';
+                }
+            }
+        }
+    }
+    getTestData();
+    clicked('table')
+</script>
+</body>
+</html>

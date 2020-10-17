@@ -1,0 +1,61 @@
+<div class="promo_swiper">
+
+    {{ each promotion_list promotion index }}
+    <div class="promo_swiper_item">
+
+        {{ if promotion.upload_big_url }}
+            {{if promotion.display_method == 'url'}} <a href ="javascript:imageRedirectModal({{ promotion.id }});"> {{/if}}  <img style="width: 574px;height: 390px;" src="../../{{ promotion.upload_big_url }}"> </a>
+        {{ else }}        
+        <img style="width: 574px;height: 390px;" src="http://www.placehold.it/574x390/EFEFEF/AAAAAA" onclick="javascript:imageRedirectModal({{ promotion.id }});">
+        {{ /if }}
+
+        <!--        <img src="../../assets/images/promo_img2.jpg">-->
+        <div class="promo_bottom">
+            <div class="title">
+                {{ promotion.name }}
+                <button type="button" onclick="javascript:triggerModal({{ promotion.id }});">查看</button>
+            </div>
+            <div class="text">
+                {{ promotion.introduction }}
+            </div>
+        </div>
+
+    </div>
+    {{ /each }}
+
+
+</div>
+<div class="arrow_prev" onclick="$('.promo_swiper').theta_carousel('moveBack')">
+    <img src="../../assets/images/arrow_right.png">
+</div>
+<div class="arrow_next" onclick="$('.promo_swiper').theta_carousel('moveForward')">
+    <img src="../../assets/images/arrow_right.png">
+</div>
+<script type="text/javascript" src="../assets/js/fo_common/theta-carousel.min.js"></script>
+<script type="text/javascript">
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: '2.1',
+
+        spaceBetween: 0,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+    });
+
+    var count = Math.floor($('.promo_swiper_item').length);
+    var roundedNumber = Math.ceil(count / 2);
+    //console.log(count);
+    //console.log(roundedNumber);
+
+    $('.promo_swiper').theta_carousel({
+        distance: 104,
+        numberOfElementsToDisplayRight: 2,
+        numberOfElementsToDisplayLeft: 2,
+        fallback: 'never',
+        scaleZ: 1.01,
+        selectedIndex: roundedNumber,
+        mousewheelEnabled: false
+    });
+</script>

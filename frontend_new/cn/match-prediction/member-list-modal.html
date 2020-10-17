@@ -1,0 +1,127 @@
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header" style="border-bottom: 0px" >
+      <h5 class="modal-title" id="exampleModalLongTitle">{{user_data.username}}这样说</h5>
+    </div>
+      <div class="modal-title2" >{{league_data.name_zh}}
+      {{if(event_data.category_id == "1")}}
+      第{{event_data.round}}輪-
+      {{/if}}
+      {{if(event_data.category_id == "2")}}
+      {{event_data.round}}-
+      {{/if}}
+      {{home_team_data.name_zh}} VS {{away_team_data.name_zh}}</div>
+    <div class="modal-body">
+      <div class="match_prediction_p2 ">
+        <div style="30%;">
+          <div>{{home_team_data.name_zh}}(主队)</div>
+          <div>{{away_team_data.name_zh}}（客队）</div>
+        </div>
+        <div class="right_item">
+          <div>让球</div>
+          <div class="handicap-bet-topTen" id="handicap_home_topTen">{{event_data.handicap_home_bet}} <span>{{event_data.handicap_home_odds}}</span> </div>
+          <div class="handicap-bet-topTen" id="handicap_away_topTen">{{event_data.handicap_away_bet}} <span>{{event_data.handicap_away_odds}}</span> </div>
+        </div>
+        <div class="right_item">
+          <div>大小</div>
+          <div class="over_under-bet-topTen" id="over_under_home_topTen">{{event_data.over_under_home_bet}} <span>{{event_data.over_under_home_odds}}</span> </div>
+          <div class="over_under-bet-topTen" id="over_under_away_topTen">{{event_data.over_under_away_bet}} <span>{{event_data.over_under_away_odds}}</span> </div>
+        </div>
+        {{if(event_data.category_id == "1")}}
+        <div class="right_item win">
+          <div>独赢</div>
+          <div class="single-bet-topTen" id="single_home_topTen">主  <span>{{event_data.single_home}}</span> </div>
+          <div class="single-bet-topTen" id="single_tie_topTen">和  <span>{{event_data.single_tie}}</span> </div>
+          <div class="single-bet-topTen" id="single_away_topTen">客 <span>{{event_data.single_away}}</span> </div>
+        </div>
+        {{/if}}
+        {{if(event_data.category_id == "2")}}
+        <div class="right_item">
+          <div>独赢</div>
+          <div class="single-bet-topTen" id="single_home_topTen">主  <span>{{event_data.single_home}}</span> </div>
+          <div class="single-bet-topTen" id="single_away_topTen">客 <span>{{event_data.single_away}}</span> </div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="modal-footer"  style="justify-content: space-evenly;">
+      <button type="button"   class="submit_btn" id="customized-btn">自定</button> <button type="button" class="submit_btn" id="copy-btn">跟随</button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+      var defaultTopTenResult = []
+      var allFlagData = []
+      var flag = {
+          handicap : "",
+          over_under : "",
+          single : ""
+      }
+      /*var topTenPredictedResAry = {{@result_data}}
+      for (const property in topTenPredictedResAry) {
+        if (`${topTenPredictedResAry[property]}` == true){
+            $("#"+`${property}`+"_topTen").addClass("active activeSelected")
+            defaultTopTenResult.push(`${property}`)
+        }
+      }*/
+      if ({{handicap_home}} == true) {
+        $("#handicap_home_topTen").addClass("active activeSelected")
+        defaultTopTenResult.push("handicap_home")
+      }
+      if ({{handicap_away}} == true) {
+        $("#handicap_away_topTen").addClass("active activeSelected")
+        defaultTopTenResult.push("handicap_away")
+      }
+      if ({{over_under_home}} == true) {
+        $("#over_under_home_topTen").addClass("active activeSelected")
+        defaultTopTenResult.push("over_under_home")
+      }
+      if ({{over_under_away}} == true) {
+        $("#over_under_away_topTen").addClass("active activeSelected")
+        defaultTopTenResult.push("over_under_away")
+      }
+      if ({{single_home}} == true) {
+        $("#single_home_topTen").addClass("active activeSelected")
+        defaultTopTenResult.push("single_home")
+      }
+      if ({{single_away}} == true) {
+        $("#single_away_topTen").addClass("active activeSelected")
+        defaultTopTenResult.push("single_away")
+      }
+      if ({{single_tie}} == true) {
+        $("#single_tie_topTen").addClass("active activeSelected")
+        defaultTopTenResult.push("single_tie")
+      }
+
+      //when handicap is predicted
+      $(".handicap-bet-topTen").click(function(){
+          $(".handicap-bet-topTen").removeClass("active activeSelected");
+          $("#"+this.id).addClass("active activeSelected");
+      })
+      //when over-under is predicted
+      $(".over_under-bet-topTen").click(function(){
+          $(".over_under-bet-topTen").removeClass("active activeSelected");
+          $("#"+this.id).addClass("active activeSelected");
+      })
+      //when single is predicted
+      $(".single-bet-topTen").click(function(){
+          $(".single-bet-topTen").removeClass("active activeSelected");
+          $("#"+this.id).addClass("active activeSelected");
+      })
+      $("#customized-btn").click(function(){
+        var allTypes = $(".activeSelected")
+        for (var i = 0, len = allTypes.length; i < len; i++) {
+            var flagData = allTypes[i].id.split("_")
+            flagData.pop()
+            var flag = flagData.join("_")
+            allFlagData.push(flag)
+        }
+        if(allFlagData.length > 0) updateUserPredictionFromTopTen(allFlagData)
+      })
+      $("#copy-btn").click(function(){
+        if(defaultTopTenResult.length > 0) updateUserPredictionFromTopTen(defaultTopTenResult)
+      })
+    });
+</script>

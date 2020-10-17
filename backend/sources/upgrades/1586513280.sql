@@ -1,0 +1,15 @@
+ALTER TABLE `result` MODIFY `handicap_odds` VARCHAR(255) NOT NULL;
+ALTER TABLE `result` MODIFY `handicap_away` VARCHAR(255) NOT NULL;
+ALTER TABLE `result` MODIFY `over_under_odds` VARCHAR(255) NOT NULL;
+ALTER TABLE `result` MODIFY `over_under_bet` VARCHAR(255) NOT NULL;
+ALTER TABLE `event` MODIFY `handicap_home_odds` VARCHAR(255) NOT NULL;
+ALTER TABLE `event` MODIFY `handicap_away_odds` VARCHAR(255) NOT NULL;
+ALTER TABLE `event` MODIFY `handicap_home_bet` VARCHAR(255) NOT NULL;
+ALTER TABLE `event` MODIFY `handicap_home_bet` VARCHAR(255) NOT NULL;
+ALTER TABLE `event` MODIFY `over_under_home_odds` VARCHAR(255) NOT NULL;
+ALTER TABLE `event` MODIFY `over_under_away_odds` VARCHAR(255) NOT NULL;
+ALTER TABLE `event` MODIFY `over_under_home_bet` VARCHAR(255) NOT NULL;
+ALTER TABLE `event` MODIFY `over_under_away_bet` VARCHAR(255) NOT NULL;
+ALTER TABLE `event` MODIFY `single_home` VARCHAR(255) NOT NULL;
+ALTER TABLE `event` MODIFY `single_tie` VARCHAR(255) NOT NULL;
+ALTER TABLE `event` MODIFY `single_away` VARCHAR(255) NOT NULL;

@@ -1,0 +1,26 @@
+{{ each category category index }}
+<div class="index_p5 layout1200">
+    <div class="category_area">
+        <div class="title_area "><span>{{ category.display }}</span></div>
+        <div class="category_item_area">
+            {{ each category.items item index }}
+            <a class="category_item" href="article.php?id={{ item.article_data.id }}">
+                <video style="width: 200px;height: 115px;">
+                    <source src={{ "../../" + item.url }} type="video/mp4">
+                </video>
+
+                <div class="text">
+                    {{ item.article_data.title }}
+                </div>
+
+                <div class="sub_text">
+                    {{ item.article_data.active_at }} {{ item.article_data.sub_category }}
+                </div>
+
+            </a>
+            {{ /each }}
+        </div>
+    </div>
+
+</div>
+{{ /each }}

@@ -1,0 +1,42 @@
+
+<script>
+
+function set_active(){
+	var fullUri = getCurrentFullUri();
+	var menu_name='index_tab'; // default set as index 總覽
+	
+	if (fullUri.indexOf("tab=winrate") >= 0)
+		menu_name='winrate_tab';
+	else if (fullUri.indexOf("tab=prediction") >= 0)
+		menu_name='prediction_tab';
+		
+	
+	$("#"+menu_name).addClass('active');
+}
+
+$(document).ready(function(){
+		
+	set_active();	//1
+	
+});
+
+
+  </script>
+
+<div class="profile_right" id='profile_right'>
+	<div class="title_area "><span>战绩</span></div>
+	<div class="chart_area_btn">
+		<div id='index_tab' onclick="location.href = '/cn/profile/index.html?tab=general';"> 总览</div>
+		<div id='winrate_tab' onclick="location.href = '/cn/profile/index.html?tab=winrate';"> 胜率</div>
+		<div id='prediction_tab' onclick="location.href = '/cn/profile/index.html?tab=prediction';">预言家资格</div>
+	
+	</div>
+	
+	
+	
+</div>
+	    	
+			
+	    	
+	    	
+	   

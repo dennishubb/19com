@@ -1,0 +1,1 @@
+ALTER TABLE `fan_zone` ADD COLUMN `sorting` INT NOT NULL AFTER `upload_id`;

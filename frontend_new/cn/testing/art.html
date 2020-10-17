@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>basic-demo</title>
+	<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="../js/art-template-master/lib/template-web.js"></script>
+</head>
+
+<body>
+	<div id="content"></div>
+	<div id="container"></div>
+
+	<?php
+   //读取json 并返回给浏览器
+   echo file_get_contents('data.json');
+?>
+<!--	<script id="test" type="text/html">-->
+<!--		{{if isAdmin}}-->
+<!--		<h1>{{title}}</h1>-->
+<!--		<ul>-->
+<!--		 {{each list as value i}}-->
+<!--		  <li>索引 {{i + 1}} ：{{value}}</li>-->
+<!--		 {{/each}}-->
+<!--		</ul>-->
+<!--		-->
+<!--		 <ul>-->
+<!--			<%for (var i =0;i<list2.length;i++){%>-->
+<!--				<li>索引<%=i+1%>:<%=list2[i]%></li>-->
+<!--			<% } %>-->
+<!--		</ul>-->
+
+<!--		{{/if}}-->
+<!--	</script>-->
+<!--	-->
+<!--	-->
+<!--	<script>-->
+<!--		var data = {-->
+<!--		 title: '基本例子',-->
+<!--		 isAdmin: true,-->
+<!--		 list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他'],-->
+<!--		 list2:['读书', '听歌', '摄影', '旅行', '跑步', '爬山', '骑行']-->
+<!--		};-->
+<!--		var html = template('test', data);-->
+<!--		document.getElementById('content').innerHTML = html;-->
+<!--		-->
+<!--	</script>-->
+	
+
+
+	<script type="text/html" id="template">alert();
+		<%for (var i =1; i<items.length;i++){%>
+		<div class="item">
+			<a href="#" class="cover"><img src="<%=items[i].path%>"></a>
+			<div class="bottom">
+				<a href="#"><%=items[i].name%></a>
+				<div class="rightBox">
+					<span class="icon-heart">阅读：<%=items[i].star%></span>
+					<span class="icon-commit">评论：<%=items[i].message%></span>
+				</div>
+			</div>
+		</div>
+		<%}%>
+
+	</script>
+
+		<script type="text/javascript">
+    $(function () {
+        $(".getMore").click(function () {alert();
+            // 使用jQuery 发送ajax请求
+            $.ajax({
+                url:'artTem.php',
+                type:'get',
+                success:function (data) {
+                    console.log(data);
+                    // 转化为js对象 数组
+                    var jsArr = JSON.parse(data);
+                    // 包装为js对象
+                    var obj ={
+                        items:jsArr
+                    };
+                    // 调用模板引擎的方法，填充数据
+                    var result = template('template',obj);
+
+                    $('.container').append(result);
+                }
+            });
+        });
+    });
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,160 @@
+<style>
+    .make-bold {
+        font-weight:bolder
+    }
+
+    .btn-reply {
+        text-align: right;
+        width: 100%;
+        color: #ed1b34;
+        font-size: 14px;
+        padding-right: 15px;
+        padding-bottom: 10px
+    }
+    #main-message-reply {
+        padding-left: 30px;
+    }
+
+    .dropdown {
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .dropdown div:hover {background-color: #ddd;}
+</style>
+
+<div class="comments">
+    <div class="title_area style2"><span>留言区（{{messagesTree.messages.length}}则回复）</span> 
+        <div class="right_filter" >排序方式：
+            <select id="sort-type" onchange="sortByFunc(this.value);">
+                <option value="like_count">热门</option>
+                <option value="created_at">最新</option>
+            </select>
+        </div>
+    </div>
+    <div class="my_comments">
+        {{if (messagesTree.userPicture)}}
+            <img src={{messagesTree.userPicture}} style="height: 50px; width: 50px;">
+        {{else }}
+            <img src="/assets/images/default_user_image.png" style="height: 50px; width: 50px;">
+        {{/if}}
+        <input id="main_message_input" type="input" placeholder="新增回复...">
+    </div>
+    <div class="btn_area btn_area2 btn-reply">
+        <btn id="main-message-cancel" type="button" onclick="main_message_cancel()"><span>取消</span></btn>
+        <btn id="main-message-reply" type="button" onclick="main_message_reply()"=><span>回复</span></btn>
+    </div>
+    {{each messagesTree.messages message index}}
+    <div class="other_comments">
+        {{if message.selfComment}}
+        <div class="del_comments"><i id="delete-{{message.id}}" class="far fa-trash-alt" onclick="deleteSelfComment(this.id)"></i></div>
+        {{/if}}
+        <div class="report" tabindex="-1" onblur="hideList()">
+            <div class="report_btn" id="{{message.id}}" onclick="reportBtn(this)">
+                <i class="fas fa-exclamation-triangle"></i>留言举报
+            </div>
+            <div class="report_pop dropdown" id="report_pop_{{message.id}}" style="display: none;">
+                <div class="report-type" id="ads_{{message.id}}" onclick="report_type(this)">垃圾广告</div>
+                <div class="report-type" id="abusive_{{message.id}}" onclick="report_type(this)">辱骂行为</div>
+                <div class="report-type" id="copyright_{{message.id}}" onclick="report_type(this)">涉嫌侵权</div>
+                <div class="report-type" id="politics_{{message.id}}" onclick="report_type(this)">反动政治</div>
+                <div class="report-type" id="marketingSpam_{{message.id}}" onclick="report_type(this)">垃圾营销</div>
+            </div>
+        </div>
+        <div>
+            {{if (message.user_upload_url)}}
+                <img src=/{{message.user_upload_url}} style="height: 50px; width: 50px;">
+            {{else }}
+                <img src="/assets/images/default_user_image.png" style="height: 50px; width: 50px;">
+            {{/if}}
+        </div>
+        <div style="width: 800px;">
+            <div class="name"><strong>{{message.user_username}}</strong></div>
+            <div class="comments_text">
+                {{message.message}}
+                <div class="btn_area">
+                    <btn id="{{message.id}}" type="button" onclick="count(this.id)">
+                        <span id="bold_{{message.id}}">
+                            {{if (message.like_count)}}
+                                赞({{message.like_count}})
+                            {{else}}
+                                赞(0)
+                            {{/if}}
+                        </span>
+                    </btn>
+                    <btn id="{{message.id}}" type="button" onclick="replyTo(this.id)"><span>回复</span></btn>
+                    <span class="times">{{ $imports.dateFormat(message.created_at, 'timestamp') }}</span>
+                </div>
+                {{each message.subMessages reply subIndex}}
+                <div>
+                    <div class="other_comments">
+                        {{if reply.selfComment}}
+                        <div class="del_comments"><i id="delete-{{reply.id}}" class="far fa-trash-alt" onclick="deleteSelfComment(this.id)"></i></div>
+                        {{/if}}
+                        <div class="report" tabindex="-1" onblur="hideList()">
+                            <div class="report_btn" id="{{reply.id}}" onclick="reportBtn(this)">
+                                <i class="fas fa-exclamation-triangle"></i>留言举报
+                            </div>
+                            <div class="report_pop dropdown" id="report_pop_{{reply.id}}" style="display: none;">
+                                <div class="report-type" id="ads_{{reply.id}}" onclick="report_type(this)">垃圾广告</div>
+                                <div class="report-type" id="abusive_{{reply.id}}" onclick="report_type(this)">辱骂行为</div>
+                                <div class="report-type" id="copyright_{{reply.id}}" onclick="report_type(this)">涉嫌侵权</div>
+                                <div class="report-type" id="politics_{{reply.id}}" onclick="report_type(this)">反动政治</div>
+                                <div class="report-type" id="marketingSpam_{{reply.id}}" onclick="report_type(this)">垃圾营销</div>
+                            </div>
+                        </div>
+                        <div>
+                            {{if (reply.user_upload_url)}}
+                                <img src=/{{reply.user_upload_url}} style="height: 50px; width: 50px;">
+                            {{else }}
+                                <img src="/assets/images/default_user_image.png" style="height: 50px; width: 50px;">
+                            {{/if}}
+                        </div>
+                        <div>
+                            <div class="name"><strong>{{reply.user_username}}</strong></div>
+                            <div class="comments_text">
+                                {{reply.message}}
+                                <div class="btn_area">
+                                    <btn id="{{reply.id}}" type="button" onclick="count(this.id)">
+                                        <span id="bold_{{reply.id}}">
+                                            {{if (reply.like_count)}}
+                                                赞({{reply.like_count}})
+                                            {{else}}
+                                                赞(0)
+                                            {{/if}}
+                                        </span>
+                                    </btn>
+                                    <btn id="{{message.id}}_{{reply.id}}" type="button" onclick="replyToSub(this.id)"><span>回复</span></btn>
+                                    <span class="times">{{ $imports.dateFormat(reply.created_at, 'timestamp') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                <!--<div>-->
+                    <div class="my_comments">
+                        {{if (messagesTree.userPicture)}}
+                            <img src={{messagesTree.userPicture}} style="height: 50px; width: 50px;">
+                        {{else }}
+                            <img src="/assets/images/default_user_image.png" style="height: 50px; width: 50px;">
+                        {{/if}}
+                        <input id="message_input_{{message.id}}" type="input" placeholder="新增回复...">
+                    </div>
+                    <div class="btn_area btn_area2">
+                        <btn id="{{message.id}}" type="button" onclick="cancel(this.id)"><span>取消</span></btn>
+                        <btn id="{{message.id}}" type="button" onclick="reply(this.id)"><span>回复</span></btn>
+                    </div>
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    });
+</script>

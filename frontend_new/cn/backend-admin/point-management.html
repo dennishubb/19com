@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="">
+    <meta charset="utf-8">
+    <title>19com | 後端管理系統</title>
+    <meta name="description" content="Latest updates and statistic charts">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--begin::Fonts -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
+
+    <!--end::Fonts -->
+
+    <!--begin::Page Vendors Styles(used by this page) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css"
+          rel="stylesheet" type="text/css">
+
+    <!--end::Page Vendors Styles -->
+
+    <!--begin::Global Theme Styles(used by all pages) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.css" rel="stylesheet"
+          type="text/css">
+    <link href="../../assets/template/metronic/demo12/assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+
+    <!--end::Global Theme Styles -->
+
+    <!--begin::Layout Skins(used by all pages) -->
+
+    <!--end::Layout Skins -->
+    <link rel="shortcut icon" href="../../assets/branding/favicon.ico">
+</head>
+
+<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
+
+<!-- begin:: Header Mobile -->
+<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+    <div class="kt-header-mobile__logo">
+        <a href="index.html">
+            <img id="branding_mobile" style="width: 82px;" alt="Logo" src="../../assets/branding/logo.png">
+        </a>
+    </div>
+    <div class="kt-header-mobile__toolbar">
+        <button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left"
+                id="kt_aside_mobile_toggler">
+            <span></span>
+        </button>
+        <button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler">
+            <i class="flaticon-more"></i>
+        </button>
+    </div>
+</div>
+<!-- end:: Header Mobile -->
+
+<div class="kt-grid kt-grid--hor kt-grid--root">
+
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+        <!-- begin:: Aside -->
+
+        <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop"
+             id="kt_aside">
+
+            <!-- begin:: Aside -->
+
+            <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
+
+            <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand" kt-hidden-height="65" style="">
+                <div class="kt-aside__brand-logo">
+                    <a href="index.html">
+                        <img id="branding_pc" style="width: 112px;" alt="Logo" src="../../assets/branding/logo.png">
+                    </a>
+                </div>
+                <div class="kt-aside__brand-tools">
+                    <button class="kt-aside__brand-aside-toggler" id="kt_aside_toggler"><span></span></button>
+                </div>
+            </div>
+
+            <!-- end:: Aside -->
+
+            <!-- begin:: SideNav -->
+
+            <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+                <div id="kt_aside_menu" class="kt-aside-menu kt-scroll ps ps--active-y" data-ktmenu-vertical="1"
+                     data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500" style="height: 512px; overflow: hidden;">
+                    <ul class="kt-menu__nav"></ul>
+                </div>
+            </div>
+
+            <!-- end:: SideNav -->
+
+        </div>
+
+        <!-- end:: Aside -->
+
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+            <!-- begin:: Header -->
+
+            <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed">
+
+                <!-- begin: Header Menu -->
+
+                <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn">
+                    <i class="la la-close"></i>
+                </button>
+                <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper"></div>
+
+                <!-- end: Header Menu -->
+
+                <div class="kt-header__topbar">
+
+                    <!--begin: Language bar -->
+
+                    <div id="kt-language" class="kt-header__topbar-item kt-header__topbar-item--langs"></div>
+
+                    <!--end: Language bar -->
+
+                    <!--begin: User Bar -->
+
+                    <div class="kt-header__topbar-item kt-header__topbar-item--user">
+                        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+                            <div id="kt-user" class="kt-header__topbar-user"></div>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+
+                            <!--begin: Head -->
+                            <div id="kt-user-dropdown"
+                                 class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
+                                 style="background-image: url(../../assets/template/metronic/demo12/assets/media/misc/bg-1.jpg)">
+                            </div>
+                            <!--end: Head -->
+
+                            <!--begin: Navigation -->
+                            <div class="kt-notification">
+                                <div class="kt-notification__custom kt-space-between">
+                                    <a href="../auth/logout.html"
+                                       class="btn btn-label btn-label-brand btn-sm btn-bold">
+                                        登出
+                                    </a>
+                                </div>
+                            </div>
+                            <!--end: Navigation -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- end:: Header -->
+
+            <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+                <!-- begin:: Subheader -->
+
+                <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                    <div class="kt-container  kt-container--fluid ">
+                        <div class="kt-subheader__main">
+                            <h3 class="kt-subheader__title">
+                                战数管理
+                            </h3>
+                            <span class="kt-subheader__separator kt-hidden"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end:: Subheader -->
+
+                <!-- begin:: Content -->
+
+                <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+
+                    <div class="row">
+
+                        <div class="col-12">
+
+                            <div class="kt-portlet">
+                                <div class="kt-portlet__head">
+                                    <div class="kt-portlet__head-label">
+                                        <span class="kt-portlet__head-icon">
+                                            <i class="fa fa-list"></i>
+                                        </span>
+                                        <h3 class="kt-portlet__head-title font-weight-bold">
+                                            战数管理
+                                            <small>Manage Points</small>
+                                        </h3>
+                                    </div>
+                                    <div class="kt-portlet__head-toolbar">
+                                        <div class="dropdown dropdown-inline">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="kt-portlet__body">
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+
+                                            <form id="filter_form">
+                                                <div class="row" style="padding-bottom: 20px;">
+                                                    <div class="col-lg-12">
+                                                        <div class="input-group">
+                                                            <label class="col-form-label">&nbsp; 等级：</label>
+                                                            <input type="hidden" name="user.level_id" id="level_id"
+                                                                   value="">
+                                                            <div class="btn-group btn-group" role="group">
+                                                                <button type="button"
+                                                                        class="btn btn-level btn-secondary active">
+                                                                    全部
+                                                                </button>
+                                                                <input style="" type="button"
+                                                                       class="btn btn-level btn-secondary" value="1"/>
+                                                                <input style="" type="button"
+                                                                       class="btn btn-level btn-secondary" value="2"/>
+                                                                <input style="" type="button"
+                                                                       class="btn btn-level btn-secondary" value="3"/>
+                                                                <input style="" type="button"
+                                                                       class="btn btn-level btn-secondary" value="4"/>
+                                                                <input style="" type="button"
+                                                                       class="btn btn-level btn-secondary" value="5"/>
+                                                                <input style="" type="button"
+                                                                       class="btn btn-level btn-secondary" value="6"/>
+                                                                <input style="" type="button"
+                                                                       class="btn btn-level btn-secondary" value="7"/>
+                                                                <input style="" type="button"
+                                                                       class="btn btn-level btn-secondary" value="8"/>
+                                                                <input style="" type="button"
+                                                                       class="btn btn-level btn-secondary" value="9"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row" style="padding-bottom: 20px;">
+                                                    <div class="col-md-12 col-lg-6">
+                                                        <div class="input-group">
+                                                            <label class="col-form-label">&nbsp; 战数：</label>
+                                                            <input type="text" name="user.points_from"
+                                                                   class="form-control">
+                                                            <span class="input-group-text">-</span>
+                                                            <input type="text" name="user.points_to"
+                                                                   class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-lg-6">
+                                                        <div class="input-group">
+                                                            <label class="col-form-label">&nbsp; 调整：</label>
+                                                            <input type="hidden" name="_points_after_operator" value="">
+                                                            <div style="padding-right: 5px;"></div>
+                                                            <input type="button"
+                                                                   class="btn btn-point btn-sm btn-outline-brand btn-elevate btn-pill active"
+                                                                   value=" + "/>
+                                                            <div style="padding-right: 5px;"></div>
+                                                            <input type="button"
+                                                                   class="btn btn-point btn-sm btn-outline-brand btn-elevate btn-pill"
+                                                                   value=" - "/>
+                                                            <div style="padding-right: 5px;"></div>
+                                                            <input type="text" name="points_after_from"
+                                                                   class="form-control">
+                                                            <span class="input-group-text">-</span>
+                                                            <input type="text" name="points_after_to"
+                                                                   class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row" style="padding-bottom: 20px;">
+                                                    <div class="col-md-12 col-lg-6">
+                                                        <div class="input-group">
+                                                            <label class="col-form-label">&nbsp; 卷数：</label>
+                                                            <input type="text" class="form-control"
+                                                                   name="user.voucher_from">
+                                                            <span class="input-group-text">-</span>
+                                                            <input type="text" class="form-control"
+                                                                   name="user.voucher_to">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-lg-6">
+                                                        <div class="input-group">
+                                                            <label class="col-form-label">&nbsp; 调整：</label>
+                                                            <input type="hidden" name="_voucher_after_operator"
+                                                                   value="">
+                                                            <div style="padding-right: 5px;"></div>
+                                                            <input type="button"
+                                                                   class="btn btn-voucher btn-sm btn-outline-brand btn-elevate btn-pill active"
+                                                                   value=" + "/>
+                                                            <div style="padding-right: 5px;"></div>
+                                                            <input type="button"
+                                                                   class="btn btn-voucher btn-sm btn-outline-brand btn-elevate btn-pill"
+                                                                   value=" - "/>
+                                                            <div style="padding-right: 5px;"></div>
+                                                            <input type="text" class="form-control"
+                                                                   name="voucher_after_from">
+                                                            <span class="input-group-text">-</span>
+                                                            <input type="text" class="form-control"
+                                                                   name="voucher_after_to">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row" style="padding-bottom: 20px;">
+                                                    <div class="col-lg-6">
+                                                        <div class="input-group">
+                                                            <label class="col-form-label">&nbsp; 兑换次数：</label>
+                                                            <input type="text" class="form-control"
+                                                                   name="user.gift_redeem_count_from">
+                                                            <span class="input-group-text">-</span>
+                                                            <input type="text" class="form-control"
+                                                                   name="user.gift_redeem_count_to">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row" style="padding-bottom: 20px;">
+                                                    <div class="col-lg-6">
+                                                        <div class="input-group">
+                                                            <label class="col-form-label">&nbsp; 记录笔数：</label>
+                                                            <input type="text" class="form-control"
+                                                                   name="adjustment_count_from">
+                                                            <span class="input-group-text">-</span>
+                                                            <input type="text" class="form-control"
+                                                                   name="adjustment_count_to">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                    </div>
+                                                </div>
+
+                                                <input class="sync-username" type="hidden" name="user.username_like"
+                                                       value="">
+
+                                            </form>
+
+
+                                        </div>
+
+                                        <div class="col-lg-6">
+
+                                            <div class="row" style="padding-bottom: 30px;">
+                                                <div class="col-lg-10">
+                                                    <div class="input-group">
+                                                        <input type="text"
+                                                               class="form-control kt-quick-search kt-quick-search__input sync-username"
+                                                               placeholder="搜素会员账号..."
+                                                               id="username">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <button type="button" class="btn btn-info btn-block"
+                                                            onclick="filterAdjustment()">
+                                                        <i class="fa fa-search"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <div class="row" style="padding-bottom: 20px;">
+                                                <div class="col-lg-12">
+                                                    <form id="adjustment_form">
+                                                        <div class="kt-section">
+                                                            <div class="kt-section__content kt-section__content--solid"
+                                                                 style="padding: 2.5rem;">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="message_output"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row" style="padding-bottom: 20px;">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="input-group">
+                                                                            <label class="col-form-label">&nbsp;
+                                                                                调整操作：</label>
+                                                                            <select class="form-control selectpicker"
+                                                                                    id="users_select" name="users[]"
+                                                                                    data-live-search="true"
+                                                                                    multiple>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row"
+                                                                     style="padding-bottom: 10px;">
+                                                                    <div class="col-lg-2">
+                                                                    </div>
+                                                                    <div class="col-lg-8">
+                                                                        <div class="input-group">
+                                                                            <label class="col-form-label">&nbsp;
+                                                                                战数：</label>
+                                                                            <input type="hidden"
+                                                                                   name="points_operator"
+                                                                                   value="">
+                                                                            <div style="padding-right: 5px;"></div>
+                                                                            <input type="button"
+                                                                                   class="btn btn-point-create btn-sm btn-outline-brand btn-elevate btn-pill active"
+                                                                                   value=" + "/>
+                                                                            <div style="padding-right: 5px;"></div>
+                                                                            <input type="button"
+                                                                                   class="btn btn-point-create btn-sm btn-outline-brand btn-elevate btn-pill"
+                                                                                   value=" - "/>
+                                                                            <div style="padding-right: 5px;"></div>
+                                                                            <input type="text" name="points"
+                                                                                   class="form-control" value="0">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-2">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row"
+                                                                     style="padding-bottom: 10px;">
+                                                                    <div class="col-lg-2">
+                                                                    </div>
+                                                                    <div class="col-lg-8">
+                                                                        <div class="input-group">
+                                                                            <label class="col-form-label">&nbsp;
+                                                                                卷数：</label>
+                                                                            <input type="hidden"
+                                                                                   name="voucher_operator"
+                                                                                   value="">
+                                                                            <div style="padding-right: 5px;"></div>
+                                                                            <input type="button"
+                                                                                   class="btn btn-voucher-create btn-sm btn-outline-brand btn-elevate btn-pill active"
+                                                                                   value=" + "/>
+                                                                            <div style="padding-right: 5px;"></div>
+                                                                            <input type="button"
+                                                                                   class="btn btn-voucher-create btn-sm btn-outline-brand btn-elevate btn-pill"
+                                                                                   value=" - "/>
+                                                                            <div style="padding-right: 5px;"></div>
+                                                                            <input type="text" name="voucher"
+                                                                                   class="form-control" value="0">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-2">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 text-right">
+                                                                        <button type="button"
+                                                                                onclick="massageAdjustment()"
+                                                                                class="btn btn-info">
+                                                                            发送
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="kt-portlet__body kt-portlet__body--fit">
+
+                                    <!--begin: Datatable -->
+                                    <div class="kt-datatable" id="main-datatable"></div>
+                                    <!--end: Datatable -->
+
+                                </div>
+
+                                <div class="modal fade" id="adjustment_history_modal" tabindex="-1" role="dialog"
+                                     aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog modal-xl" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="predictionlist_title">调整的历史记录</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                </button>
+                                            </div>
+
+                                            <div class="modal-body">
+                                                <div class="modal-message_output"></div>
+
+                                                <div class="col-lg-12">
+                                                    <div class="kt-datatable" id="modal-datatable"></div>
+                                                </div>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                        onclick="" data-dismiss="modal">
+                                                    关闭
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- end:: Content -->
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- begin::Global Config(global config for global JS sciprts) -->
+<script>
+    var KTAppOptions = {
+        "colors": {
+            "state": {
+                "brand": "#2c77f4",
+                "light": "#ffffff",
+                "dark": "#282a3c",
+                "primary": "#5867dd",
+                "success": "#34bfa3",
+                "info": "#36a3f7",
+                "warning": "#ffb822",
+                "danger": "#fd3995"
+            },
+            "base": {
+                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+            }
+        }
+    };
+</script>
+<!-- end::Global Config -->
+
+<!--begin::Global Theme Bundle(used by all pages) -->
+<script src="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.js"
+        type="text/javascript"></script>
+<script src="../../assets/template/metronic/demo12/assets/js/scripts.bundle.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    document.write("<script type='text/javascript' src='../../assets/js/common/utility.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-common.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-logic.js?v=" + Date.now() + "'><\/script>");
+
+    document.write("<script type='text/javascript' src='../../assets/js/logic/point-management.js?v=" + Date.now() + "'><\/script>");
+</script>
+<!--end::Global Theme Bundle -->
+
+<!--begin::Page Scripts(used by this page) -->
+<script src="../../assets/template/metronic/demo12/assets/js/pages/dashboard.js" type="text/javascript"></script>
+
+<!--end::Page Scripts -->
+
+<script type="text/javascript">
+    var tableDataRaw = [];
+
+    function dataCallback(raw) {
+        tableDataRaw = raw.data
+    }
+
+    var config = {
+        url: "/api/cn/adjustment",
+        params: {
+            filter: [{field: "latest", value: "1", operator: "="}],
+            sort: {field: "adjustment.created_at", sort: "desc"},
+        },
+        page_size: 50,
+        search_element: '#generalSearch',
+        layout_header: true,
+        server_sorting: true,
+        columns: [
+            {
+                field: 'user_id',
+                title: '#',
+                sortable: false,
+                width: 20,
+                selector: {class: 'kt-checkbox--solid adjustment-checkbox'}
+            },
+            {
+                field: 'user.username',
+                title: '会员账号',
+                autoHide: false,
+                template: function (row) {
+                    btnGroup = '';
+                    if (row.user_data) {
+                        btnGroup += row.user_data.username;
+                    }
+                    return btnGroup;
+                }
+            },
+            {
+                field: 'user.level_id',
+                title: '等级',
+                width: 50,
+                autoHide: false,
+                textAlign: 'center',
+                template: function (row) {
+                    btnGroup = '';
+                    if (row.user_data) {
+                        btnGroup += row.user_data.level_id;
+                    }
+                    return btnGroup;
+                }
+            },
+            {
+                field: 'points_before',
+                title: '交易前战数',
+                width: 70,
+                autoHide: false,
+                textAlign: 'center'
+            },
+            {
+                field: 'adjustment.points',
+                title: '战数调整',
+                width: 70,
+                autoHide: false,
+                textAlign: 'center',
+                template: function (row) {
+                    btnGroup = '';
+                    btnGroup += row.points;
+
+                    return btnGroup;
+                }
+            },
+            {
+                field: 'points_after',
+                title: '交易后战数',
+                width: 70,
+                autoHide: false,
+                textAlign: 'center',
+            },
+            {
+                field: 'user.total_points',
+                title: '总累积战数',
+                width: 70,
+                autoHide: false,
+                textAlign: 'center',
+                template: function (row) {
+                    btnGroup = '';
+                    if (row.user_data) {
+                        btnGroup += row.user_data.total_points;
+                    }
+                    return btnGroup;
+                }
+            },
+            {
+                field: 'voucher_before',
+                title: '交易前卷数',
+                width: 70,
+                autoHide: false,
+                textAlign: 'center',
+            },
+            {
+                field: 'adjustment.voucher',
+                title: '卷数调整',
+                width: 70,
+                autoHide: false,
+                textAlign: 'center',
+                template: function (row) {
+                    btnGroup = '';
+                    btnGroup += row.voucher;
+
+                    return btnGroup;
+                }
+            },
+            {
+                field: 'voucher_after',
+                title: '交易后卷数',
+                width: 70,
+                autoHide: false,
+                textAlign: 'center',
+            },
+            {
+                field: 'user.gift_redeem_count',
+                title: '兑换礼品次数',
+                width: 80,
+                autoHide: false,
+                textAlign: 'center',
+                template: function (row) {
+                    btnGroup = '';
+                    if (row.user_data) {
+                        btnGroup += row.user_data.gift_redeem_count;
+                    }
+                    return btnGroup;
+                }
+            },
+            {
+                field: 'adjustment.created_at',
+                title: '操作人员<br>操作时间',
+                width: 100,
+                autoHide: false,
+                textAlign: 'center',
+                template: function (row) {
+					
+                    return (row.admin ? row.admin : "system") + "<br>" + row.created_at;
+                }
+            },
+            {
+                field: 'remark',
+                title: '备注',
+                width: 80,
+                autoHide: false,
+            },
+            {
+                field: 'user.adjustment_count',
+                title: '记录比数',
+                width: 60,
+                autoHide: false,
+                textAlign: 'center',
+                template: function (row) {
+                    btnGroup = '';
+                    if (row.user_data) {
+                        btnGroup += row.user_data.adjustment_count;
+                    }
+                    return btnGroup;
+                }
+            },
+            {
+                field: 'Actions',
+                title: 'Actions',
+                sortable: false,
+                width: 80,
+                overflow: 'visible',
+                autoHide: false,
+                template: function (row) {
+                    return '<a href="javascript:void(0);" class="" data-toggle="modal" data-target="#adjustment_history_modal"  onclick="getUserHistory(' + row.user_id + ');"><i class="fa fa-search"></i> 点击查看</a>';
+                }
+            },
+        ]
+    };
+
+    var modalConfig = {
+        url: "/api/cn/adjustment",
+        params: {
+            filter: [
+                {field: "latest", value: "0", operator: "="},
+
+            ],
+        },
+        page_size: 20,
+        layout_header: true,
+        server_sorting: true,
+        columns: [
+            {
+                field: 'id',
+                title: '#',
+                sortable: false,
+                width: 20,
+            },
+            {
+                field: 'adjustment.created_at',
+                title: '日期时间',
+                autoHide: false,
+                template: function (row) {
+                    return row.created_at;
+                }
+            },
+            {
+                field: 'points',
+                title: '现有战数',
+                autoHide: false,
+                textAlign: 'center',
+            },
+            {
+                field: 'points_before',
+                title: '战数调整',
+                autoHide: false,
+                textAlign: 'center',
+            },
+            {
+                field: 'points_after',
+                title: '交易后战数',
+                autoHide: false,
+                textAlign: 'center',
+            },
+            {
+                field: 'voucher_before',
+                title: '现有卷数',
+                autoHide: false,
+                textAlign: 'center',
+            },
+            {
+                field: 'voucher',
+                title: '卷数调整',
+                autoHide: false,
+                textAlign: 'center',
+            },
+            {
+                field: 'voucher_after',
+                title: '交易后卷数',
+                autoHide: false,
+                textAlign: 'center',
+            },
+            {
+                field: 'remark',
+                title: '备注',
+                autoHide: false,
+            },
+        ]
+    }
+
+    $(document).ready(function () {//localStorage.clear()
+        getAlert();
+
+        populateUserSelection();
+
+        $('.btn-level').click(function () {
+            $('.btn-level').each(function (i, e) {
+                $(e).removeClass('active');
+            });
+            $(this).addClass('active');
+            $('#level_id').val($(this).val());
+        });
+
+        $('.btn-point').click(function () {
+            $('.btn-point').each(function (i, e) {
+                $(e).removeClass('active');
+            });
+            $(this).addClass('active');
+            $('input[name=_points_after_operator]').val($(this).val());
+        });
+
+        $('.btn-voucher').click(function () {
+            $('.btn-voucher').each(function (i, e) {
+                $(e).removeClass('active');
+            });
+            $(this).addClass('active');
+            $('input[name=_voucher_after_operator]').val($(this).val());
+        });
+
+        $('.btn-point-create').click(function () {
+            $('.btn-point-create').each(function (i, e) {
+                $(e).removeClass('active');
+            });
+            $(this).addClass('active');
+            $('input[name=points_operator]').val($(this).val());
+        });
+
+        $('.btn-voucher-create').click(function () {
+            $('.btn-voucher-create').each(function (i, e) {
+                $(e).removeClass('active');
+            });
+            $(this).addClass('active');
+            $('input[name=voucher_operator]').val($(this).val());
+        });
+
+        buildDataTable($("#main-datatable"), config, dataCallback);
+        $("#main-datatable").init();
+
+        buildDataTable($("#modal-datatable"), modalConfig, dataCallback);
+
+        $("#main-datatable").KTDatatable().on('kt-datatable--on-check kt-datatable--on-uncheck', function (event, args) {
+            console.log(unique(getSelectedIds()));
+
+            $("#users_select").val(getSelectedIds());
+            $("#users_select").selectpicker('refresh');
+        });
+
+        $(".sync-username").keyup(function () {
+            console.log("sync-username - " + $(this).val());
+            $(".sync-username").val($(this).val());
+        });
+
+    });
+
+</script>
+
+</body>
+
+<!-- end::Body -->
+
+</html>

@@ -1,0 +1,9 @@
+{{ each promotion_list promotion index }}
+<a href="javascript:triggerModal({{ promotion.id }});">
+    {{ if promotion.upload_big_url }}
+    <img style="width: 300px;height: 158px;" src="../../{{ promotion.upload_big_url }}">
+    {{ else }}
+    <img style="width: 300px;height: 158px;" src="http://www.placehold.it/300x158/EFEFEF/AAAAAA">
+    {{ /if }}
+</a>
+{{ /each }}

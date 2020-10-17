@@ -1,0 +1,17 @@
+<div class="">
+    <div class="tab">
+        {{ each article_detail.tags tag i }}
+        <div>
+            <a href="tags.html?tags={{ tag }}">{{ tag }}</a>
+        </div>
+        {{ /each }}
+    </div>
+    <div class="title">{{ article_detail.title }}</div>
+
+    <div class="title_bottom">
+        <span>{{ article_detail.active_at }}</span>
+        <span>来自：{{ article_detail.author }}</span>
+        <span>访问：{{ article_detail.view_count }} </span>
+    </div>
+</div>
+<div class="main_text" id="div_content"></div>

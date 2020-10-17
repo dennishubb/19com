@@ -1,0 +1,29 @@
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header" style="border-bottom: 0px" >
+      <h5 class="modal-title" id="exampleModalLongTitle">解锁预测</h5>
+    </div>
+    <div class="modal-body">
+      <i class="fas fa-unlock unlock " ></i>
+        <div>是否使用1张兑换光解锁预测？</div>
+    </div>
+    <div class="modal-footer"  style="justify-content: space-evenly;">
+      <button type="button"   class="cancel_btn" id="voucher-cancel-button">取消</button> <button type="button" class="submit_btn" id="voucher-submit-button">解锁</button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#voucher-cancel-button").click(function(){
+          $('#unlock_popup').modal('hide');
+          $('.modal-backdrop').remove();
+        })
+
+        $("#voucher-submit-button").click(function(){
+          if(window.selectedUnlockPredictionId){
+            unlockTopTenList();
+          }
+        })
+    });
+</script>

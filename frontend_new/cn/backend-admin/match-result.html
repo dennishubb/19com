@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="">
+    <meta charset="utf-8">
+    <title>19com | 後端管理系統</title>
+    <meta name="description" content="Latest updates and statistic charts">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--begin::Fonts -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
+
+    <!--end::Fonts -->
+
+    <!--begin::Page Vendors Styles(used by this page) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css"
+          rel="stylesheet" type="text/css">
+
+    <!--end::Page Vendors Styles -->
+
+    <!--begin::Global Theme Styles(used by all pages) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.css" rel="stylesheet"
+          type="text/css">
+    <link href="../../assets/template/metronic/demo12/assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+
+    <!--end::Global Theme Styles -->
+
+    <!--begin::Layout Skins(used by all pages) -->
+
+    <!--end::Layout Skins -->
+    <link rel="shortcut icon" href="../../assets/branding/favicon.ico">
+    <style>
+        table.modal_predictionUserList td{
+            border: 1px solid #ebedf2;
+            color:black;
+            vertical-align : middle;
+            text-align:center;
+            padding: 16px 10px;
+        }
+        table.modal_predictionUserList th{
+            border: 1px solid #ebedf2;
+            color:black;
+            vertical-align : middle;
+            text-align:center;
+            padding: 16px 10px;
+        }
+    </style>
+</head>
+
+<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
+
+<!-- begin:: Header Mobile -->
+<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+    <div class="kt-header-mobile__logo">
+        <a href="index.html">
+            <img id="branding_mobile" style="width: 82px;" alt="Logo" src="../../assets/branding/logo.png">
+        </a>
+    </div>
+    <div class="kt-header-mobile__toolbar">
+        <button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left"
+                id="kt_aside_mobile_toggler">
+            <span></span>
+        </button>
+        <button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler">
+            <i class="flaticon-more"></i>
+        </button>
+    </div>
+</div>
+<!-- end:: Header Mobile -->
+
+<div class="kt-grid kt-grid--hor kt-grid--root">
+
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+        <!-- begin:: Aside -->
+
+        <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop"
+             id="kt_aside">
+
+            <!-- begin:: Aside -->
+
+            <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
+
+            <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand" kt-hidden-height="65" style="">
+                <div class="kt-aside__brand-logo">
+                    <a href="index.html">
+                        <img id="branding_pc" style="width: 112px;" alt="Logo" src="../../assets/branding/logo.png">
+                    </a>
+                </div>
+                <div class="kt-aside__brand-tools">
+                    <button class="kt-aside__brand-aside-toggler" id="kt_aside_toggler"><span></span></button>
+                </div>
+            </div>
+
+            <!-- end:: Aside -->
+
+            <!-- begin:: SideNav -->
+
+            <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+                <div id="kt_aside_menu" class="kt-aside-menu kt-scroll ps ps--active-y" data-ktmenu-vertical="1"
+                     data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500" style="height: 512px; overflow: hidden;">
+                    <ul class="kt-menu__nav"></ul>
+                </div>
+            </div>
+
+            <!-- end:: SideNav -->
+
+        </div>
+
+        <!-- end:: Aside -->
+
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+            <!-- begin:: Header -->
+
+            <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed">
+
+                <!-- begin: Header Menu -->
+
+                <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn">
+                    <i class="la la-close"></i>
+                </button>
+                <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper"></div>
+
+                <!-- end: Header Menu -->
+
+                <div class="kt-header__topbar">
+
+                    <!--begin: Language bar -->
+
+                    <div id="kt-language" class="kt-header__topbar-item kt-header__topbar-item--langs"></div>
+
+                    <!--end: Language bar -->
+
+                    <!--begin: User Bar -->
+
+                    <div class="kt-header__topbar-item kt-header__topbar-item--user">
+                        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+                            <div id="kt-user" class="kt-header__topbar-user"></div>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+
+                            <!--begin: Head -->
+                            <div id="kt-user-dropdown"
+                                 class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
+                                 style="background-image: url(../../assets/template/metronic/demo12/assets/media/misc/bg-1.jpg)">
+                            </div>
+                            <!--end: Head -->
+
+                            <!--begin: Navigation -->
+                            <div class="kt-notification">
+                                <div class="kt-notification__custom kt-space-between">
+                                    <a href="../auth/logout.html"
+                                       class="btn btn-label btn-label-brand btn-sm btn-bold">
+                                        登出
+                                    </a>
+                                </div>
+                            </div>
+                            <!--end: Navigation -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- end:: Header -->
+
+            <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+                <!-- begin:: Subheader -->
+
+                <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                    <div class="kt-container  kt-container--fluid ">
+                        <div class="kt-subheader__main">
+                            <h3 class="kt-subheader__title">
+                                赛事结果
+                            </h3>
+                            <span class="kt-subheader__separator kt-hidden"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end:: Subheader -->
+
+                <!-- begin:: Content -->
+
+                <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="kt-portlet">
+                                <div class="message_output"></div>
+                                <div class="kt-portlet__head">
+                                    <div class="kt-portlet__head-label">
+                                        <span class="kt-portlet__head-icon">
+                                            <i class="fa fa-newspaper"></i>
+                                        </span>
+                                        <h3 class="kt-portlet__head-title font-weight-bold">
+                                            赛事结果
+                                            <small>All match result</small>
+                                        </h3>
+                                    </div>
+                                    <div class="kt-portlet__head-toolbar">
+                                        <div class="dropdown dropdown-inline">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="kt-portlet__body">
+                                    <!--end: Search Form -->
+                                    <div class='row'>
+                                        <div class="col-lg-10"></div>
+                                        <div class="col-lg-2">
+                                            <div class="input-group ">
+                                                <label class="col-form-label">批量操作：</label>
+                                                <select class="form-control selectpicker" id="bulk_edit">
+                                                    <option value="">无</option>
+                                                    <!--<option value="bulk_edit_category">更改類型</option>-->
+                                                    <option value="bulk_delete">删除</option>
+                                                </select>
+                                                <button class="btn btn-secondary" id="apply-bulk-button">应用</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--<form id="delete_form" action="/api/cn/event" method="DELETE"
+                                          data-redirect="match-result.html" id="form">
+                                        <input type="hidden" name="id" value="">
+                                    </form>-->
+
+                                    <!-- end:: Dynamic Content -->
+                                </div>
+                                <div class="kt-portlet__body kt-portlet__body--fit">
+
+                                    <!--begin: Datatable -->
+                                    <div class="kt-datatable" id="main-datatable"></div>
+
+                                    <!--end: Datatable -->
+                                </div>
+                                <div class="modal fade" id="prediction_member_list_modal" tabindex="-1" role="dialog"
+                                     aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="predictionlist_title">会员列表</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                </button>
+                                            </div>
+											
+                                            <div class="modal-body">
+                                                <div class="modal-message_output"></div>
+												<div class="col-lg-12">
+													<div id='predict_user_datatable'></div>
+												</div>
+											   
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                        onclick=""  data-dismiss="modal">
+                                                    关闭
+                                                </button>
+                                               </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--begin: pop-up-modal -->
+                                <div class="modal fade" id="pop-up-modal" tabindex="-1" role="dialog"
+                                     aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog modal-xl" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">编辑赛果</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal-message_output"></div>
+                                                <div class="" >
+                                                <div class="d-flex flex-row">
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        <p>主(上)</p>
+                                                        <p>客(下)</p>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        <p>让球</p>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        <p>大小</p>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left border-right col-3 d-flex flex-column justify-content-center">
+                                                        <p>独赢</p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-row">
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        <p id='home_team_id' class="mb-0"></p>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="handicap-result" id="handicap-result-home" value="">
+                                                            <label class="form-check-label" for="handicap-result-home" id="handicap-result-home-label">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="over-under-result" id="over-under-result-home" value="">
+                                                            <label class="form-check-label" for="over-under-result-home" id="over-under-result-home-label">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left border-right col-3 d-flex flex-column justify-content-center">
+                                                        
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="single-result" id="single-result-home" value="">
+                                                            <label class="form-check-label" for="single-result-home" id="single-result-home-label">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-row">
+                                                    <div class="px-2 py-2 border-top border-left col-9"></div>
+                                                    <div class="px-2 py-2 border-top border-left border-right col-3 d-flex flex-column justify-content-center">
+                                                        <div class="form-check single-bet-tie">
+                                                            <input class="form-check-input" type="radio" name="single-result" id="single-result-tie" value="">
+                                                            <label class="form-check-label" for="single-result-tie" id="single-result-tie-label">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-row">
+                                                    <div class="px-2 py-2 border-top border-left border-bottom col-3 d-flex flex-column justify-content-center">
+                                                        <p id='away_team_id'class="mb-0"></p>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left border-bottom col-3 d-flex flex-column justify-content-center">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="handicap-result" id="handicap-result-away" value="">
+                                                            <label class="form-check-label" for="handicap-result-away" id="handicap-result-away-label">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left border-bottom col-3 d-flex flex-column justify-content-center">
+                                                        
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="over-under-result" id="over-under-result-away" value="">
+                                                            <label class="form-check-label" for="over-under-result-away" id="over-under-result-away-label">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left border-bottom border-right col-3 d-flex flex-column justify-content-center">
+                                                        
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="single-result" id="single-result-away" value="">
+                                                            <label class="form-check-label" for="single-result-away" id="single-result-away-label">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                            <div class="modal-footer">
+                                                <!--<button type="button" class="btn btn-secondary"
+                                                        onclick="" data-dismiss="modal">
+                                                    关闭
+                                                </button>-->
+                                                <button type="button" class="btn btn-success" id="send-button">
+                                                    送出
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                </div>
+                                <!--end: pop-up-modal -->
+
+                                <!--begin: pop-up-confirmation -->
+                                <div class="modal fade" id="pop-up-confirmation" tabindex="-1" role="dialog"
+                                     aria-hidden="true" >
+                                    <div class="modal-dialog modal-xl" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">编辑赛果确认</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal-message_output"></div>
+                                                <div class="" >
+                                                <div class="d-flex flex-row">
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        <p>主(上)</p>
+                                                        <p>客(下)</p>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        <p>让球</p>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        <p>大小</p>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left border-right col-3 d-flex flex-column justify-content-center">
+                                                        <p>独赢</p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-row">
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        <p id='confirm_home_team' class="mb-0"></p>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        <p style="display: none;" id="confirm_home_handicap" class="mb-0"></p>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        <p style="display: none;" id="confirm_home_over_under" class="mb-0"></p>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left border-right col-3 d-flex flex-column justify-content-center">
+                                                        <p style="display: none;" id="confirm_home_single" class="mb-0"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-row">
+                                                    <div class="px-2 py-2 border-top border-left col-9">
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left border-right col-3 d-flex flex-column justify-content-center">
+                                                        <p style="display: none;" id="confirm_tie_single" class="mb-0"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-row">
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        <p id='confirm_away_team' class="mb-0"></p>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        <p style="display: none;" id="confirm_away_handicap" class="mb-0"></p>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left col-3 d-flex flex-column justify-content-center">
+                                                        <p style="display: none;" id="confirm_away_over_under" class="mb-0"></p>
+                                                    </div>
+                                                    <div class="px-2 py-2 border-top border-left border-right col-3 d-flex flex-column justify-content-center">
+                                                        <p style="display: none;" id="confirm_away_single" class="mb-0"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                        onclick="backKey()">
+                                                    返回
+                                                </button>
+                                                <button type="button" class="btn btn-success" id="final-confirm-button">
+                                                    确认
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end: pop-up-confirmation -->
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- end:: Content -->
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- begin::Global Config(global config for global JS sciprts) -->
+<script>
+    var KTAppOptions = {
+        "colors": {
+            "state": {
+                "brand": "#2c77f4",
+                "light": "#ffffff",
+                "dark": "#282a3c",
+                "primary": "#5867dd",
+                "success": "#34bfa3",
+                "info": "#36a3f7",
+                "warning": "#ffb822",
+                "danger": "#fd3995"
+            },
+            "base": {
+                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+            }
+        }
+    };
+</script>
+<!-- end::Global Config -->
+
+<!--begin::Global Theme Bundle(used by all pages) -->
+<script src="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.js"
+        type="text/javascript"></script>
+<script src="../../assets/template/metronic/demo12/assets/js/scripts.bundle.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    document.write("<script type='text/javascript' src='../../assets/js/common/utility.js?v=" + Date.now() + "'><\/script>");
+    //document.write("<script type='text/javascript' src='../../assets/js/admin-component.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-common.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-logic.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/logic/match-event-result.js?v=" + Date.now() + "'><\/script>");
+
+</script>
+
+<!--end::Global Theme Bundle -->
+
+<!--begin::Page Scripts(used by this page) -->
+<script src="../../assets/template/metronic/demo12/assets/js/pages/dashboard.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+<!--end::Page Scripts -->
+
+<script type="text/javascript">
+    var tableDataRaw = [];
+    function dataCallback(raw) {
+        tableDataRaw = raw.data
+    }
+    var config = {
+        url: "/api/cn/event?search[ended]=0&sort[field]=event.id&sort[sort]=desc",
+        //params: {via: "client"},
+        page_size: 50,
+        //search_element: '#generalSearch',
+        layout_header: true,
+        columns: [
+            {
+                field: 'id',
+                title: '编号',
+                sortable: false,
+                width: 20,
+                selector: {class: 'kt-checkbox--solid'}
+            },
+            {
+                field: 'prediction_end_at',
+                title: '创建日期时间',
+                autoHide: false,
+                sortable: true,
+                template: function (row) {
+                    btnGroup = '';
+                    btnGroup += '<a href="match-edit.html?id=' + row.id + '" >'+ row.prediction_end_at +'</a>&nbsp';
+                    return btnGroup;
+                }
+            },
+            {
+                field: 'match_at',
+                title: '比赛日期时间',
+                autoHide: false,
+                sortable: true,
+            },
+            {
+                field: 'league.name_zh',
+                title: '联赛名称',
+                width: 80,
+                overflow: 'visible',
+                sortable: true,
+                autoHide: false,
+                template: function (row) {
+                    rowGroup = '';
+                    if(row.league_data) rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">' +row.league_data.name_zh + '</span><br>';
+                    if (row.category_id == "2")
+                    rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">'+"比赛类型 :" + row.round +'</span>';
+                    else
+                    rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">'+"轮数 :" + row.round +'</span>';
+                    return rowGroup;
+                }
+            },
+            {
+                field: 'category.display',
+                title: '体育类别',
+                width: 80,
+                overflow: 'visible',
+                sortable: true,
+                autoHide: false,
+                template: function (row) {
+                    rowGroup = '';
+                    rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">' + row.category_data.display + '</span><br>';
+                    return rowGroup;
+                }
+            },
+            {
+                field: 'team',
+                title: '主(上)<br>客(下)',
+                width: 80,
+                overflow: 'visible',
+                sortable: false,
+                autoHide: false,
+                template: function (row) {
+                    rowGroup = '';
+                    if(row.home_team_data) rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">' + row.home_team_data.name_zh + '</span><br>';
+                    if(row.away_team_data) rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">' + row.away_team_data.name_zh + '</span>';
+                    return rowGroup;
+                }
+            },
+            {
+                field: 'handicap',
+                title: '让球',
+                width: 80,
+                overflow: 'visible',
+                sortable: false,
+                autoHide: false,
+                template: function (row) {
+                    rowGroup = '';
+                    rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">' + row.handicap_home_bet + '/' + row.handicap_home_odds +  '</span><br>';
+                    rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">' + row.handicap_away_bet + '/' + row.handicap_away_odds +  '</span>';
+                    return rowGroup;
+                }
+            },
+            {
+                field: 'over_under',
+                title: '大小',
+                width: 80,
+                overflow: 'visible',
+                sortable: false,
+                autoHide: false,
+                template: function (row) {
+                    rowGroup = '';
+                    rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">' + row.over_under_home_bet + '/' + row.over_under_home_odds +  '</span><br>';
+                    rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">' + row.over_under_away_bet + '/' + row.over_under_away_odds +  '</span>';
+                    return rowGroup;
+                }
+            },
+            {
+                field: 'single',
+                title: '独赢',
+                width: 80,
+                overflow: 'visible',
+                sortable: false,
+                autoHide: false,
+                template: function (row) {
+                    rowGroup = '';
+                    if (row.category_id == "1") {
+                        rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">' +"主" +row.single_home + '</span><br>';
+                        rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">' +"和" + row.single_tie + '</span>';
+                        rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">' +"客" + row.single_away + '</span>';
+                    }else {
+                        rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">' +"主" +row.single_home + '</span><br>';
+                        rowGroup += '<span class="kt-badge kt-badge--inline kt-badge--pill">' +"客" + row.single_away + '</span>';
+                    }
+                    return rowGroup;
+                }
+            },
+            {
+                field: 'editor_note',
+                title: '预测简介',
+                autoHide: false,
+                sortable: true,
+                template: function (row) {
+                    if(!row.editor_note)
+                        return ''
+                    note = '';
+                    note += row.editor_note.replace(/\\"/g, '"');
+                    var element = $(`<div>${note}</div>`);
+
+                    element.find('img').remove()
+                    element.find('figure').remove()
+                    element.find('a').remove()
+                    var txt = element.text()
+                    if(txt.length > 30)
+                        txt = txt.substring(0,30);
+                    return txt;
+                }
+            },
+            {
+                field: 'prediction_count',
+                title: '预测人数',
+                width: 80,
+                overflow: 'visible',
+                sortable: false,
+                autoHide: false,
+                template: function (row) {
+                    if(row.prediction_count == 'undefined' || !row.prediction_count) return "";
+                    btnGroup = '';
+                    //btnGroup += '<a href="match-prediction-list.html" >' + row.prediction_count + '</a>&nbsp;&nbsp;&nbsp;';
+                    btnGroup+='<a href="#" class="" data-toggle="modal" data-target="#prediction_member_list_modal"  onclick="getEventData('+row.id+');">' + row.prediction_count + '</a>';
+                    return btnGroup;
+
+                }
+            },
+            {
+                field: 'comment_count',
+                title: '留言总数',
+                width: 80,
+                overflow: 'visible',
+                sortable: false,
+                autoHide: false,
+                template: function (row) {
+                    if(row.comment_count == 'undefined' || !row.comment_count) return "";
+                    btnGroup = '';
+                    btnGroup += '<a href="match-comment.html" >' + row.comment_count + '</a>&nbsp;&nbsp;&nbsp;';
+                    return btnGroup;
+                }
+            },
+            {
+                field: 'Actions',
+                title: 'Actions',
+                sortable: false,
+                width: 80,
+                overflow: 'visible',
+                autoHide: false,
+                template: function (row) {
+                    btnGroup = '';
+                    btnGroup += '<a href="match-edit.html?id=' + row.id + '" class="btn btn-sm btn-clean btn-icon btn-icon-sm" title="更改内容"><i class="flaticon2-paper"></i></a>&nbsp;&nbsp;&nbsp;';
+                    if(!row.ended){
+                        btnGroup += '<a onclick="getChecked(' + row.id + ')" class="btn btn-sm btn-clean btn-icon btn-icon-sm" title="新增赛果"><i class="flaticon-trophy"></i></a>&nbsp;&nbsp;&nbsp;';
+                    }/*else{
+                        btnGroup += '<a onclick="getChecked(' + row.id + ","+row.result_data.id+')" class="btn btn-sm btn-clean btn-icon btn-icon-sm" title="编辑赛果"><i class="flaticon-edit"></i></a>&nbsp;&nbsp;&nbsp;';
+                    }*/
+                    return btnGroup;
+                }
+            },
+        ]
+    };
+
+    $(document).ready(function () {
+        getAlert();
+        $('#apply-bulk-button').on('click', function() {
+            var option = $('#bulk_edit').val();
+            var selectedIds = getSelectedIds();
+            if(selectedIds.length != 0){
+                var confirmed = showBulkActionPrompt(option);
+                if(!confirmed){
+                    return;
+                }else if(option == 'bulk_delete'){
+                    if(selectedIds) handleBatchDelete(selectedIds)
+                }
+            }
+            else{
+                confirm("请勾选复选框！")
+            }
+        })
+        buildDataTable($("#main-datatable"), config, dataCallback);
+        $("#main-datatable").init();
+        var datatable = $("#main-datatable").KTDatatable();
+        //searching
+        $('#generalSearch').on('input', function (event) {
+            var searchValue = event.target.value
+            datatable.setDataSourceParam('search[username]', searchValue)
+            datatable.load();
+        })
+
+        //pagination
+        datatable.on('kt-datatable--on-goto-page', function(event, args) {
+            datatable.setDataSourceParam('page_number', args.page)
+            datatable.setDataSourceParam('limit', args.perpage)
+        })
+
+        datatable.on('kt-datatable--on-update-perpage', function(event, args) {
+            datatable.setDataSourceParam('page_number', args.page)
+            datatable.setDataSourceParam('limit', args.perpage)
+        })
+        var selections = {
+            home_team: {
+                handicap: {
+                    selected: false,
+                    value: ''
+                },
+                over_under: {
+                    selected: false,
+                    value: ''
+                },
+                single: {
+                    selected: false,
+                    value: ''
+                }
+            },
+            tie: {
+                selected: false,
+                value: ''
+            },
+            away_team: {
+                handicap: {
+                    selected: false,
+                    value: ''
+                },
+                over_under: {
+                    selected: false,
+                    value: ''
+                },
+                single: {
+                    selected: false,
+                    value: ''
+                }
+            },
+            originalData: {}
+        }
+
+        $('#handicap-result-home').change(function() {
+            selections.home_team.handicap.selected = true;
+            selections.away_team.handicap.selected = false;
+            selections.home_team.handicap.value = $('#handicap-result-home-label').html();
+        })
+        $('#handicap-result-away').change(function() {
+            selections.away_team.handicap.selected = true;
+            selections.home_team.handicap.selected = false;
+            selections.away_team.handicap.value = $('#handicap-result-away-label').html();
+        })
+        $('#over-under-result-home').change(function() {
+            selections.home_team.over_under.selected = true;
+            selections.away_team.over_under.selected = false;
+            selections.home_team.over_under.value = $('#over-under-result-home-label').html();
+        })
+        $('#over-under-result-away').change(function() {
+            selections.away_team.over_under.selected = true;
+            selections.home_team.over_under.selected = false;
+            selections.away_team.over_under.value = $('#over-under-result-away-label').html();
+        })
+        $('#single-result-home').change(function() {
+            selections.home_team.single.selected = true;
+            selections.away_team.single.selected = false;
+            selections.tie.selected = false;
+            selections.home_team.single.value = $('#single-result-home-label').html();
+        })
+        $('#single-result-away').change(function() {
+            selections.away_team.single.selected = true;
+            selections.home_team.single.selected = false;
+            selections.tie.selected = false;
+            selections.away_team.single.value = $('#single-result-away-label').html();
+        })
+        $('#single-result-tie').change(function() {
+            selections.away_team.single.selected = false;
+            selections.home_team.single.selected = false;
+            selections.tie.selected = true;
+            selections.tie.value = $('#single-result-tie-label').html();
+        })
+        
+        $('#send-button').click(function() {
+            confirmMatchResult(selections)
+        })
+        $('#final-confirm-button').click(function() {
+            finalConfirm(selections)
+        })
+
+    });
+
+
+</script>
+
+</body>
+
+<!-- end::Body -->
+
+</html>

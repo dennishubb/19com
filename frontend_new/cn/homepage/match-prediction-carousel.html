@@ -1,0 +1,104 @@
+ <link rel="stylesheet" href="../assets/fontawesome-free-5.13.0-web/css/all.css" />
+<div class="title_area ">
+	<span><a href='/cn/match-prediction/'>19赛事预测</a></span> 
+</div>
+
+<div class="match_prediction_swiper-button">
+	 <div class="match_prediction-swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
+	<div class="match_prediction-swiper-button-next"><i class="fas fa-chevron-right"></i></div>
+   
+</div>
+<div class="match_prediction-swiper-container">
+    <div class="swiper-wrapper">
+        {{if data_length>=6}}
+			<!-- more than 6 use this-->
+			  {{each match_prediction_data}}
+			  <div class="swiper-slide exist_checker">
+				{{each match_prediction_data[$index] as data_detail}}
+				<div class="match_prediction" onclick="location.href = '/cn/match-prediction?event_id={{data_detail.event_id}}' " style='cursor:pointer'>
+					<div class="title">{{data_detail.league_name}}</div>
+					<div class="date">{{data_detail.match_at}}</div>
+					<div class="team">
+						<div class="team_logo" style='width: 190px;'>
+						
+						
+						<img src="{{data_detail.home_logo_url}}" style="height: 82px; width: 82px;"  onError="this.onerror=null;this.src='/assets/images/default_no_image.png';"/>
+						<span style='white-space: nowrap;'>{{data_detail.home_name}}</span>
+						</div>
+						<div>VS</div>
+						
+						<div class="team_logo" style='width: 190px;'>
+						
+						<img src="{{data_detail.away_logo_url}}" style="height: 82px; width: 82px;"  onError="this.onerror=null;this.src='/assets/images/default_no_image.png';"/>
+						<span style='white-space: nowrap;'><br>{{data_detail.away_name}}</span>
+						</div>
+					</div>
+					
+				</div>
+				{{/each}}
+			 
+				
+			  </div>
+			   {{/each}}
+			
+		{{else}}		
+			
+       			
+				{{each match_prediction_data as data_detail}}
+				 <div class="swiper-slide exist_checker less6">
+					
+					<div class="match_prediction" onclick="location.href = '/cn/match-prediction?event_id={{data_detail.event_id}}' " style='cursor:pointer'>
+						<div class="title">{{data_detail.league_name}}</div>
+						<div class="date">{{data_detail.match_at}}</div>
+						<div class="team">
+							<div class="team_logo" style='width: 190px;'>
+							
+							
+							<img src="{{data_detail.home_logo_url}}" style="height: 82px; width: 82px;"  onError="this.onerror=null;this.src='/assets/images/default_no_image.png';"/>
+							<span style='white-space: nowrap;'>{{data_detail.home_name}}</span>
+							</div>
+							<div>VS</div>
+							
+							<div class="team_logo" style='width: 190px;'>
+							
+							<img src="{{data_detail.away_logo_url}}" style="height: 82px; width: 82px;"  onError="this.onerror=null;this.src='/assets/images/default_no_image.png';"/>
+							<span style='white-space: nowrap;'><br>{{data_detail.away_name}}</span>
+							</div>
+						</div>
+						
+					</div>
+					
+					
+				  </div>
+
+				  {{/each}}
+			
+		{{/if}}
+     
+    </div>
+    <!-- Add Arrows -->
+    
+</div>
+	    	
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView:'2.1',
+       
+      spaceBetween: 0,
+       navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+     
+    });
+     var swiper = new Swiper('.match_prediction-swiper-container', {
+
+      navigation: {
+        nextEl: '.match_prediction-swiper-button-next',
+        prevEl: '.match_prediction-swiper-button-prev',
+      },
+    });
+    
+     
+  </script>			
+	    			

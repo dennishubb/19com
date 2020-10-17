@@ -1,0 +1,1 @@
+ALTER TABLE `message` ADD COLUMN `article_id` BIGINT(20) NOT NULL AFTER `chatroom_id`;

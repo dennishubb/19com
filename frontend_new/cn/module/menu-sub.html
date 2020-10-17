@@ -1,0 +1,74 @@
+<style>
+.category_menu >div.active ,.category_menu >div:hover{
+    color: #ed1b34;
+	
+}
+
+.category_menu >div.active a{
+    display: inline-block;
+    border-bottom: 2px solid #ed1b34;
+    padding-bottom: 2px;
+}
+
+.scrollable{
+  display: inline-block;
+  
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+
+/* width */
+.category_menu::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+.category_menu::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.category_menu::-webkit-scrollbar-thumb {
+  background: #cccac4; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.category_menu::-webkit-scrollbar-thumb:hover {
+  background:#9e9d99; 
+}
+</style>
+
+<script>
+    function highlight_current_sub_menu(){
+		var fullUri = getCurrentFullUri();
+		var menu_id = getQueryString('id');
+		var menu_name='menu_item_sub_';
+		
+		menu_name+=menu_id;
+		
+		$("#"+menu_name).addClass('active');
+	}
+	
+	$(document).ready(function(){
+		
+		//highlight_current_sub_menu();	
+	});
+</script>
+
+<div class="layout1200 category_menu" style='overflow: auto;white-space: nowrap;'>
+	{{each sub_menu}}
+	  <div id='menu_item_sub_{{$value.id}}' class='scrollable'><a href="{{$value.url}}" target="{{$value.target}}">{{$value.display}}</a></div>
+	 {{/each}}
+	 
+	
+	<div class="search_bar" style='display:none'>
+		<input type="">
+		<i class="fas fa-search"></i>
+	</div>
+</div>
+    	

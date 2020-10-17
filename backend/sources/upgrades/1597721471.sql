@@ -1,0 +1,1 @@
+ALTER TABLE `site` ADD COLUMN `type` varchar(255) NOT NULL AFTER `description`;

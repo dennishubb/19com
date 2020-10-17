@@ -1,0 +1,51 @@
+{
+    "status": "success",
+    "code": 0,
+    "header": [
+    {
+        "rank_number": "排名",
+        "team": "球队",
+        "session": "场次",
+        "win": "胜",
+        "level": "平",
+        "negative": "负",
+        "goal": "进",
+        "conceded": "失",
+        "net": "净胜球",
+        "integral": "积分",
+        "ball": "球"
+    }
+    ],
+    "body": [
+        {
+            "rank_number": "1",
+            "session": "26",
+            "win": "4",
+            "level": "5",
+            "negative": "78",
+            "goal": "78",
+            "conceded": "89",
+            "net": "78",
+            "integral": "78",
+            "ball": "球",
+            "src":"http://cdn.sportnanoapi.com/football/team/120ac5156dd7f19c7e7d1737aa9aca3f.png",
+            "alt" : "皇家马德里"
+
+        },
+        {
+            "rank_number": "2",
+            "session": "56",
+            "win": "6",
+            "level": "5",
+            "negative": "78",
+            "goal": "78",
+            "conceded": "89",
+            "net": "78",
+            "integral": "78",
+            "ball": "球",
+            "src":"http://cdn.sportnanoapi.com/football/team/120ac5156dd7f19c7e7d1737aa9aca3f.png",
+            "alt" : "皇家马德里"
+
+        }
+        ]
+}

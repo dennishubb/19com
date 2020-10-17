@@ -1,0 +1,61 @@
+{{ each articles article index }}
+<a class="category_item" href="article.php?id={{ article.id }}">
+    {{ if article.upload_url }}
+
+    {{ if $imports.detectMedia(article.upload_url, 0, 0) }}
+    <img src="../../{{ article.upload_url }}" style="width: 290px;height: 211px;">
+    {{ else }}
+    <video style="width: 290px;height: 211px;">
+        <source src={{ "../../" + article.upload_url }} type="video/mp4">
+    </video>
+    {{ /if }}
+
+    {{ else }}
+    <img src="http://www.placehold.it/290x163/EFEFEF/AAAAAA" style="width: 290px;height: 211px;">
+    {{ /if }}
+    <div>
+        <div class="text">
+            {{ article.title }}
+        </div>
+        <div class="sub_text">
+            {{ $imports.html2String(article.content,100) }}
+        </div>
+        <div class="date">
+            {{ article.active_at }}
+        </div>
+    </div>
+</a>
+{{ /each }}
+
+<div class="pagination_area layout1200" data-pageno="{{totalPage}}">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a id="{{i}}" class="page-link page-pagination" href="#" aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                </a>
+            </li>
+            <% for(var i = 1; i <= totalPage; i++){ %>
+            <li id="{{i}}" class="page-item page-pagination"><a class="page-link" href="#"><%= i %></a></li>
+            <% } %>
+            <li class="page-item">
+                <a id="{{ totalPage }}" class="page-link page-pagination" href="#" aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //pagination
+        $(".page-pagination").click(function () {
+            // if (this.id == "{{ total_page }}") this.id = (this.id - 1);
+            window.article_all_list_page_no = this.id;
+            article_category_list(cat_id, 0, limit);
+        })
+
+    });
+</script>

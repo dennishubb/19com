@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="">
+    <meta charset="utf-8">
+    <title>19com | 後端管理系統</title>
+    <meta name="description" content="Latest updates and statistic charts">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--begin::Fonts -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
+
+    <!--end::Fonts -->
+
+    <!--begin::Page Vendors Styles(used by this page) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css"
+          rel="stylesheet" type="text/css">
+
+    <!--end::Page Vendors Styles -->
+
+    <!--begin::Global Theme Styles(used by all pages) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.css" rel="stylesheet"
+          type="text/css">
+    <link href="../../assets/template/metronic/demo12/assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+
+    <!--end::Global Theme Styles -->
+
+    <!--begin::Layout Skins(used by all pages) -->
+
+    <!--end::Layout Skins -->
+    <link rel="shortcut icon" href="../../assets/branding/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js" type="text/javascript"></script>
+    <style>
+        .align-centre {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+        }
+    </style>
+</head>
+
+<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
+
+<!-- begin:: Header Mobile -->
+<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+    <div class="kt-header-mobile__logo">
+        <a href="index.html">
+            <img id="branding_mobile" style="width: 82px;" alt="Logo" src="../../assets/branding/logo.png">
+        </a>
+    </div>
+    <div class="kt-header-mobile__toolbar">
+        <button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left"
+                id="kt_aside_mobile_toggler">
+            <span></span>
+        </button>
+        <button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler">
+            <i class="flaticon-more"></i>
+        </button>
+    </div>
+</div>
+<!-- end:: Header Mobile -->
+
+<div class="kt-grid kt-grid--hor kt-grid--root">
+
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+        <!-- begin:: Aside -->
+
+        <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop"
+             id="kt_aside">
+
+            <!-- begin:: Aside -->
+
+            <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
+
+            <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand" kt-hidden-height="65" style="">
+                <div class="kt-aside__brand-logo">
+                    <a href="index.html">
+                        <img id="branding_pc" style="width: 112px;" alt="Logo" src="../../assets/branding/logo.png">
+                    </a>
+                </div>
+                <div class="kt-aside__brand-tools">
+                    <button class="kt-aside__brand-aside-toggler" id="kt_aside_toggler"><span></span></button>
+                </div>
+            </div>
+
+            <!-- end:: Aside -->
+
+            <!-- begin:: SideNav -->
+
+            <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+                <div id="kt_aside_menu" class="kt-aside-menu kt-scroll ps ps--active-y" data-ktmenu-vertical="1"
+                     data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500" style="height: 512px; overflow: hidden;">
+                    <ul class="kt-menu__nav"></ul>
+                </div>
+            </div>
+
+            <!-- end:: SideNav -->
+
+        </div>
+
+        <!-- end:: Aside -->
+
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+            <!-- begin:: Header -->
+
+            <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed">
+
+                <!-- begin: Header Menu -->
+
+                <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn">
+                    <i class="la la-close"></i>
+                </button>
+                <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper"></div>
+
+                <!-- end: Header Menu -->
+
+                <div class="kt-header__topbar">
+
+                    <!--begin: Language bar -->
+
+                    <div id="kt-language" class="kt-header__topbar-item kt-header__topbar-item--langs"></div>
+
+                    <!--end: Language bar -->
+
+                    <!--begin: User Bar -->
+
+                    <div class="kt-header__topbar-item kt-header__topbar-item--user">
+                        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+                            <div id="kt-user" class="kt-header__topbar-user"></div>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+
+                            <!--begin: Head -->
+                            <div id="kt-user-dropdown"
+                                 class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
+                                 style="background-image: url(../../assets/template/metronic/demo12/assets/media/misc/bg-1.jpg)">
+                            </div>
+                            <!--end: Head -->
+
+                            <!--begin: Navigation -->
+                            <div class="kt-notification">
+                                <div class="kt-notification__custom kt-space-between">
+                                    <a href="../auth/logout.html"
+                                       class="btn btn-label btn-label-brand btn-sm btn-bold">
+                                        登出
+                                    </a>
+                                </div>
+                            </div>
+                            <!--end: Navigation -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- end:: Header -->
+
+            <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+                <!-- begin:: Subheader -->
+
+                <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                    <div class="kt-container  kt-container--fluid ">
+                        <div class="kt-subheader__main">
+                            <h3 class="kt-subheader__title">
+                                新增赛事
+                            </h3>
+                            <span class="kt-subheader__separator kt-hidden"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end:: Subheader -->
+
+                <!-- begin:: Content -->
+
+                <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+
+                    <!-- begin:: Dynamic Content -->
+
+                    <div class="row">
+
+                        <div class="col-12">
+
+                            <div class="kt-portlet">
+                                <div class="kt-portlet__head">
+                                    <div class="kt-portlet__head-label">
+                                        <span class="kt-portlet__head-icon">
+                                            <i class="fa fa-plus"></i>
+                                        </span>
+                                        <h3 class="kt-portlet__head-title font-weight-bold">
+                                            新增赛事
+                                            <small>Add Match</small>
+                                        </h3>
+                                    </div>
+                                    <div class="kt-portlet__head-toolbar">
+                                        <div class="dropdown dropdown-inline">
+                                            <a href="javascript: void(0);" class="btn btn-success"
+                                               onclick="submitAdd();"
+                                               aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-plus"></i>
+                                                保存
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="kt-portlet__body">
+
+                                    <div class="message_output"></div>
+
+                                    <form class="kt-form kt-form--label-right" method="POST"
+                                          action="/api/cn/event" data-redirect="match-result.html"
+                                          accept-charset="UTF-8" id="form">
+                                        <div class="kt-form__body">
+                                            <div class="kt-section kt-section--first">
+                                                <div class="kt-section__body form-control-inline">
+                                                    <div class="form-group row">
+                                                        <div class="form-group row col-lg-2"></div>
+                                                        <div class="col-lg-6 row justify-content-start">
+                                                            <label class="col-form-label">
+                                                                体育球类:
+                                                            </label>
+                                                            <div id="category-selector" class="">
+                                                                <!--<select name="category" class="form-control"  type="text"
+                                                                        value="">
+                                                                        <option value="1">足球</option>
+                                                                        <option value="2">蓝球</option>
+                                                                </select>-->
+                                                                <input type="radio" id="soccer" name="category_id" value="1">
+                                                                <label class="col-form-label" for="soccer">足球</label>
+                                                                <input type="radio" id="basketball" name="category_id" value="2">
+                                                                <label class="col-form-label" for="basketball">篮球</label>
+                                                                <input type="radio" id="gaming" name="category_id" value="4">
+                                                                <label class="col-form-label" for="gaming">电竞</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 row justify-content-start">
+                                                            <label class="col-form-label">
+                                                                联赛名称: 
+                                                            </label>
+                                                            <div>
+                                                                <select name="league_id" id="league_id" class="form-control" 
+                                                                    value="" data-live-search="true">
+                                                                    <option value="">请选择体育分类</option>
+                                                                </select>
+                                                            </div>
+                                                            <button class="esports" type="button" onclick="addNewLeague();" style="display:none">+新增联赛</button>
+                                                             <button class="esport_edit_league_name" type="button" onclick="editGameLeague();" style="display:none">修改
+                                                             <button class="esport_edit_league_name" type="button" onclick="deleteEsportLeague();" style="display:none">删除
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="form-group row col-lg-2"></div>
+                                                        <div class="col-lg-6 row justify-content-start">
+                                                            <label class="col-form-label">
+                                                                比赛日期时间：                   
+                                                            </label>
+                                                            <div class="input-icon">
+                                                                <input name="match_at" type="text" class="form-control timepicker-default" id="datetimepicker1">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 row justify-content-start">
+                                                            <label class="col-form-label">
+                                                                预测结束日期时间：                   
+                                                            </label>
+                                                            <div class="input-icon">
+                                                                <input name="prediction_end_at" type="text" class="form-control timepicker-default" id="datetimepicker2">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="form-group row col-lg-2"></div>
+                                                        <div class="form-group row col-lg-8 justify-content-center">
+                                                            <label class="col-form-label" id="round-label">
+                                                                轮数：                    
+                                                            </label>
+                                                            <div class="non-esports">
+                                                                <select name="round" id="round" class="form-control"  type="text"
+                                                                    value="">
+                                                                    <option value="">请选择体育分类</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="esports" style="display:none; padding-top: 5px;">
+                                                                <input name="round" type="text" placeholder='请输入轮数'></input>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-6 row justify-content-center">
+                                                            <div class="">
+                                                                <div class="">
+                                                                    <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_1">
+                                                                        <img class="avatar__holder" id="elm-image1" name="elm-image1"
+                                                                        style="height: 90px; width: 90px;"
+                                                                            src="http://www.placehold.it/90x90/EFEFEF/AAAAAA&text=90px+X+90px">
+                                                                        <label class="kt-avatar__upload"
+                                                                            data-toggle="kt-tooltip"
+                                                                            data-original-title="Upload / Change Image"
+                                                                               onclick="toggle_ckfinder($('#elm-image1'),$('input[name=upload_url_home]'))">
+                                                                            <i class="fa fa-pen"></i>
+                                                                            <input type="hidden" name="upload_url_home" value="">
+                                                                        </label>
+                                                                        <span class="kt-avatar__cancel"
+                                                                            data-toggle="kt-tooltip"
+                                                                            title="" data-original-title="Cancel avatar">
+                                                                            <i class="fa fa-times"></i>
+                                                                        </span>
+                                                                        <!--<span class="form-text text-muted">
+                                                                            <span class="btn btn-bold btn-sm btn-font-sm  btn-label-danger">備注</span>
+                                                                            顯示於列表圖片，大小為：90px X 90px
+                                                                        </span>-->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 row justify-content-center">
+                                                            <div class="">
+                                                                <div class="">
+                                                                    <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_1">
+                                                                        <img class="avatar__holder" id="elm-image2" name="elm-image2" style="height: 90px; width: 90px;"
+                                                                            src="http://www.placehold.it/90x90/EFEFEF/AAAAAA&text=90px+X+90px">
+                                                                        <label class="kt-avatar__upload"
+                                                                               data-toggle="kt-tooltip"
+                                                                               data-original-title="Upload / Change Image"
+                                                                               onclick="toggle_ckfinder($('#elm-image2'),$('input[name=upload_url_away]'))">
+                                                                            <i class="fa fa-pen"></i>
+                                                                            <input type="hidden" name="upload_url_away" value="">
+                                                                        </label>
+                                                                        <span class="kt-avatar__cancel"
+                                                                            data-toggle="kt-tooltip"
+                                                                            title="" data-original-title="Cancel avatar">
+                                                                            <i class="fa fa-times"></i>
+                                                                        </span>
+                                                                        <!--<span class="form-text text-muted">
+                                                                            <span class="btn btn-bold btn-sm btn-font-sm  btn-label-danger">備注</span>
+                                                                            顯示於列表圖片，大小為：90px X 90px
+                                                                        </span>-->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="form-group row col-lg-2"></div>
+                                                        <div class="col-lg-6 row justify-content-start">
+                                                            <label class="col-form-label">
+                                                                主队：                    
+                                                            </label>
+                                                            <div class="">
+                                                                <select name="home_team_id" id="home_team_id" class="form-control"  type="text"
+                                                                    value="" data-live-search="true">
+                                                                    <option value="">请选择联赛</option>
+                                                                </select>
+                                                            </div>
+                                                            <button class="esports" type="button" onclick="addGameTeam();" style="display:none">+新增队伍</button>
+                                                            <button class='esport_edit_hometeam_name' type="button" onclick="editGameTeam();" style="display:none">修改队伍
+                                                            <button class="esport_edit_hometeam_name" type="button" onclick="deleteEsportTeam();" style="display:none">删除
+                                                        </div>
+                                                        <div class="col-lg-4 row justify-content-start">
+                                                            <label class="col-form-label">
+                                                                客队：                    
+                                                            </label>
+                                                            <div class="">
+                                                                <select name="away_team_id" id="away_team_id" class="form-control"  type="text"
+                                                                    value="" data-live-search="true">
+                                                                    <option value="">请选择联赛</option>
+                                                                </select>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <table class="form-group col-lg-12 table">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>全场让球</th>
+                                                                <th>全场大小</th>
+                                                                <th>全场独赢</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>主</td>
+                                                                <td style="width:406px">
+                                                                    <div class="row non-esports">
+                                                                        <input name="handicap_home_bet" type="text" placeholder='+0.5' value="+0.5"></input>
+                                                                        <input name="handicap_home_odds" type="text" placeholder='1.00' value="1.00"></input>
+                                                                        <!--<select name="handicap_home_odds" type="text"
+                                                                            value="">
+                                                                            <option value="1.00">1.00</option>
+                                                                            <option value="2.00">2.00</option>
+                                                                            <option value="3.00">3.00</option>
+                                                                        </select>-->
+                                                                    </div>
+                                                                </td>
+                                                                <td style="width:406px">
+                                                                    <div class="row non-esports">
+                                                                        <input name="over_under_home_bet" type="text" placeholder='大2.5' value="大2.5"></input>
+                                                                        <input name="over_under_home_odds" type="text" placeholder='1.00' value="1.00"></input>
+                                                                        <!--<select name="over_under_home_odds" type="text"
+                                                                                value="">
+                                                                            <option value="1.00">1.00</option>
+                                                                            <option value="2.00">2.00</option>
+                                                                            <option value="3.00">3.00</option>
+                                                                        </select>-->
+                                                                    </div>
+                                                                <td>
+                                                                    主
+                                                                    <input name="single_home" type="text" placeholder='1.00' value="1.00"></input>
+                                                                    <!--<select name="single_home" type="text"
+                                                                            value="">
+                                                                        <option value="1.00">1.00</option>
+                                                                        <option value="2.00">2.00</option>
+                                                                        <option value="3.00">3.00</option>
+                                                                    </select>-->
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="non-esports" id="single_tie">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td>
+                                                                    和
+                                                                    <input name="single_tie" type="text" placeholder='1.00' value="1.00"></input>
+                                                                    <!--<select name="single_tie" type="text" 
+                                                                            value="">
+                                                                        <option value="1.00">1.00</option>
+                                                                        <option value="2.00">2.00</option>
+                                                                        <option value="3.00">3.00</option>
+                                                                    </select>-->
+                                                                </td><!--not for football-->
+                                                            </tr>
+                                                            <tr>
+                                                                <td>客</td>
+                                                                <td style="width:406px">
+                                                                    <div class="row non-esports">
+                                                                        <input  name="handicap_away_bet" type="text" placeholder='-0.5' value='-0.5'></input>
+                                                                        <input  name="handicap_away_odds" type="text" placeholder='1.00' value="1.00"></input>
+                                                                        <!--<select name="handicap_away_odds" type="text"
+                                                                                value="">
+                                                                            <option value="1.00">1.00</option>
+                                                                            <option value="2.00">2.00</option>
+                                                                            <option value="3.00">3.00</option>
+                                                                        </select>-->
+                                                                    </div>
+                                                                </td>
+                                                                <td style="width:406px">
+                                                                    <div class="row non-esports">
+                                                                        <input name="over_under_away_bet" type="text" placeholder='小2.5' value="小2.5"></input>
+                                                                        <input name="over_under_away_odds" type="text" placeholder='1.00' value="1.00"></input>
+                                                                        <!--<select name="over_under_away_odds" type="text"
+                                                                                value="">
+                                                                            <option value="1.00">1.00</option>
+                                                                            <option value="2.00">2.00</option>
+                                                                            <option value="3.00">3.00</option>
+                                                                        </select>-->
+                                                                    </div>
+                                                                </td>
+                                                                <td>客
+                                                                    <input name="single_away" type="text" placeholder='1.00' value="1.00"></input>
+                                                                    <!--<select name="single_away" type="text"
+                                                                            value="">
+                                                                        <option value="1.00">1.00</option>
+                                                                        <option value="2.00">2.00</option>
+                                                                        <option value="3.00">3.00</option>
+                                                                    </select>-->
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <div class="form-group col-lg-12 justify-content-start">
+                                                        <label class="">
+                                                            小编预测
+                                                        </label>
+                                                        <div class="">
+                                                            <textarea name="editor_note" id="editor"
+                                                                      data-type="ckeditor">
+                                                            </textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- end:: Dynamic Content -->
+
+                </div>
+
+                <!-- end:: Content -->
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- begin::Global Config(global config for global JS sciprts) -->
+<script>
+    var KTAppOptions = {
+        "colors": {
+            "state": {
+                "brand": "#2c77f4",
+                "light": "#ffffff",
+                "dark": "#282a3c",
+                "primary": "#5867dd",
+                "success": "#34bfa3",
+                "info": "#36a3f7",
+                "warning": "#ffb822",
+                "danger": "#fd3995"
+            },
+            "base": {
+                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+            }
+        }
+    };
+</script>
+<!-- end::Global Config -->
+
+<!--begin::Global Theme Bundle(used by all pages) -->
+<script src="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.js"
+        type="text/javascript"></script>
+<script src="../../assets/template/metronic/demo12/assets/js/scripts.bundle.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    document.write("<script type='text/javascript' src='../../assets/js/common/utility.js?v=" + Date.now() + "'><\/script>");
+    //document.write("<script type='text/javascript' src='../../assets/js/admin-component.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-common.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-logic.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/logic/match-event-result.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/ckfinder/ckfinder.js?v=" + Date.now() + "'><\/script>");
+</script>
+<!--end::Global Theme Bundle -->
+
+<!--begin::Page Scripts(used by this page) -->
+<script src="../../assets/template/metronic/demo12/assets/js/pages/dashboard.js" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"
+        integrity="sha256-bqVeqGdJ7h/lYPq6xrPv/YGzMEb6dNxlfiTUHSgRCp8=" crossorigin="anonymous"></script>
+<script src="/assets/js/ckeditor/ckeditor.js" type="text/javascript"></script>
+<script src="/assets/js/ckfinder/ckfinder.js"></script>
+<!--end::Page Scripts -->
+
+<script type="text/javascript">
+    function toggle_ckfinder($img_selector = 0, $input_selector = 0) {
+
+        //console.log("---");
+
+        CKFinder.modal({
+            chooseFiles: true,
+            width: 800,
+            height: 600,
+            resourceType: "Images(bmp,gif,jpeg,jpg,png)",
+            onInit: function (finder) {
+                finder.on('files:choose', function (evt) {
+                    var file = evt.data.files.first();
+                    var formatted_url = file.getUrl().substr(1);
+
+                    if($img_selector) {
+                        $($img_selector).attr('src', "../../" + file.getUrl());
+                    } else {
+                        $('#elm-image').attr('src', "../../" + file.getUrl());
+                    }
+
+                    if($input_selector) {
+                        $($input_selector).attr('value', formatted_url);
+                    } else {
+                        $('#file_input').attr('value', formatted_url);
+                    }
+
+                });
+            }
+        });
+    }
+
+    function submitAdd($draft = null){
+        const editorData = editor.getData();
+        usedImages = getImgUrl(editorData)
+        var event = {
+            event: ''
+        }
+        form = document.getElementById('form');
+        formData = new FormData(form);
+        formData.append("editor_note", editorData);
+
+        var data = {};
+        formData.forEach(function(value, key){
+            data[key] = value;
+        });
+        if (data['category_id'] != 4) data['round'] = $("#round").val()
+        var deletedImages = getRemovedImages(allImgAry, usedImages)
+        event = {
+            ...event,
+            ...data,
+            deletedImages
+        }
+        createEvent(event)
+        .then(function (createEventResponse) {
+            $redirect_uri = $(form).attr('data-redirect');
+            if (createEventResponse.code == 1) {
+                if (createEventResponse.redirect) {
+                    redirect_to($redirect_uri + "?alert-success=" + createEventResponse.status);
+                }
+            }else {
+                showAlert(createEventResponse.message, "danger", $(".message_output"));
+            }
+            return createEventResponse;
+        });
+
+    }
+    
+    
+    
+    $(document).ready(function () {
+        var sportType = "";
+        blockUI();
+
+        $('#datetimepicker1').datetimepicker({
+            minuteStep: 1
+        });
+        $('#datetimepicker2').datetimepicker({
+            minuteStep: 1
+        });
+        
+        $('#league_id').change(function(){
+            if ($('#league_id').val()>0)
+                $('.esport_edit_league_name').css('display','block');
+                
+            else
+                $('.esport_edit_league_name').css('display','none');
+        });
+        
+        $('#home_team_id').change(function(){
+            if ($('#home_team_id').val()>0)
+                $('.esport_edit_hometeam_name').css('display','block');
+                
+            else
+                $('.esport_edit_hometeam_name').css('display','none');
+        });
+        
+        
+         
+        //round dropdown list
+        $('#basketball').change(function(){
+            if (!this.checked) 
+                return
+            $(".non-esports").show()
+            $(".esports").hide()
+            roundLabel.text("比赛类型：                    ")
+            roundSelector.empty();//clear round option
+            roundSelector.selectpicker('refresh');
+            appendBasketballRoundList()
+            $('#round option:not(.basketball-option)').hide();
+            $('#single_tie').hide();
+            $('#round option.basketball-option').show();
+            $('#round').selectpicker('refresh');
+            //league dropdown list
+            sportType = 2;
+            leaguePicker.empty();
+            leaguePicker.selectpicker('refresh');
+            leaguePicker.append($(`<option value="">无</option>`))
+            getAllLeague(sportType).then(response => {
+                if (!this.checked) return;
+                response.data.forEach(league => {
+                    leaguePicker.append($(`<option value="${league.id}">${league.name_zh}</option>`))
+                })
+                leaguePicker.selectpicker('refresh');
+            })
+        })
+        $('#soccer').change(function(){
+            if (!this.checked) 
+                return
+            $(".non-esports").show()
+            $(".esports").hide()
+            roundLabel.text("轮数：                    ")
+            roundSelector.empty();//clear round option
+            appendSoccerRoundList()
+            $('#single_tie').show();
+            $('#round option:not(.soccer-option)').hide();
+            $('#round option.soccer-option').show();
+            $('#round').selectpicker('refresh');
+            //league dropdown list
+            sportType = 1;
+            leaguePicker.empty();
+            leaguePicker.selectpicker('refresh');
+            leaguePicker.append($(`<option>无</option>`))
+            getAllLeague(sportType).then(response => {
+                if (!this.checked) return;
+                response.data.forEach(league => {
+                    leaguePicker.append($(`<option value="${league.id}">${league.name_zh}</option>`))
+                })
+                leaguePicker.selectpicker('refresh');
+            })
+        })
+        $('#gaming').change(function(){
+            if (!this.checked) 
+                return
+            $(".non-esports").hide()
+            $(".esports").show()
+            sportType = 4;
+            leaguePicker.empty();
+            leaguePicker.selectpicker('refresh');
+            leaguePicker.append($(`<option>无</option>`))
+            getAllLeague(sportType).then(response => {
+                if (!this.checked) return;
+                response.data.forEach(league => {
+                    leaguePicker.append($(`<option value="${league.id}">${league.name_zh}</option>`))
+                })
+                leaguePicker.selectpicker('refresh');
+            })
+        })
+        //team dropdown list
+        leaguePicker.change(function(){
+            var selectedLeagueId = ""
+            if (sportType == 4) {
+                selectedLeagueId = 0
+            }else {
+                selectedLeagueId = leaguePicker.val()
+            }
+            getAllTeam(selectedLeagueId,sportType).then(response => {
+                homeTeamPicker.empty();
+                awayTeamPicker.empty();
+
+                response.data.forEach(homeTeam => {
+                    homeTeamPicker.append($(`<option value="${homeTeam.id}">${homeTeam.name_zh}</option>`))
+                } )
+                homeTeamPicker.selectpicker('refresh');
+                $('.esport_edit_hometeam_name').css('display','block');
+
+                response.data.forEach(awayTeam => {
+                    awayTeamPicker.append($(`<option value="${awayTeam.id}">${awayTeam.name_zh}</option>`))
+                })
+                awayTeamPicker.selectpicker('refresh');
+                
+            })
+        })
+        populateForm($("form")).then(a => {
+            editor.model.document.on( 'change:data', (e) => {
+                onChangeImgAry = getImgUrl(editor.getData())
+                onChangeImgAry.forEach(function(value, key){
+                    if(value) allImgAry.push(value)
+                });
+                document.querySelectorAll( 'a[href]' ).forEach( element => {
+                    const allowedTypes = ['avi','flv','mov','mp4','mpeg']
+                    const href = element.attributes.href.value || ''
+                    const data = href.split('.')
+                    const type = data[data.length - 1]
+                    const isAllowed = !!_.find(allowedTypes, t => t === type)
+                    if(!type || !isAllowed)
+                        return
+                    $(element).replaceWith(`<div style="position: relative; padding-bottom: 100%; height: 0; padding-bottom: 56.2493%;"><iframe src="${href}" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div>`)
+                } );
+            });
+        });
+        unblockUI();
+    });
+</script>
+
+</body>
+
+<!-- end::Body -->
+
+</html>

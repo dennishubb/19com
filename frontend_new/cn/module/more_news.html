@@ -1,0 +1,32 @@
+<div class="title_area "><span>更多新闻</span></div>
+<div class="list">
+    {{ each more_news data index }}
+    {{ if index >= 0 && index <= 9 }}
+    <a class="list_item" href="article.php?id={{ data.id }}">
+        <div>{{ data.title }}</div>
+        <div>{{ $imports.dateFormat(data.active_at, 'yyyy-MM-dd') }}</div>
+    </a>
+    {{/if}}
+    {{ /each }}
+</div>
+<div class="list">
+    {{ each more_news data index }}
+    {{ if index >= 10 && index <= 19 }}
+    <a class="list_item" href="article.php?id={{ data.id }}">
+        <div>{{ data.title }}</div>
+        <div>{{ $imports.dateFormat(data.active_at, 'yyyy-MM-dd') }}</div>
+    </a>
+    {{/if}}
+    {{ /each }}
+</div>
+<div class="list">
+    {{ each more_news data index }}
+    {{ if index >= 20 && index <= 29 }}
+    <a class="list_item" href="article.php?id={{ data.id }}">
+        <div>{{ data.title }}</div>
+        <div>{{ $imports.dateFormat(data.active_at, 'yyyy-MM-dd') }}</div>
+    </a>
+    {{/if}}
+    {{ /each }}
+</div>
+

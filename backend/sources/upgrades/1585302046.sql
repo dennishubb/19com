@@ -1,0 +1,1 @@
+ALTER TABLE `user` ADD COLUMN `token` VARCHAR(255) NOT NULL AFTER `password`;

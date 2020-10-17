@@ -1,0 +1,1 @@
+ALTER TABLE `promotion` ADD COLUMN `sorting` INT NOT NULL AFTER `name`;

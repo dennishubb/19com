@@ -1,0 +1,143 @@
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">我的预测</h5>
+        </div>
+        <div class="modal-body">
+        <div class="mp_item_area">
+          {{each matchPredictions prediction index}}
+          <div class="mp_item">
+              <div class="top">
+                  <div class="title">{{prediction.home_team_data.name_zh}} VS {{prediction.away_team_data.name_zh}}</div>
+                  <div>
+                    {{if (prediction.league_data)}}
+                      {{prediction.league_data.name_zh}}
+                    {{else}}
+                      {{}}
+                    {{/if}}
+                    <span>
+                      {{if (prediction.event_data)}}
+                        {{prediction.event_data.match_at}}
+                      {{else}}
+                        {{}}
+                      {{/if}}
+                    </span>
+                  </div>
+              </div>
+              <div class="bottom">
+                  <table>
+                      <tr>
+                        <td>让球</td>
+                        <td>
+                          {{if (prediction.handicap_home)}}
+                            <div>{{prediction.home_team_data.name_zh}}<span>{{prediction.event_data.handicap_home_bet}}</span><i class="far fa-star" id="handicap-home-{{prediction.id}}"></i>
+                            </div>
+                          {{else if(prediction.handicap_away)}}
+                            <div>{{prediction.away_team_data.name_zh}}<span>{{prediction.event_data.handicap_away_bet}}</span><i class="far fa-star" id="handicap-away-{{prediction.id}}"></i>
+                            </div>
+                          {{/if}}
+                        </td>
+                        <td rowspan="3">
+                          <div class="edit_btn edit-match-button" id="{{prediction.event_id}}">
+                            <img src="/assets/images/edit_icon.png">
+                              <br>修<br>改
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          大小
+                        </td>
+                        <td>
+                          {{if (prediction.over_under_home)}}
+                            <div>
+                              {{if (prediction.over_under_home_bet_size)}}
+                                {{prediction.over_under_home_bet_size}}
+                              {{/if}}
+                              <span>{{prediction.over_under_home_bet_detail}}</span> 
+                              <i class="far fa-star" id="over_under-home-{{prediction.id}}"></i>
+                            </div> 
+                        </td>
+                        <td>
+                          {{else if (prediction.over_under_away)}}
+                            <div>
+                            {{if (prediction.over_under_away_bet_size)}}
+                              {{prediction.over_under_away_bet_size}}
+                            {{/if}}
+                              <span>{{prediction.over_under_away_bet_detail}}</span> 
+                              <i class="far fa-star" id="over_under-away-{{prediction.id}}"></i>
+                            </div> 
+                          {{/if}}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          独赢
+                        </td>
+                        <td>
+                          {{if (prediction.single_detail)}}
+                          <div>
+                            {{prediction.single_detail}}
+                            <i class="far fa-star" id="single-{{prediction.single_detail_bet}}-{{prediction.id}}"></i>
+                          </div>
+                          {{/if}}
+                        </td>
+                      </tr>
+                  </table>
+              </div>
+              <div class="mp_item_close" id="{{prediction.id}}">
+                <i class="fas fa-times-circle"></i>
+              </div>
+          </div>
+          {{/each}}
+        </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="submit_btn" onclick="promptSuccess()">送出</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  var allUserFavData = []
+  var userFavId = ""
+  getUserFavorite().then(response => {
+    response.data.forEach(function(key,value){
+      $("#"+key.prediction_type+"-"+key.prediction_bet+"-"+key.prediction_id).removeClass("far fa-star")
+      $("#"+key.prediction_type+"-"+key.prediction_bet+"-"+key.prediction_id).addClass("fas fa-star")
+    });
+  })
+  $(".mp_item_close").click(function(){
+    deleteUserPrediction(this.id)
+  })
+  $(".edit-match-button").click(function(){
+    editUserPrediction(this.id)
+  })
+  $(".fa-star").click(function(){
+    getUserFavorite().then(response => {
+      response.data.forEach(function(key,value){
+        allUserFavData.push(key)
+      });
+      response.thisId = this.id
+      response.thisClass = this.className
+      return response
+    }).then(response => {
+      allUserFavData.forEach(function(keys){
+      if (keys.prediction_type+"-"+keys.prediction_bet+"-"+keys.prediction_id == response.thisId){
+        userFavId = keys.id
+      }
+      })
+      if(response.thisClass == "far fa-star"){
+        $("#"+response.thisId).removeClass("far fa-star")
+        $("#"+response.thisId).addClass("fas fa-star")
+        storeFav(response.thisId)
+      }else if(response.thisClass == "fas fa-star"){
+        $("#"+response.thisId).removeClass("fas fa-star")
+        $("#"+response.thisId).addClass("far fa-star")
+        deleteFav(userFavId)
+      }
+    })
+  })
+});
+</script>

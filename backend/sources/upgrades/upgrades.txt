@@ -1,0 +1,41 @@
+1585284289 (Dennis) - added seo_title, hot and popular column to article table
+1585293039 (Dennis) - added comment_count and article_count column to user table
+1585294159 (Dennis) - insert roles
+1585302046 (Dennis) - add token column to user table
+1585304419 (Dennis) - add draft column to article table
+1585539442 (Dennis) - Add parent_id column to message table
+1585638960 (Dennis) - Add chatroom_id column to article and message table
+1585706985 (Dennis) - Alter link column url in ads_button table
+1585725733 (Dennis) - Add status and updated_at column to message table
+1585728033 (Dennis) - Add disabled, created_at and updated_at column to role table
+1585801375 (Dennis) - Create category table
+1585815405 (Dennis) - add url and upload_id to category
+1585817635 (Dennis) - add title and description column to site table
+1586159935 (Dennis) - rename sort column to sorting for article, category and permission table
+1586163722 (Dennis) - add article_id column to message table
+1586228644 (Dennis) - add gender, address, birth_at and weibo column to user table
+1586250405 (Dennis) - Add area, country, league, team, event, prediction, credit, transaction, accounting and balance table 
+1586330768 (Dennis) - Add handicap_result, over_under_result, single_result and ended columns to event table. selected_team_id, handicap, over_under and single columns to prediction table.
+1586406688 (Dennis) - Add handicap, overunder, single odds and winning team id columns to event table
+1586419917 (Dennis) - Add result table, remove handicap_result, over_under_result and single_result from event table
+1586423879 (Dennis) - Add handicap_win, over_under_win and single_win column to prediction table
+1586501084 (Dennis) - Make changes to event, prediction and result tables
+1586505018 (Dennis) - Add tutorial table
+1586513280 (Dennis) - Change odds and bets column type to varchar
+1586762900 (Dennis) - Change result table handicap_away column to tinyint, add single_odds column to result table
+1586851858 (Dennis) - Add type column to chatroom and message table
+1586935882 (Dennis) - Add win column to prediction table, sub_category_id to article table
+1587017246 (Dennis) - Add win_amount to prediction table
+1587024047 (Dennis) - Alter decimal columns to 10,2
+1587114855 (Dennis) - Add has_event column to league table
+1587604801 (Dennis) - Add level, adjustment, gift and promo related tables and changes
+1589250811 (Dennis) - Add use_count column to team and league table
+1589336190 (Dennis) - Add limitation_count and change level_id type in promotion table
+1589435335 (Dennis) - Add total_count and total_points to prediction_rate table
+1590026069 (Dennis) - Add message_like table and upload_id in user table
+1590030917 (Dennis) - Add type to article table
+1597721471 (Hum)    - Add type to site table
+1599702964 (Hum)    - Add sorting to fan_zone table
+1599713246 (Hum)    - Add sorting to promotion table
+1599534416 (Dennis) - Add columns for season win rate 
+1600075693 (Dennis) - Add user_admin to user table

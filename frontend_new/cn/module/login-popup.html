@@ -1,0 +1,76 @@
+<script src="/assets/js/fo_common/plugins.bundle.js" type="text/javascript"></script>
+
+<div class="modal-dialog" role="document">
+       <div class="modal-content">
+           <div class="modal-header">
+               <nav>
+                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                   	 <a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-login" aria-selected="true"  onclick="refreshCaptcha('login')">登入</a>
+                       <a class="nav-item nav-link" id="nav-register-tab" data-toggle="tab" href="#nav-register" role="tab" aria-controls="nav-register" aria-selected="false" onclick="refreshCaptcha('signup')">注册</a>
+                      
+                   </div>
+               </nav>
+       
+               
+           </div>
+           <div class="modal-body">
+	           <div class="tab-content" id="nav-tabContent">
+		           	<div class="tab-pane fade active show" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+		           
+						<!--登入-->
+			           	<form class="kt-form" method="POST" id="login_form" action="/api/auth/login" data-redirect="/cn/">
+			                <input type="hidden" name='type' value='Member'>
+							<input placeholder="会员ID" type="text" name='username'>
+			                <input placeholder="密码" type="password" name='password'>
+							<div class="cache">
+								<!--<input placeholder="验证码"> <img  src="../assets/images/cache.jpg">-->
+							
+								<input type="text" data-type="required" placeholder="验证码" name="captcha">
+								<a onclick="refreshCaptcha('login');" id="captcha">
+                                    <img id="login-img-captcha" src="" alt="captcha"> <!--width='100%' height='100%'-->
+                                </a>
+							</div>
+							
+							<div class="forget_pw">
+								<u  data-toggle="modal" data-target="#forgotpw" data-dismiss="modal" style='cursor:pointer'>忘记密码</u> 
+								 /
+								<u data-toggle="modal" data-target="#forgotac" data-dismiss="modal" style='cursor:pointer'>忘记账户</u>
+							</div>
+						</form>
+							<button type="button" id='login_button' onclick="login($('#login_form'));">送出</button>   
+						
+			           
+			       	</div>
+			    <div class="tab-pane fade " id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
+						
+						<!--註冊-->
+			           	<form class="kt-form" id="signup_form" method="POST" action="api/cn/user" data-redirect="/cn" accept-charset="UTF-8" >
+						
+							<input type="hidden" name='type' value='Member'>
+							<input type="hidden" name='from' value='Member'>
+							<input placeholder="会员ID" type="text" name='username'>
+							
+			                <input placeholder="密码" type="password" name='password' id='signup_password'>
+							<input placeholder="确认密码"  type="password" name='confirm_password' id='signup_confirm_password'>
+						   
+						   <div class="cache">
+								<!--<input placeholder="验证码"> <img  src="../assets/images/cache.jpg">-->
+								<input type="text" data-type="required" placeholder="验证码" name="captcha">
+								<a onclick="refreshCaptcha('signup');" id="captcha">
+                                    <img id="signup-img-captcha" src="" alt="captcha"> <!--width='100%' height='100%'-->
+                                </a>
+							</div>
+							
+							
+							<button type="button" id='signup_button'  onclick="signup('signup_form');">送出</button>   
+						   
+						</form>
+						
+				</div>
+	        </div>
+	    </div>
+	</div>
+</div>
+
+
+

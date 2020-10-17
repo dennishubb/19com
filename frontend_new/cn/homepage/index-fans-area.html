@@ -1,0 +1,6 @@
+<div class="title_area "><span><a href='promotion.html'>19宠粉专区</a></span></div>
+
+{{each fans_area_data}}
+	  <div class=''>{{$value.display}}</a></div>
+	  <div class="image"><a href="{{$value.url}}" target="_blank"><img src="/{{$value.upload_url}}" style="width: 380px;height:160px" ></a></div>
+{{/each}}

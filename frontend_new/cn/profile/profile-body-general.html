@@ -1,0 +1,177 @@
+<script src="/assets/Chart.js-2.9.3/dist/Chart.bundle.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/assets/Chart.js-2.9.3/dist/Chart.min.css">
+
+<script>
+var swiper = new Swiper('.swiper-container', {
+      slidesPerView:'2.1',
+       
+      spaceBetween: 0,
+       navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+     
+    });
+     var swiper = new Swiper('.match_prediction-swiper-container', {
+      navigation: {
+        nextEl: '.match_prediction-swiper-button-next',
+        prevEl: '.match_prediction-swiper-button-prev',
+      },
+    });
+
+
+
+function showChart(a,b,c,d,e,f){//"战数", "预言次数", "神级兑换卷", "参与率", "总胜率",'预言次数' display
+	var marksData = {
+		labels: ["战数", "预言家次数", "神级兑换卷", "参与率", "总胜率"],
+		datasets: [{
+			label: "Student A", 
+			backgroundColor: "rgba(255,74,96,0.3)",
+			pointBorderWidth:"1",
+			pointBackgroundColor:"rgba(255,108,126)",
+			borderColor:"rgba(255,121,136,1)",
+			//data: [100 ,50 ,100 ,50, "66.67"]
+			data: [a,b,c,d,e]
+		  }]
+			
+	};
+	var ctx = $('#myChart');
+	
+	var myChart = new Chart(ctx, {
+			  type: 'radar',
+			   data: marksData,
+			  options: {
+			  	scale: {
+					        ticks: {
+					            // changes here
+					          
+						        max: 100,
+						        min: 0
+						       
+					        }
+					    },
+					legend: {
+						display: false,
+						labels: {
+							fontColor: 'rgb(255, 99, 132)'
+						}
+					},
+					tooltips: {
+						enabled: true,
+						callbacks: {
+							title: function(context,data) {
+								console.log();
+								return data.labels[context[0].index];
+							},
+							label: function(tooltipItem, data) {
+							var label = '';
+
+						  
+							label += Math.round(tooltipItem.yLabel * 100) / 100;
+							
+							return label;
+						}, scale: {
+				            ticks: {
+				                max: 500
+				               
+				            }
+				        }
+
+						}
+					}
+				}
+
+	  });
+}
+	  
+
+function showBar(curr_month,zhutui,topten,topten_display){ //单月胜率, 主推月胜率, 神准预言家, 神准预言家 display
+	
+	var temp;
+	var calc='';
+	/*curr_month=20;
+	zhutui=10;
+	topten=90;*/
+	
+	//单月胜率
+	temp=curr_month/100;
+	calc='calc((75px - 75px *'+ temp+'))';
+	$('#curr_month_bar').html(curr_month+'%')
+	$('#curr_month_bar').css('padding-top',calc);
+	
+	//主推月胜率
+	temp=zhutui/100;
+	calc='calc((75px - 75px *'+ temp+'))';
+	$('#zhutui_bar').html(zhutui+'%')
+	$('#zhutui_bar').css('padding-top',calc);
+	
+	//神准预言家
+	temp=topten/100;
+	calc='calc((75px - 75px *'+ temp+'))';
+	$('#topten_bar').html(topten_display)
+	$('#topten_bar').css('padding-top',calc);
+}
+	 
+	 
+	
+</script>
+<div class="chart_area">
+		    			<div class="left_chart ">
+		    				<canvas id="myChart" ></canvas>
+		    			</div>
+		    			<div class=" right_chart">
+		    				<div>
+		    					<div class="w-100" style="text-align: center;">
+		    					<select name='category_id' id='parent_sport_category' onchange='get_league_dropdown($(this).val(),false,true)'></select> 
+		    					<select id='league_list' name='league_id'  onchange="generateChartBar()"></select>
+								<!--<button name='search_button' type='button'  onclick="generateChartBar()">确认</button>-->
+								</div>
+		    				</div>
+		    				<div class="bar_area">
+		    					<div>
+		    						<div id='curr_month_bar' ></div>
+		    						<img src="/assets/images/red_col.png">
+		    					</div>
+		    					<div>
+		    						<div id='zhutui_bar' ></div>
+		    						<img src="/assets/images/yellow_col.png">
+		    					</div>
+		    					<div>
+		    						<div  id='topten_bar' ></div>
+		    						<img src="/assets/images/gray_col.png">
+		    					</div>
+
+		    					
+		    					
+		    				</div>
+		    				<div style="padding-bottom: 20px; font-size: 10px;">
+		    					<div>单月胜率</div>
+		    					<div>主推月胜率</div>
+		    					<div>神准预言家</div>
+							</div>
+				
+		    			</div>
+	    			</div>
+	<div class="title_area "><span>预测历史</span><div class="mc_filter"><button class="more_btn" onclick="location.href = '/cn/prediction-history/';">更多</button></div></div>
+	<div class="history_table">
+		<table class="table_style" id='user_prediction_table'>
+			<tr><th>预测时间</th><th>比赛时间</th><th>让球</th><th>大小</th><th>独赢</th><th>总得战数</th><th>状态</th></tr>
+			{{each prediction_table_data}}
+				<tr>
+					<td>{{$value.created_at}}</td>
+					<td>{{$value.match_at}}</td>
+					<td>{{$value.handicap}}</td>
+					<td>{{$value.over_under}}</td>
+					<td>{{$value.single}}</td>
+					<td>{{$value.win_amount}}</td>
+					<td>{{$value.match_status}}</td>
+					
+				</tr>
+				
+			{{/each}}
+			
+			{{if table_length==0}}
+				<tr><td colspan='7'>无记录</td></tr>
+			{{/if}}
+		</table>
+	</div>

@@ -1,0 +1,1 @@
+ALTER TABLE prediction ADD COLUMN `win_amount` decimal (3,2) NOT NULL AFTER `win`;

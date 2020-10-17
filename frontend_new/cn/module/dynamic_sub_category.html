@@ -1,0 +1,35 @@
+{{ each sub_category category index }}
+<div class="index_p5 layout1200" style="padding-top: 0px;padding-bottom: 0px;margin-top:0px;margin-bottom: 20px;">
+    <div class="category_area">
+        <div class="title_area "><span>{{ category.display }}</span></div>
+        <div class="category_item_area">
+            {{ each category.items item index }}
+            <a class="category_item" href="article.php?id={{ item.id }}">
+
+                {{ if item.upload_url }}
+
+                {{ if $imports.detectMedia(item.upload_url, 0, 0) }}
+                <img src={{ "../../" + item.upload_url }} style="width: 200px !important;height: 115px !important;"
+                alt="{{
+                item.title }}">
+                {{ else }}
+                <video style="width: 200px;height: 115px;">
+                    <source src={{
+                    "../../" + item.upload_url }} type="video/mp4">
+                </video>
+                {{ /if }}
+
+                {{ /if }}
+
+                <div class="text">
+                    {{ item.title }}
+                </div>
+                <div class="sub_text">
+                    {{ item.active_at }} {{ item.sub_category }}
+                </div>
+            </a>
+            {{ /each }}
+        </div>
+    </div>
+</div>
+{{ /each }}

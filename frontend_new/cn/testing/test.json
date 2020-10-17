@@ -1,0 +1,38 @@
+{
+  "status": "success",
+  "code": 0,  
+  "table": [
+    {
+      "date": "11月10日",
+      "day": "周日",
+	   "detail": {
+		"detail_1":{
+			"time": "23:00",
+			"round": "英超28轮",
+			"status": "已結束",
+			"hometeam": "阿斯顿维拉",
+			"score": "0-2",
+			"awayteam": "谢菲尔德联队"
+		},
+		"detail_2":{
+			"time": "23:00",
+			"round": "英超29轮",
+			"status": "已結束",
+			"hometeam": "阿斯顿维拉",
+			"score": "0-2",
+			"awayteam": "谢菲尔德联队"
+		},
+		"detail_3":{
+			"time": "23:00",
+			"round": "英超30轮",
+			"status": "已結束",
+			"hometeam": "阿斯顿维拉",
+			"score": "0-2",
+			"awayteam": "谢菲尔德联队"
+		}
+      }
+     
+     
+    }
+  ]
+}

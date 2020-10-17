@@ -1,0 +1,2 @@
+ALTER TABLE `site` ADD COLUMN `title` VARCHAR (255) NOT NULL after `id`;
+ALTER TABLE `site` ADD COLUMN `description` VARCHAR(255) NOT NULL AFTER `title`;

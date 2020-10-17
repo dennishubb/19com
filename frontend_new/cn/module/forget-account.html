@@ -1,0 +1,27 @@
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">忘记账户</h5>
+        
+      </div>
+		<div class="modal-body">
+			<div class="">
+				<form id="forgetac_form" action="/api/cn/forget_password" method="POST" data-redirect="/cn" style='width: 100%;'>
+					<input name='phone' placeholder="手机号" autocomplete="off">
+					<div class="cache">
+						<input type="text" data-type="required" placeholder="验证码" name="captcha" id="forgetac_captcha">
+						<a onclick="refreshCaptcha('forgetpw');" id="captcha">
+							<img id="forgetac-img-captcha" src="" alt="captcha">
+						</a>
+					</div>
+					
+					<div style="width: 100%;text-align: center;">
+						<span id='forgetac_msg_sent_span' style='display:none;padding: 10px;color: #aa0b27;' >用戶名已发送到您手机，请重新登入。</span>
+						<button type='button' id='forgetac_sms_button' onclick='forget_acc()'>送出短信</button> 
+						<button type='button' id='forgetac_close_button' onclick="$('#forgotac').modal('hide');$('.modal-backdrop').remove();" style='display:none'>关闭</button>
+					</div>
+			    </form>
+			</div>
+		</div>
+	</div>
+</div>

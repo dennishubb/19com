@@ -1,0 +1,47 @@
+<div class="exchange_item_top">
+
+    {{ if ((category_id) && (sub_category_id)) }}
+    {{ category }} / {{ sub_category }}
+    {{ /if }}
+
+    {{ if ((!category_id) && (!sub_category_id)) }}
+    全部
+    {{ /if }}
+
+    {{ if ((category_id) && (!sub_category_id)) }}
+    {{ category }} / 全部
+    {{ /if }}
+
+    <div>
+        <select name="sorting" onchange="sort_gift(this);">
+            <option value="ASC">战数低 > 高</option>
+            <option value="DESC">战数高 > 低</option>
+        </select>
+    </div>
+</div>
+{{ each exchange_list data index }}
+<div class="exchange_item">
+    <div class="image">
+        <div>
+            {{ if data.upload_url }}
+            <img src={{ '../../' + data.upload_url }} style="width: 350px !important;height: 240px !important;" align="{{ data.title }}">
+            {{ else }}
+            <img src="http://www.placehold.it/350x240/EFEFEF/AAAAAA" style="width: 350px;height: 240px;"
+                 align="{{ data.title }}">
+            {{ /if }}
+            <div class="text" style="width: 350px;height: 240px;">
+                <div>{{ data.name }}
+                    <div>兑换战数：{{ $imports.toInt(data.points) }} 点</div>
+                </div>
+            </div>
+            <div class="description" style="width: 100%">
+                {{ data.name }}
+                <br>
+                <!--市价：${{ data.amount }}-->
+            </div>
+        </div>
+    </div>
+    <div class="exchange_btn" onclick="triggerModalGiftRedeem(this)" data-id="{{ data.id }}">兑换
+    </div>
+</div>
+{{ /each }}

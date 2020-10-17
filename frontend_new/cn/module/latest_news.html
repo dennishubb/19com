@@ -1,0 +1,31 @@
+<div class="title_area "><span>最新消息</span></div>
+{{ each latest_news data index }}
+<a class="news_item" href="article.php?id={{ data.id }}" data-url="{{ data.upload_url }}">
+
+    {{ if data.upload_url }}
+    {{ if $imports.detectMedia(data.upload_url, 0, 0) }}
+    <div class="image">
+        <img src={{ "../../" + data.upload_url }} alt="{{ data.title }}" style="width: 120px; height: 80px;">
+    </div>
+    {{ else }}
+    <video style="width: 120px;height: 80px;">
+        <source src={{ "../../" + data.upload_url }} type="video/mp4">
+    </video>
+    {{ /if }}
+    {{ /if }}
+
+    <div class="text">
+        <div>
+            {{ data.title  }}
+        </div>
+        <div>
+            {{ data.active_at }}
+            {{ if sub_category }}
+            {{ data.sub_category }}
+            {{ else }}
+            {{ data.category }}
+            {{ /if}}
+        </div>
+    </div>
+</a>
+{{ /each }}

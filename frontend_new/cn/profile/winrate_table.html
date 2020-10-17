@@ -1,0 +1,9 @@
+<tr><th>项目{{test}}</th><th>胜场</th><th>败场</th><th>胜率[排名]</th></tr>
+	{{each winrate_arr}}
+	  <tr><td>{{$value.display}}</td><td>{{$value.win_count}}</td><td>{{$value.lose_count}}</td><td>{{$value.rate}}[{{$value.rank}}]</td></tr>
+	{{/each}}
+	
+	{{if table_length==0}}
+		<tr><td colspan='4'>无记录</td></tr>
+	{{/if}}
+

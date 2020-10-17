@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="">
+    <meta charset="utf-8">
+    <title>19com | 後端管理系統</title>
+    <meta name="description" content="Latest updates and statistic charts">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--begin::Fonts -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
+
+    <!--end::Fonts -->
+
+    <!--begin::Page Vendors Styles(used by this page) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css"
+          rel="stylesheet" type="text/css">
+
+    <!--end::Page Vendors Styles -->
+
+    <!--begin::Global Theme Styles(used by all pages) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.css" rel="stylesheet"
+          type="text/css">
+    <link href="../../assets/template/metronic/demo12/assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+
+    <!--end::Global Theme Styles -->
+
+    <!--begin::Layout Skins(used by all pages) -->
+
+    <!--end::Layout Skins -->
+    <link rel="shortcut icon" href="../../assets/branding/favicon.ico">
+</head>
+
+<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
+
+<!-- begin:: Header Mobile -->
+<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+    <div class="kt-header-mobile__logo">
+        <a href="index.html">
+            <img id="branding_mobile" style="width: 82px;" alt="Logo" src="../../assets/branding/logo.png">
+        </a>
+    </div>
+    <div class="kt-header-mobile__toolbar">
+        <button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left"
+                id="kt_aside_mobile_toggler">
+            <span></span>
+        </button>
+        <button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler">
+            <i class="flaticon-more"></i>
+        </button>
+    </div>
+</div>
+<!-- end:: Header Mobile -->
+
+<div class="kt-grid kt-grid--hor kt-grid--root">
+
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+        <!-- begin:: Aside -->
+
+        <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop"
+             id="kt_aside">
+
+            <!-- begin:: Aside -->
+
+            <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
+
+            <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand" kt-hidden-height="65" style="">
+                <div class="kt-aside__brand-logo">
+                    <a href="index.html">
+                        <img id="branding_pc" style="width: 112px;" alt="Logo" src="../../assets/branding/logo.png">
+                    </a>
+                </div>
+                <div class="kt-aside__brand-tools">
+                    <button class="kt-aside__brand-aside-toggler" id="kt_aside_toggler"><span></span></button>
+                </div>
+            </div>
+
+            <!-- end:: Aside -->
+
+            <!-- begin:: SideNav -->
+
+            <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+                <div id="kt_aside_menu" class="kt-aside-menu kt-scroll ps ps--active-y" data-ktmenu-vertical="1"
+                     data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500" style="height: 512px; overflow: hidden;">
+                    <ul class="kt-menu__nav"></ul>
+                </div>
+            </div>
+
+            <!-- end:: SideNav -->
+
+        </div>
+
+        <!-- end:: Aside -->
+
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+            <!-- begin:: Header -->
+
+            <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed">
+
+                <!-- begin: Header Menu -->
+
+                <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn">
+                    <i class="la la-close"></i>
+                </button>
+                <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper"></div>
+
+                <!-- end: Header Menu -->
+
+                <div class="kt-header__topbar">
+
+                    <!--begin: Language bar -->
+
+                    <div id="kt-language" class="kt-header__topbar-item kt-header__topbar-item--langs"></div>
+
+                    <!--end: Language bar -->
+
+                    <!--begin: User Bar -->
+
+                    <div class="kt-header__topbar-item kt-header__topbar-item--user">
+                        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+                            <div id="kt-user" class="kt-header__topbar-user"></div>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+
+                            <!--begin: Head -->
+                            <div id="kt-user-dropdown"
+                                 class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
+                                 style="background-image: url(../../assets/template/metronic/demo12/assets/media/misc/bg-1.jpg)">
+                            </div>
+                            <!--end: Head -->
+
+                            <!--begin: Navigation -->
+                            <div class="kt-notification">
+                                <div class="kt-notification__custom kt-space-between">
+                                    <a href="../auth/logout.html"
+                                       class="btn btn-label btn-label-brand btn-sm btn-bold">
+                                        登出
+                                    </a>
+                                </div>
+                            </div>
+                            <!--end: Navigation -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- end:: Header -->
+
+            <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+                <!-- begin:: Subheader -->
+
+                <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                    <div class="kt-container  kt-container--fluid ">
+                        <div class="kt-subheader__main">
+                            <h3 class="kt-subheader__title">
+                                內頁廣告管理
+                            </h3>
+                            <span class="kt-subheader__separator kt-hidden"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end:: Subheader -->
+
+                <!-- begin:: Content -->
+
+                <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+
+                    <!-- begin:: Dynamic Content -->
+
+                    <div class="row">
+
+                        <div class="col-12">
+
+                            <div class="kt-portlet">
+                                <div class="kt-portlet__head">
+                                    <div class="kt-portlet__head-label">
+                                        <span class="kt-portlet__head-icon">
+                                            <i class="fa fa-plus"></i>
+                                        </span>
+                                        <h3 class="kt-portlet__head-title font-weight-bold">
+                                            內頁廣告新增
+                                            <small>Add Page Banner</small>
+                                        </h3>
+                                    </div>
+                                    <div class="kt-portlet__head-toolbar">
+                                        <div class="dropdown dropdown-inline">
+                                            <a href="ad-sub-list.html" class="btn btn-primary"
+                                               aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-angle-left"></i>
+                                                返回
+                                            </a>
+                                            <a href="javascript: void(0);" class="btn btn-success"
+                                               onclick="ajax_submit($('form'));"
+                                               aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-check"></i>
+                                                儲存
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="kt-portlet__body">
+
+                                    <div class="message_output"></div>
+
+                                    <form class="kt-form kt-form--label-right" method="POST"
+                                          action="/api/admin/create-ad" data-redirect="ad-sub-list.html"
+                                          accept-charset="UTF-8" id="form">
+                                        <div class="kt-form__body">
+                                            <div class="kt-section kt-section--first">
+                                                <div class="kt-section__body">
+                                                    <input type="hidden" name="id" value="">
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">
+                                                            是否顯示
+                                                        </label>
+                                                        <div class="col-lg-9 col-xl-6">
+                                                            <span class="kt-switch kt-switch--success">
+															<label>
+																<input name="is_visible" type="checkbox">
+																<span></span>
+															</label>
+														</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">
+                                                            排序
+                                                        </label>
+                                                        <div class="col-lg-9 col-xl-6">
+                                                            <input name="rank" class="form-control" type="text"
+                                                                   value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">
+                                                            标题
+                                                        </label>
+                                                        <div class="col-lg-9 col-xl-6">
+                                                            <input name="title" class="form-control" type="text"
+                                                                   value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">
+                                                            內容
+                                                        </label>
+                                                        <div class="col-lg-9 col-xl-6">
+                                                            <textarea name="content" id="editor"
+                                                                      data-type="ckeditor">
+                                                            </textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">
+                                                            日期
+                                                        </label>
+                                                        <div class="col-lg-9 col-xl-6">
+                                                            <input name="date" class="form-control" type="text"
+                                                                   data-provide="datepicker"
+                                                                   data-date-format="yyyy-mm-dd" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">
+                                                            標簽
+                                                        </label>
+                                                        <div class="col-lg-9 col-xl-6">
+                                                            <input id='tags' name="tags" value=''
+                                                                   placeholder='標簽...' style="height: 200%;"
+                                                                   data-type="tagify">
+                                                            <div class="kt-margin-t-10">
+                                                                <a href="javascript:;" id="tags_remove"
+                                                                   class="btn btn-brand btn-bold">移除標簽</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">
+                                                            連結
+                                                        </label>
+                                                        <div class="col-lg-9 col-xl-6">
+                                                            <input name="url_link" class="form-control" type="text"
+                                                                   value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">
+                                                            廣告區塊
+                                                        </label>
+                                                        <div class="col-lg-9 col-xl-6">
+                                                            <select class="form-control" name="block">
+                                                                <option value="">没选项</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">
+                                                            圖片
+                                                        </label>
+                                                        <div class="col-lg-9 col-xl-6">
+                                                            <div class="kt-avatar kt-avatar--outline"
+                                                                 id="kt_user_avatar_1">
+                                                                <img class="avatar__holder" name="elm-image"
+                                                                     style="max-width: 200px;"
+                                                                     src="http://www.placehold.it/200x200/EFEFEF/AAAAAA&text=1920px+X+660px">
+                                                                <label class="kt-avatar__upload"
+                                                                       data-toggle="kt-tooltip"
+                                                                       data-original-title="Upload / Change Image">
+                                                                    <i class="fa fa-pen"></i>
+                                                                    <input type="file" id="image" name="image"
+                                                                           data-type="image"
+                                                                           accept=".png, .jpg, .jpeg"
+                                                                           onchange="upload_pic(this);">
+                                                                </label>
+                                                                <span class="kt-avatar__cancel"
+                                                                      data-toggle="kt-tooltip"
+                                                                      title="" data-original-title="Cancel avatar">
+                                                                    <i class="fa fa-times"></i>
+                                                                </span>
+                                                                <span class="form-text text-muted">
+                                                                    <span class="btn btn-bold btn-sm btn-font-sm  btn-label-danger">備注</span>
+                                                                    顯示於列表圖片，大小為：1920px X 660px
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">
+                                                            手機板圖片
+                                                        </label>
+                                                        <div class="col-lg-9 col-xl-6">
+                                                            <div class="kt-avatar kt-avatar--outline">
+                                                                <img class="avatar__holder" name="elm-sm_image"
+                                                                     style="max-width: 200px;"
+                                                                     src="http://www.placehold.it/200x200/EFEFEF/AAAAAA&text=990px+X+660px">
+                                                                <label class="kt-avatar__upload"
+                                                                       data-toggle="kt-tooltip"
+                                                                       data-original-title="Upload / Change Image">
+                                                                    <i class="fa fa-pen"></i>
+                                                                    <input type="file" id="sm_image" name="sm_image"
+                                                                           data-type="image"
+                                                                           accept=".png, .jpg, .jpeg"
+                                                                           onchange="upload_pic(this);">
+                                                                </label>
+                                                                <span class="kt-avatar__cancel"
+                                                                      data-toggle="kt-tooltip"
+                                                                      title="" data-original-title="Cancel avatar">
+                                                                    <i class="fa fa-times"></i>
+                                                                </span>
+                                                                <span class="form-text text-muted">
+                                                                    <span class="btn btn-bold btn-sm btn-font-sm  btn-label-danger">備注</span>
+                                                                    顯示於列表圖片，大小為：990px X 660px
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                                <div class="kt-portlet__body kt-portlet__body--fit">
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- end:: Dynamic Content -->
+
+                </div>
+
+                <!-- end:: Content -->
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- begin::Global Config(global config for global JS sciprts) -->
+<script>
+    var KTAppOptions = {
+        "colors": {
+            "state": {
+                "brand": "#2c77f4",
+                "light": "#ffffff",
+                "dark": "#282a3c",
+                "primary": "#5867dd",
+                "success": "#34bfa3",
+                "info": "#36a3f7",
+                "warning": "#ffb822",
+                "danger": "#fd3995"
+            },
+            "base": {
+                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+            }
+        }
+    };
+</script>
+<!-- end::Global Config -->
+
+<!--begin::Global Theme Bundle(used by all pages) -->
+<script src="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.js"
+        type="text/javascript"></script>
+<script src="../../assets/template/metronic/demo12/assets/js/scripts.bundle.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    document.write("<script type='text/javascript' src='../../assets/js/common/utility.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/admin-component.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-common.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-logic.js?v=" + Date.now() + "'><\/script>");
+</script>
+<!--end::Global Theme Bundle -->
+
+<!--begin::Page Scripts(used by this page) -->
+<script src="../../assets/template/metronic/demo12/assets/js/pages/dashboard.js" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"
+        integrity="sha256-bqVeqGdJ7h/lYPq6xrPv/YGzMEb6dNxlfiTUHSgRCp8=" crossorigin="anonymous"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/17.0.0/classic/ckeditor.js"></script>
+<!--end::Page Scripts -->
+
+<script type="text/javascript">
+    blockUI();
+
+    $(document).ready(function () {
+        getAlert();
+
+        ajax_retrieve_callback(
+            {r_url: "/api/admin/get-sport-category"},
+            function (response, status, xhr) {
+                console.log(response);
+
+                categories = response.datas;
+
+                $.each(response.datas, function (key, entry) {
+                    $("select[name=block]").append(
+                        $('<option></option>')
+                            .attr('value', entry.id)
+                            .text(entry.name)
+                    );
+                });
+                $('select[name=block]').selectpicker('refresh');
+
+                populateForm($("form"), response.data);
+                unblockUI();
+            }
+        );
+    });
+</script>
+
+</body>
+
+<!-- end::Body -->
+
+</html>

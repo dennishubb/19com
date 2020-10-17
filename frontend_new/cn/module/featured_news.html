@@ -1,0 +1,26 @@
+<div class="title_area">
+    <span>19资讯精选新闻</span>
+</div>
+<div class="category_item_area">
+    {{ each featured_news data index }}
+    <a class="category_item" href="article.php?id={{ data.id }}" data-url="{{ data.upload_url }}">
+
+        {{ if data.upload_url }}
+            {{ if $imports.detectMedia(data.upload_url) }}
+            <img src={{ "../../" + data.upload_url }} style="width: 200px !important;height: 115px !important;" alt="{{ data.title }}">
+            {{ else }}
+            <video style="width: 200px;height: 115px;">
+                <source src={{ "../../" + data.upload_url }} type="video/mp4">
+            </video>
+            {{ /if }}
+        {{ /if}}
+
+        <div class="text">
+            {{ data.title }}
+        </div>
+        <div class="sub_text">
+            {{ data.active_at }} {{ data.category }}
+        </div>
+    </a>
+    {{ /each }}
+</div>

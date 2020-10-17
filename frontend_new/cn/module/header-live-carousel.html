@@ -1,0 +1,79 @@
+<div class="layout1200 ">
+    <div class="hot_event_left">
+        <select id='banner_dropdown' onchange='pre_header_live_carousel();'>
+            <option value='popular'>热门赛事</option>
+			<option value='football'>足球</option>
+			<option value='basketball'>篮球</option>
+			<option value='1'>NBA</option>
+			<option value='3'>CBA</option>
+			<option value='1423'>英超</option>
+			<option value='1461'>西甲</option>
+			<option value='1469'>德甲</option>
+			<option value='1449'>意甲</option>
+			<option value='1482'>法甲</option>
+			<option value='1877'>中超</option>
+			<option value='1388'>欧冠杯</option>
+			<option value='1827'>亚冠杯</option>
+			<option value='1387'>欧洲杯</option>
+        </select>
+
+    </div>
+    <div class="hot_event_right">
+    	<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		      {{each data_arr}}
+		       <div class="swiper-slide">
+		      	<div class="hot_event_item">
+	        		<div class="hot_event_item_left_title" style='white-space: nowrap;padding-right: 60px;'>{{league}}</div>
+	        		<div class="hot_event_item_right">
+	        			{{each data_arr[$index] as data_detail}}
+						<div>
+		        			<div class="sub_title"></div>
+		        			<div>{{data_detail.home_team_name}}  <span>{{data_detail.home_score}}</span></div>
+		        			<div>{{data_detail.away_team_name}} <span>{{data_detail.away_score}}</span></div>
+	        			</div>
+						{{/each}}
+	        			
+	        		</div>
+	        	
+	        	</div>
+		      </div>
+			  {{/each}}
+		        
+		    </div>
+		    
+			
+		  </div>
+		   <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+</div>
+
+<script>
+  
+  $(document).ready(function() {
+		/*var userPredictedResAry = {{@league}}
+		alert(userPredictedResAry);
+		document.getElementById('banner_dropdown').value='NBA';	*/
+		//alert(window.localStorage.banner_curr_league)
+		document.getElementById('banner_dropdown').value=window.localStorage.banner_curr_league;
+		window.localStorage.removeItem('banner_curr_league');		
+	});
+	var swiper = new Swiper('.swiper-container', {
+      slidesPerView:'2.1',
+       
+      spaceBetween: 0,
+       navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+     
+    });
+    /*var swiper = new Swiper('.match_prediction-swiper-container', {
+      navigation: {
+        nextEl: '.match_prediction-swiper-button-next',
+        prevEl: '.match_prediction-swiper-button-prev',
+      },
+    });*/
+</script>

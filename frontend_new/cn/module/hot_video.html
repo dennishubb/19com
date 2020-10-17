@@ -1,0 +1,22 @@
+{{ each hot_videos data index }}
+{{ if data.article_data }}
+<div class="category_item">
+
+    <video id="main-video" style="width: 572px;height: 322px;">
+        <source src={{ "../../" + data.url }} type="video/mp4">
+    </video>
+
+    <div class="text_area">
+        <div class="sub_text">
+            {{ data.article_data.active_at }}
+        </div>
+        <div class="text">
+            {{ data.article_data.title }}
+        </div>
+        <a href="article.php?id={{ data.article_data.id }}" class="play_btn">
+            <i class="fas fa-play-circle"></i></i>播放完整影片
+        </a>
+    </div>
+</div>
+{{ /if }}
+{{ /each }}

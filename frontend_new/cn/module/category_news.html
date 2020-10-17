@@ -1,0 +1,20 @@
+<div class="title_area">
+    <span>{{ title }}</span>
+</div>
+<div class="category_item_area">
+    {{ each category_news data index }}
+    <a class="category_item" href="article.php?id={{ data.id }}">
+        {{ if data.upload_url }}
+        <img src="../..{{ data.upload_url }}" style="max-width: 200px;max-height: 115px;">
+        {{ else }}
+        <img src="http://www.placehold.it/200x115/EFEFEF/AAAAAA" style="max-width: 200px;max-height: 115px;">
+        {{ /if }}
+        <div class="text">
+            {{ data.title }}
+        </div>
+        <div class="sub_text">
+            {{ data.active_at }} {{ data.category }}
+        </div>
+    </a>
+    {{ /each }}
+</div>

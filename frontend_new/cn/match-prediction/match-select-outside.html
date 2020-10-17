@@ -1,0 +1,80 @@
+<div class="match_select_outside">
+	<div class="match_select layout1200">
+		<div class="select_detail" style="display: none;">已预测 <span id="userPredictionNumber"></span> 笔赛事<div class="select_detail_btn" data-toggle="modal" data-target="#my_mpModal">查看</div></div>
+		<div class="match_prediction-swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
+			<div class="match_prediction-swiper-button-next"><i class="fas fa-chevron-right"></i></div>	
+		<div class="match_prediction-swiper-container">
+			
+			<div class="swiper-wrapper">
+				{{each allMatch match index}}
+				<div class="swiper-slide">
+				<!--div class="match_prediction selected">-->
+				<div class="match_prediction" id="match_prediction_{{match.id}}" style='cursor:pointer;'>
+					<div class="title">{{match.league_data.name_zh}}</div>
+					<!--{{if (match.category_id == 2)}}
+					<div class="title">{{match.league_data.name_zh}}{{match.round}}</div>
+					{{/if}}
+					{{if (match.category_id == 1)}}
+					<div class="title">{{match.league_data.name_zh}}第{{match.round}}轮</div>
+					{{/if}}-->
+					<div class="date">{{match.match_at}}</div>
+					<div class="team">
+						<div class="team_logo">
+							{{if (match.home_team_upload_data)}}
+							<img src="/{{match.home_team_upload_data.url}}" style="height: 80px; width: 80px;" onError="this.onerror=null;this.src='/assets/images/default_no_image.png';"/>
+							{{else}}
+							<img src="/assets/images/default_no_image.png" style="height: 80px; width: 80px;">
+							{{/if}}
+							<span>{{match.home_team_data.name_zh}}</span>
+						</div>
+						<div>VS</div>
+						<div class="team_logo">
+							{{if (match.away_team_upload_data)}}
+							<img src="/{{match.away_team_upload_data.url}}" style="height: 80px; width: 80px;" onError="this.onerror=null;this.src='/assets/images/default_no_image.png';"/>
+							{{else}}
+							<img src="/assets/images/default_no_image.png" style="height: 80px; width: 80px;">
+							{{/if}}
+							<span>{{match.away_team_data.name_zh}}</span>
+						</div>
+					</div>	
+				</div>
+				</div>
+				{{/each}}
+			</div>
+			<!-- Add Arrows -->
+		</div>
+	</div>
+</div>
+<script>
+	$(document).ready(function() {
+		if (window.localStorage.access_token && window.localStorage.user_id) {
+			$('.select_detail').css('display','block');
+		}
+		var swiper = new Swiper('.swiper-container', {
+			slidesPerView:'2.1',
+			spaceBetween: 0,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+		});
+		var swiper = new Swiper('.match_prediction-swiper-container', {
+			slidesPerView:'3.5',
+			spaceBetween: 30,
+			navigation: {
+				nextEl: '.match_prediction-swiper-button-next',
+				prevEl: '.match_prediction-swiper-button-prev',
+
+			},
+		});
+		$(".match_prediction").click(function(){
+			$(".match_prediction").removeClass("selected")
+      		$("#"+this.id).toggleClass("selected")
+			var match_id_class = this.id.split("_");
+    		var match_id = match_id_class[2]
+			window.match_id = match_id
+			window.changeMatch = 1
+			main_area()
+    	});
+	})
+</script>

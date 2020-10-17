@@ -1,0 +1,10 @@
+ALTER TABLE `event` ADD COLUMN `season_id` bigint NOT NULL AFTER `league_id`;
+ALTER TABLE `prediction_rate` ADD COLUMN `season_win_count` int NOT NULL AFTER total_count;
+ALTER TABLE `prediction_rate` ADD COLUMN `season_lose_count` int NOT NULL AFTER season_win_count;
+ALTER TABLE `prediction_rate` ADD COLUMN `season_total_count` int NOT NULL AFTER season_lose_count;
+ALTER TABLE `prediction_rate` ADD COLUMN `season_rate` decimal(10,2) NOT NULL AFTER season_total_count;
+ALTER TABLE `prediction_rate` ADD COLUMN `season_id` bigint NOT NULL AFTER league_id;
+ALTER TABLE `top_ten_rate` ADD COLUMN `season_min_rate` decimal(10,2) NOT NULL AFTER min_rate;
+ALTER TABLE `prediction_rate` ADD COLUMN `top_ten_season_rate` decimal(10,2) NOT NULL AFTER `rank`;
+ALTER TABLE `prediction_rate` ADD COLUMN `top_ten_rate` decimal(10,2) NOT NULL AFTER `top_ten_season_rate`;
+ALTER TABLE `prediction_rate` ADD COLUMN `top_ten_prediction_count` int NOT NULL AFTER `top_ten_rate`;

@@ -1,0 +1,1 @@
+ALTER TABLE `article` ADD COLUMN `deleted` tinyint NOT NULL AFTER `disabled`;

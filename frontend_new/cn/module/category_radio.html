@@ -1,0 +1,9 @@
+{{ each categories category index }}
+{{ if index == 0 }}
+<input class="category-filter" type="radio" name="type" value="{{ category.id }}" checked="checked"
+       onclick="filterType(this);">
+{{ else }}
+<input class="category-filter" type="radio" name="type" value="{{ category.id }}" onclick="filterType(this);">
+{{ /if }}
+{{ category.display }}
+{{ /each }}

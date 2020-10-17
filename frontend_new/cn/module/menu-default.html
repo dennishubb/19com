@@ -1,0 +1,115 @@
+<style>
+.static_menu >div.active ,.static_menu >div:hover{
+    color: #ed1b34;
+	
+}
+
+.static_menu >div.active a{
+    display: inline-block;
+    border-bottom: 2px solid #ed1b34;
+    padding-bottom: 2px;
+}
+
+.scrollable{
+	display: inline-block;
+    text-align: center;
+    text-decoration: none;
+	padding: 10px 0px;
+}
+
+
+/* width */
+.static_menu::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+.static_menu::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.static_menu::-webkit-scrollbar-thumb {
+  background: #cccac4; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.static_menu::-webkit-scrollbar-thumb:hover {
+  background:#9e9d99; 
+}
+</style>
+
+<script>
+    function getCategoryName(cat_id,menu){
+		//console.log(menu)
+		var cat_name='';
+		
+		$.each(menu, function (index, value) {
+			//console.log(index,value)
+			
+			if (value.id==cat_id)
+				cat_name=value.name;
+		});
+		
+		
+		return cat_name;
+	}
+	
+	function highlight_current_menu(menu){
+		var highlighted=false;
+		
+		var fullUri = getCurrentFullUri();
+		var menu_name='menu_item_';
+		
+		if (fullUri.indexOf("category-inner.html") >= 0){ //special case, category-inner highlight 综合
+			menu_name+='category-all';
+		}
+		//if current page is category page
+		else if (fullUri.indexOf("category") >= 0){
+			if (fullUri.indexOf("category-all") >= 0)
+				menu_name+='category-all';
+			else{
+				var cat_id = getQueryString('id');
+				var cat_name=getCategoryName(cat_id,menu);
+				menu_name+=cat_name;
+			}
+			
+			
+			//alert(menu_name);
+		}
+		else{ // if not from category
+			if (fullUri.indexOf("match_prediction") >= 0)
+				menu_name+='match_prediction';
+				
+			else if (fullUri.indexOf("video.html") >= 0)
+				menu_name+='video';
+			
+			else if (fullUri.indexOf("ziliaoku") >= 0)
+				menu_name+='ziliaoku';
+		}
+		
+		//console.log(menu_name)
+		
+		$("#"+menu_name).addClass('active');
+		//$("#"+menu_name).css('text-decoration', 'none');
+	}
+	
+	
+	$(document).ready(function(){
+		
+		//highlight_current_menu();	//1
+	});
+</script>
+
+<div class="static_menu" style='overflow: auto;white-space: nowrap;'>
+	 {{each menu}}
+	  <div id='menu_item_{{$value.name}}' class='scrollable' ><a href="{{$value.url}}" target="{{$value.target}}">{{$value.display}}</a></div>
+	 {{/each}}
+ </div>
+
+ 
+ 
+ 

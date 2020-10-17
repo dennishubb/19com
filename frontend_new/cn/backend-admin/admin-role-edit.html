@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="">
+    <meta charset="utf-8">
+    <title>19com | 後端管理系統</title>
+    <meta name="description" content="Latest updates and statistic charts">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--begin::Fonts -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
+
+
+    <!--end::Fonts -->
+
+	<link href="../../assets/css/wizard-3.css" rel="stylesheet" type="text/css" />
+	
+	
+    <!--begin::Page Vendors Styles(used by this page) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css"
+          rel="stylesheet" type="text/css">
+
+    <!--end::Page Vendors Styles -->
+
+    <!--begin::Global Theme Styles(used by all pages) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.css" rel="stylesheet"
+          type="text/css">
+    <link href="../../assets/template/metronic/demo12/assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+
+    <!--end::Global Theme Styles -->
+
+    <!--begin::Layout Skins(used by all pages) -->
+
+    <!--end::Layout Skins -->
+    <link rel="shortcut icon" href="../../assets/branding/favicon.ico">
+</head>
+
+<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
+
+<!-- begin:: Header Mobile -->
+<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+    <div class="kt-header-mobile__logo">
+        <a href="index.html">
+            <img id="branding_mobile" style="width: 82px;" alt="Logo" src="../../assets/branding/logo.png">
+        </a>
+    </div>
+    <div class="kt-header-mobile__toolbar">
+        <button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left"
+                id="kt_aside_mobile_toggler">
+            <span></span>
+        </button>
+        <button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler">
+            <i class="flaticon-more"></i>
+        </button>
+    </div>
+</div>
+<!-- end:: Header Mobile -->
+
+<div class="kt-grid kt-grid--hor kt-grid--root">
+
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+        <!-- begin:: Aside -->
+
+        <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop"
+             id="kt_aside">
+
+            <!-- begin:: Aside -->
+
+            <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
+
+            <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand" kt-hidden-height="65" style="">
+                <div class="kt-aside__brand-logo">
+                    <a href="index.html">
+                        <img id="branding_pc" style="width: 112px;" alt="Logo" src="../../assets/branding/logo.png">
+                    </a>
+                </div>
+                <div class="kt-aside__brand-tools">
+                    <button class="kt-aside__brand-aside-toggler" id="kt_aside_toggler"><span></span></button>
+                </div>
+            </div>
+
+            <!-- end:: Aside -->
+
+            <!-- begin:: SideNav -->
+
+            <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+                <div id="kt_aside_menu" class="kt-aside-menu kt-scroll ps ps--active-y" data-ktmenu-vertical="1"
+                     data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500" style="height: 512px; overflow: hidden;">
+                    <ul class="kt-menu__nav"></ul>
+                </div>
+            </div>
+
+            <!-- end:: SideNav -->
+
+        </div>
+
+        <!-- end:: Aside -->
+
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+            <!-- begin:: Header -->
+
+            <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed">
+
+                <!-- begin: Header Menu -->
+
+                <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn">
+                    <i class="la la-close"></i>
+                </button>
+                <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper"></div>
+
+                <!-- end: Header Menu -->
+
+                <div class="kt-header__topbar">
+
+                    <!--begin: Language bar -->
+
+                    <div id="kt-language" class="kt-header__topbar-item kt-header__topbar-item--langs"></div>
+
+                    <!--end: Language bar -->
+
+                    <!--begin: User Bar -->
+
+                    <div class="kt-header__topbar-item kt-header__topbar-item--user">
+                        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+                            <div id="kt-user" class="kt-header__topbar-user"></div>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+
+                            <!--begin: Head -->
+                            <div id="kt-user-dropdown"
+                                 class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
+                                 style="background-image: url(../../assets/template/metronic/demo12/assets/media/misc/bg-1.jpg)">
+                            </div>
+                            <!--end: Head -->
+
+                            <!--begin: Navigation -->
+                            <div class="kt-notification">
+                                <div class="kt-notification__custom kt-space-between">
+                                    <a href="../auth/logout.html"
+                                       class="btn btn-label btn-label-brand btn-sm btn-bold">
+                                        登出
+                                    </a>
+                                </div>
+                            </div>
+                            <!--end: Navigation -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- end:: Header -->
+
+            <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+                <!-- begin:: Subheader -->
+
+                <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                    <div class="kt-container  kt-container--fluid ">
+                        <div class="kt-subheader__main">
+                            <h3 class="kt-subheader__title">
+                                账号管理
+                            </h3>
+                            <span class="kt-subheader__separator kt-hidden"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end:: Subheader -->
+
+              <!-- begin:: Content -->
+						<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+							<div class="kt-portlet">
+								<div class="kt-portlet__body kt-portlet__body--fit">
+									 <div class="message_output"></div>
+									<div class="kt-grid kt-wizard-v3 kt-wizard-v3--white" id="kt_wizard_v3" name='lala' data-ktwizard-state="step-first">
+										<div class="kt-grid__item">
+
+											<!--begin: Form Wizard Nav -->
+											<div class="kt-wizard-v3__nav">
+
+												<!--doc: Remove "kt-wizard-v3__nav-items--clickable" class and also set 'clickableSteps: false' in the JS init to disable manually clicking step titles -->
+												<div class="kt-wizard-v3__nav-items kt-wizard-v3__nav-items--clickable">
+													<div class="kt-wizard-v3__nav-item" data-ktwizard-type="step" onclick="change_role(1,'主管理者')" id='role_id_div1' data-ktwizard-state="">
+														<div class="kt-wizard-v3__nav-body">
+															<div class="kt-wizard-v3__nav-label">
+																主管理者
+															</div>
+															<div class="kt-wizard-v3__nav-bar"></div>
+														</div>
+													</div>
+													<div class="kt-wizard-v3__nav-item" data-ktwizard-type="step" onclick="change_role(2,'副管理者')" id='role_id_div2' data-ktwizard-state="">
+														<div class="kt-wizard-v3__nav-body">
+															<div class="kt-wizard-v3__nav-label">
+																副管理者
+															</div>
+															<div class="kt-wizard-v3__nav-bar"></div>
+														</div>
+													</div>
+													<div class="kt-wizard-v3__nav-item" data-ktwizard-type="step" onclick="change_role(3,'作者')" id='role_id_div3' data-ktwizard-state="">
+														<div class="kt-wizard-v3__nav-body">
+															<div class="kt-wizard-v3__nav-label">
+																作者
+															</div>
+															<div class="kt-wizard-v3__nav-bar"></div>
+														</div>
+													</div>
+													<div class="kt-wizard-v3__nav-item" data-ktwizard-type="step" onclick="change_role(4,'小编')" id='role_id_div4' data-ktwizard-state="">
+														<div class="kt-wizard-v3__nav-body">
+															<div class="kt-wizard-v3__nav-label">
+																小编
+															</div>
+															<div class="kt-wizard-v3__nav-bar"></div>
+														</div>
+													</div>
+													<div class="kt-wizard-v3__nav-item" data-ktwizard-type="step" onclick="change_role(5,'社群')" id='role_id_div5' data-ktwizard-state="">
+														<div class="kt-wizard-v3__nav-body">
+															<div class="kt-wizard-v3__nav-label">
+																社群
+															</div>
+															<div class="kt-wizard-v3__nav-bar"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<!--end: Form Wizard Nav -->
+										</div>
+										<div class="kt-grid__item kt-grid__item--fluid kt-wizard-v3__wrapper">
+
+											<!--begin: Form Wizard Form-->
+											<form class="kt-form kt-form--label-right" method="PATCH"
+													action="/api/cn/role_permission" data-redirect="admin-role-edit.html"
+													accept-charset="UTF-8" id="kt_form" style='padding: 0px;'>
+												<input type='hidden' name='role_id' id='role_id' value=''>
+
+												<div id='permission_menu_content'></div>
+												<div style='text-align: center;'>
+													<button type="button" class="btn btn-outline-primary displayblock"  onclick="setRolePermissionV2($('#kt_form'));">储存</button>
+												</div>
+												<div>&nbsp;</div>
+
+												
+												<!--end: Form Actions -->
+											</form>
+
+											<!--end: Form Wizard Form-->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- end:: Content -->
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- begin::Global Config(global config for global JS sciprts) -->
+<script>
+    var KTAppOptions = {
+        "colors": {
+            "state": {
+                "brand": "#2c77f4",
+                "light": "#ffffff",
+                "dark": "#282a3c",
+                "primary": "#5867dd",
+                "success": "#34bfa3",
+                "info": "#36a3f7",
+                "warning": "#ffb822",
+                "danger": "#fd3995"
+            },
+            "base": {
+                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+            }
+        }
+    };
+</script>
+<!-- end::Global Config -->
+
+<!--begin::Global Theme Bundle(used by all pages) -->
+<script src="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.js"
+        type="text/javascript"></script>
+<script src="../../assets/template/metronic/demo12/assets/js/scripts.bundle.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    document.write("<script type='text/javascript' src='../../assets/js/common/utility.js?v=" + Date.now() + "'><\/script>");
+    //document.write("<script type='text/javascript' src='../../assets/js/admin-component.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-logic.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-common.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/logic/user.js?v=" + Date.now() + "'><\/script>");
+</script>
+<!--end::Global Theme Bundle -->
+
+<!--begin::Page Scripts(used by this page) -->
+<script src="../../assets/template/metronic/demo12/assets/js/pages/dashboard.js" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"
+        integrity="sha256-bqVeqGdJ7h/lYPq6xrPv/YGzMEb6dNxlfiTUHSgRCp8=" crossorigin="anonymous"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/17.0.0/classic/ckeditor.js"></script>
+<script src="../../assets/js/logic/wizard-3.js" type="text/javascript"></script>
+<!--end::Page Scripts -->
+
+<script type="text/javascript">
+    
+	function setRoleId(role_id){
+		 $('#kt_form').find('#role_id').val(role_id);
+	}
+	
+	function change_role(role_id,role){
+		setRoleId(role_id);
+		getPermissionMenuContent(role_id,role);
+		
+	}
+	
+	function getRoleTitle(role_id){
+		var role_title='';
+		
+		if (role_id==1)		
+			role_title='主管理者';
+		else if (role_id==2)		
+			role_title='副管理者';
+		else if (role_id==3)		
+			role_title='作者';
+		else if (role_id==4)		
+			role_title='小编';
+		else if (role_id==5)		
+			role_title='社群';
+			
+		return role_title;
+	}
+	
+	$(document).ready(function () {
+	
+	//******default show role_id=1*********
+		//setRoleId(1);
+		//getPermissionMenuContent(1,'主管理者');
+		var role_id = getQueryString('role_id');
+		var msg = getQueryString('alert-success');
+		var role_title='';
+		
+		if (role_id==null)
+			role_id=1;
+		
+		role_title=getRoleTitle(role_id);
+		
+		if (role_id>1){//if page onload role_id is 2,3,4,5
+			$('#role_id_div'+role_id).attr('data-ktwizard-state',"current"); //set current CSS to selected
+			$('#role_id_div1').attr('data-ktwizard-state',""); //set CSS to unselected
+		}
+		
+		
+		if (msg!=null){
+			 showAlert(msg, "success");
+		}
+		
+		setRoleId(role_id);
+		getPermissionMenuContent(role_id,role_title);
+		
+	//*************************************
+		
+		
+		
+		
+		 
+    });
+</script>
+
+
+</body>
+
+<!-- end::Body -->
+
+</html>

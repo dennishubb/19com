@@ -1,0 +1,76 @@
+<div class="main_banner" style="width: 680px;height: 383px;">
+    <div class="floating_bottom" style="z-index: 1;">
+        <div class="tab">
+            {{ each main.tags tag itag }}
+            <div>
+                <a href="tags.html?tags={{ tag }}">{{ tag }}</a>
+            </div>
+            {{ /each }}
+        </div>
+        <a href="article.php?id={{ main.id }}">
+            <div class="title">
+                {{ main.title }}
+            </div>
+        </a>
+        <a href="article.php?id={{ main.id }}">
+            <div class="text">
+                {{ $imports.html2String(main.content,50) }}
+            </div>
+        </a>
+        <div class="category">
+            <a href="sub-category.php?{{ main.sub_category_id }}">{{ main.sub_category }}</a>
+        </div>
+    </div>
+    <a href="article.php?id={{ main.id }}" style="z-index: -1;">
+        {{ if main.upload_url }}
+        {{ if $imports.detectMedia(main.upload_url, 0, 0) }}
+        <img src={{ "../../" + main.upload_url }} style="width: 680px !important;height: 383px !important;" alt="{{
+        main.title }}">
+        {{ else }}
+        <video style="width: 680px;height: 383px;">
+            <source src={{ "../../" + main.upload_url }} type="video/mp4">
+        </video>
+        {{ /if }}
+        {{ /if}}
+    </a>
+</div>
+{{ if sub.length > 0 }}
+<div class="sub_banner_area">
+
+    {{ each sub item index }}
+    <div>
+        <a href="article.php?id={{ item.id }}">
+            <div class="image" data-extra="{{ $imports.detectMedia(item.upload_url, 0, 0) }}">
+                {{ if item.upload_url }}
+                {{ if $imports.detectMedia(item.upload_url, 0, 0) }}
+                <img src={{ "../../" + item.upload_url }} style="width: 200px !important;height: 133px !important;"
+                alt="{{ item.title }}">
+                {{ else }}
+                <video style="width: 200px;height: 133px;">
+                    <source src={{ "../../" + item.upload_url }} type="video/mp4">
+                </video>
+                {{ /if }}
+                {{ /if }}
+                <div class="tab">
+                    {{ each item.tags tag itag }}
+                    <div>
+                        <a href="tags.html?tags={{ tag }}">{{ tag }}</a>
+                    </div>
+                    {{ /each }}
+                </div>
+            </div>
+
+        </a>
+        <a href="article.php?id={{ item.id }}">
+            <div class="text">
+                {{ item.title }}
+            </div>
+        </a>
+        <div class="category">
+            <a href="sub-category.php?id={{ item.sub_category_id }}">{{ item.sub_category }}</a>
+        </div>
+    </div>
+    {{ /each }}
+
+</div>
+{{ /if }}

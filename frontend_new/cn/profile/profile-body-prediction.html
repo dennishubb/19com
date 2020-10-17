@@ -1,0 +1,39 @@
+<style type="text/css">
+	.history_table{
+		padding: 0px 75px;
+	}
+	.mc_filter{
+		padding-left: 0px!important;
+	}
+	.mc_filter button{
+		background-color: #ed1b34!important;
+	}
+	
+</style>
+<div class="history_table">
+	<form class="kt-form kt-form--label-right" method="GET"
+                            action="/api/cn/prediction_rate" data-redirect="/cn/profile/index.html?tab=prediction"
+                            accept-charset="UTF-8" id="form">
+		<div class="mc_filter" >
+			<select name='prediction_rate.category_id' id='parent_sport_category' ><option>---请选择---</option></select> <!--onchange='get_league_dropdown($(this).val())'-->
+			<select id='league_list' name='prediction_rate.league_id'></select>
+			<select name='time' id='time'><option>第19期(本期)</option></select>
+			<button name='search_button' type='button'  onclick="get_prediction_table(1)">确认</button>
+		</div>
+		
+	</form>
+	
+		<table class="table_style" id='prediction_table'></table>
+	
+		<div class="tips" >下期评选日:<span id='curr_month'></span>/2, 评选期間:<span id='next_month'></span></div> <!-- 3/1~3/31-->
+
+<script>
+	$(document).ready(function() {
+		//check_auth(true);
+		$('#parent_sport_category').on('change', function () {
+			get_league_dropdown($(this).val(),false)
+		});
+		
+		
+	});
+</script>

@@ -1,0 +1,44 @@
+{
+    "status": "success",
+    "code": 0,
+    "header": [
+    {
+        "sort": "排序",
+        "player": "球员",
+        "team": "球队",
+        "goal": "进球（点球）",
+        "number_of_appearances": "出场次数",
+        "playing_time": "出场时间",
+        "shot": "射门",
+        "shot_positive": "射正"
+    }
+    ],
+    "body": [
+        {
+            "sort": "1",
+            "player": "26",
+            "team": "4",
+            "goal": "78",
+            "number_of_appearances": "26",
+            "playing_time": "45",
+            "shot": "45",
+            "shot_positive": "78",
+            "src":"http://cdn.sportnanoapi.com/football/team/5a2ff46efa33abc6b2908eb6279dfbf8.png",
+            "alt" : "皇家马德里"
+
+        },
+        {
+            "sort": "2",
+            "player": "26",
+            "team": "4",
+            "goal": "78",
+            "number_of_appearances": "26",
+            "playing_time": "45",
+            "shot": "45",
+            "shot_positive": "78",
+            "src":"http://cdn.sportnanoapi.com/football/team/5a2ff46efa33abc6b2908eb6279dfbf8.png",
+            "alt" : "皇家马德里"
+
+        }
+        ]
+}

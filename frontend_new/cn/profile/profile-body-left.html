@@ -1,0 +1,40 @@
+<div class="profile_left">
+	<div class="profile_icon" data-toggle="modal" data-target="#upload_user_icon" onclick='cropper_destroy("new")'>
+		<img id='profile_thumbnail' src="{{user_data.profile_thumbnail}}">
+		<div class="add_icon"><embed class="add_icon_svg" src="/assets/images/camera_icon.svg" type="image/svg+xml" /></div>
+	</div>
+	
+	<div class="username" id='profile_username'>{{user_data.username}}</div>
+	<div class="user_tag" >{{user_data.level}} <img src="{{user_data.level_icon_red}}" style='width:25px;height:25px;margin-bottom: 5px;'></div>
+	<div class="profile_left_item" data-toggle="modal" data-target="#editProfileModal" onclick='get_member_profile("x")'><span id='profileModal' style=' cursor: pointer;'>账号设置</span></div>
+	<div class="profile_left_item" data-toggle="modal" data-target="#resetpw" ><span style=' cursor: pointer;'>密码编辑</span></div>
+	<div class="profile_left_item"><a href='/cn/message-collect/'>留言收藏</a></div>
+	<div class="profile_left_item2">
+	<div class="title">总累积战数</div>
+	<div id='total_points'>{{ $imports.toInt(user_data.total_points) }} <span>本周 {{user_data.total_points_this_week}}</span></div>
+		
+
+	</div>
+	<div class="profile_left_item2">
+	<div class="title">现有券数</div>
+	<div id='total_points'>{{user_data.voucher}} </div>
+		
+
+	</div>
+	<div class="profile_left_item2">
+		<div class="title">现有战数</div>
+		<div id='points'>{{user_data.points}}</div>
+		<div class="float_btn"><a href='../exchange.html'>兑换</a></div>
+		
+	</div>
+	
+	
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+		
+	$('#profile_thumbnail').attr('src',window.localStorage.profile_thumbnail);
+		
+});
+</script>

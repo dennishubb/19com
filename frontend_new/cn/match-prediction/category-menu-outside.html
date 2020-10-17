@@ -1,0 +1,73 @@
+<div class="category_menu_outside">
+    <div class="layout1200 category_menu">
+        <div id='mp_index'><a id="match-prediction-index"><span id="goToIndex">赛事预测</span></a></div>
+        <!--<div ><span><div class="active"><span>赛事结果</span></div></span></div>-->
+        <div id='mp_history'><span><div class="active"><a id="match-history-page"><span id="goToMatchHistory">赛事结果</span></a></div></span></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var fullUri = getCurrentFullUri();
+		
+		$("#goToIndex").click(function(){
+            //if (check_auth(0)) return ""
+            $("#match-prediction-index").attr("href", "/cn/match-prediction/");
+
+        }); 
+		
+		$("#goToMatchHistory").click(function(){
+            //if (check_auth(0)) return ""
+            $("#match-history-page").attr("href", "/cn/match_history.html");
+        })
+		
+		
+		var fullUri = getCurrentFullUri();
+		var menu_name='mp_index';
+		
+		if (fullUri.indexOf("match_history.html") >= 0)
+			menu_name='mp_history'
+			
+		$("#"+menu_name).addClass('active');	
+		
+		if (fullUri.indexOf("cn/match-prediction") >= 0)
+			$(".category_menu").append('<div class="tut_btn"  data-toggle="modal" data-target="#tut_popup"><i class="fas fa-question-circle"></i>教程</div>');
+
+    });
+     $(".gotut2").click(function(){
+     $(".tut_1").hide();
+      $(".tut_2").show();
+        $("#tut_popup").animate({ scrollTop: 400}, 600);
+
+    })
+    $(".gotut3").click(function(){
+     $(".tut_2").hide();
+      $(".tut_3").show();
+      $("#tut_popup").animate({ scrollTop: 0}, 600);
+    })
+    $(".gotut4").click(function(){
+     $(".tut_3").hide();
+      $(".tut_4").show();
+
+    })
+    $(".gotut5").click(function(){
+     $(".tut_4").hide();
+      $(".tut_5").show();
+
+    })
+     $(".gotut1").click(function(){
+     $(".tut_5").hide();
+      $(".tut_1").show();
+
+    })
+	
+	 /*$(".cancel_btn").click(function(){
+		$('#tut_popup').modal('hide');
+     });*/
+</script>

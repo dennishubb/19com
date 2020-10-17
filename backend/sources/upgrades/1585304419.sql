@@ -1,0 +1,1 @@
+ALTER TABLE `article` ADD COLUMN `draft` tinyint(1) NOT NULL AFTER `popular`;

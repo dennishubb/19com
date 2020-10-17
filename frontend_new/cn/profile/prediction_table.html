@@ -1,0 +1,13 @@
+<tr><th>项目</th><th>目前累积战绩</th><th>神级预言家资格</th><th>达到标准</th></tr>
+	{{each prediction_arr}}
+	  <tr>
+		<td>{{$value.display}}</td>
+		<td>{{$value.columnVal1}}</td>
+		<td>{{$value.columnVal2}}</td>
+		<td>{{$value.prophet}}</td>
+	</tr>
+	{{/each}}
+	
+	{{if table_length==0}}
+		<tr><td colspan='4'>无记录</td></tr>
+	{{/if}}	

@@ -1,0 +1,52 @@
+<div class="title_area2 style2"><span>神级预言家这样说<embed class="title_area2_icon" src="/assets/images/icon-talk.svg" type="image/svg+xml" /> </span>
+    <div>TOP5</div>
+</div>
+<div class="member_list_outside">
+{{if (topTen.length > 0)}}
+    {{each topTen top index}}
+    <div class="member_list_item">
+    {{if (top.user_upload_url)}}
+        <img src=/{{top.user_upload_url}} style="height: 50px; width: 50px;">
+    {{else }}
+        <img src="/assets/images/default_user_image.png" style="height: 50px; width: 50px;">
+    {{/if}}
+        <div class="text">
+            <div class="username">{{top.user_data.username}}</div>
+            【我的预测是...】
+            <!--<i id="top.id" class="fa fa-lock lock-btn" aria-hidden="true"></i>-->
+            {{if (top.unlockedFlag == "1") }}
+            <i class="fas fa-unlock unlock unlock-voucher" data-id="{{top.id}}_{{top.user_id}}" style='cursor:pointer;'></i>
+            {{/if}}
+            {{if (top.unlockedFlag == "2") }}
+            <i class="fas fa-lock lock lock-voucher" data-id="{{top.id}}_{{top.user_id}}" style='cursor:pointer;'></i>
+            {{/if}}
+        </div>
+    </div>
+    {{/each}}
+{{else}}
+    <div class="member_list_item">
+        <div class="text">
+            【没有预测】
+        </div>
+    </div>
+{{/if}}
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".unlock-voucher").click(function(){
+            if (check_auth(0)) return ""
+            var topTenData = $(this).attr('data-id').split("_")
+            window.selectedUnlockPredictionId = topTenData[0]
+            window.selectedUnlockPredictionUserId = topTenData[1]
+            member_list_modal();
+        })
+        $(".lock-voucher").click(function(){
+            if (check_auth(0)) return ""
+            var topTenData = $(this).attr('data-id').split("_")
+            window.selectedUnlockPredictionId = topTenData[0]
+            window.selectedUnlockPredictionUserId = topTenData[1]
+            $('#unlock_popup').modal("show")
+        })
+    });
+</script>

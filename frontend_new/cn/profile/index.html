@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+    <head >
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+		
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<!-- <meta content="yes" name="apple-mobile-web-app-capable"> -->
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+        <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">        
+       
+        <script type="text/javascript" src="/assets/js/fo_common/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="/assets/js/fo_common/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/assets/js/fo_common/swiper.min.js"></script>
+        <link rel="stylesheet" href="/assets/css/swiper.min.css" />
+        <link rel="stylesheet" href="/assets/css/main.css" />
+        <link rel="stylesheet" href="/assets/fontawesome-free-5.13.0-web/css/all.css" />
+        
+		<link rel="stylesheet" href="/assets/css/bootstrap-datepicker.min.css"/>
+		<script src="/assets/js/fo_common/bootstrap-datepicker.min.js"></script>
+
+		<script type="text/javascript" src="/assets/js/art-template-master/lib/template-web.js"></script>
+		
+		<script type="text/javascript" src="/assets/js/common/utility.js"></script>
+		<script type="text/javascript" src="/assets/js/fo_common/shared.js"></script>
+		<script type="text/javascript" src="/assets/js/fo_logic/member.js"></script>
+		
+		<link  href="/assets/css/cropper.css" rel="stylesheet">
+		<script src="/assets/js/common/cropper.js"></script>
+		
+         <title>19资讯</title>
+        
+		
+    </head>
+    
+    
+    <body>
+    	
+		<div class="header" ></div>
+		
+	    <div class="main_area" style='padding-bottom: 0px;'>
+	    	
+	    	<div class="profile_bg" id='user_profile_bg'> 
+	    		<img src="/assets/images/profile_bg.jpg" style='width: 100%;'>
+
+	    	</div>
+	    	<div class="profile layout1200" id='profile_body'>
+	    		
+	    	
+			</div>
+	    <div class="footer">
+	    	
+	    </div>
+    	</div>
+    	<div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLongTitle">个人资料</h5>
+		      
+		      </div>
+		      <div class="modal-body" style='text-align: center;'>
+			   <span style='color:grey'>完善资料即可获得100战数和3张卷</span>
+			  	<form class="kt-form" method="PUT" id="form" action="/api/cn/user" data-redirect="/cn/" accept-charset="UTF-8" >
+					<input type='hidden' name='id' id='form_user_id' value=''>
+					
+		      		<input type="text" name='name' id='form_name' placeholder="姓名">
+		      		<input type="text" name='phone' id='form_phone' placeholder="手机号">
+		      		<input type="text" name='email' id='form_email' placeholder="邮箱">
+		      		<input type="text" name='address' id='form_address' placeholder="地址">
+		      		
+		      		<input type="text" name='birth_at' id="datepicker" data-date-format='yyyy-mm-dd' placeholder="生日日期" data-provide="datepicker">
+		      		
+					
+			
+
+		      		<input type="text" name='weibo' id='form_weibo' placeholder="微博">
+				</form>
+				
+		      </div>
+		      <div class="modal-footer">
+		       <button type="button" class="cancel_btn" onclick="$('#form').trigger('reset');">清除</button> 
+			   <button type="button" class="submit_btn" onclick="member_update_info($('form'));">完成</button>
+			   <!--<button type="button" class="submit_btn" style='min-width: 50px;' data-dismiss="modal" data-toggle="modal" data-target="#resetpw">重置密碼</button>-->
+		        
+		      </div>
+		    </div>
+		  </div>
+		</div>
+    	
+		
+		<div class="modal fade" id="resetpw" tabindex="-1" role="dialog"  aria-hidden="true"  >
+		  
+		</div>
+		
+		<div class="modal fade" id="upload_user_icon" tabindex="-1" role="dialog"  aria-hidden="true"  >
+		   <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">头像管理</h5>
+					
+				  </div>
+				  <div class="modal-body">
+				   
+						<div style='width: 100%;padding-bottom: 15px; text-align: center;'>
+							
+								<span style="color:grey;">请上传150X150，不超过200K之图像</span>
+						 	<img id='current_thumbnail' src="" width='150' height='150' style='display: block;max-width: 100%;margin: 0 auto;margin-top: 15px;'>
+						 	
+						</div>									
+						
+						<div style="width: 100%;text-align: center;">
+							<form action="#" data-redirect="/cn/profile/" method="POST" id="user_image_form">
+								<input type="hidden" name="tempfile" id='tempfile' value="">
+								<input type="hidden" name="folder" id='folder' value="user_image">		
+							</form>
+							
+							<button style="display:block;width:140px; height:30px;margin-left: 160px;border-radius: 8px;" onclick="document.getElementById('file2').click()">选择图像</button>
+							<input type='file' id="file2" name="file2" accept="image/x-png,image/gif,image/jpeg" onchange='local_media_ajax_submit()' style="display:none"> 
+								
+							
+						   
+						</div>
+						<div style="width: 100%;text-align: center;padding:10px">
+							<button class="submit_btn" id="crop_button" style='display: none;margin-left: 150px;'>裁剪</button> 
+						</div>
+						<div style='text-align:center'>
+							<div id='cropped_preview_msg' style='display: none;padding: 10px;font-size: 18px;padding-top: 30px;'><u>头像预览</u></div>
+							<div id='result' style='width: 100%;' style='display: none'>
+								<img id='cropped_image' >
+								<button class="submit_btn" id="upload_button" style='display: block;margin-left: 160px;'>上传</button> 
+							</div>
+						</div>
+									   
+				  </div>
+				  
+				</div>
+			  </div>
+		</div>
+		
+    </body>
+    <footer>
+   
+
+    </footer>
+	</html>
+   
+    <script type="text/javascript">
+	
+	$(document).ready(function() {
+		
+		check_auth(true);
+		var tab = getQueryString('tab');
+		
+		embed_reset_pw();
+		get_member_profile(tab);
+		
+		$('#current_thumbnail').attr('src',window.localStorage.profile_thumbnail);
+		//$('#image').attr('src','http://test.19com/upload/media/5f72a0218b83e11d0ee9fe0cb4a74ee7.png')
+		
+		//get_member_info();
+			var complete_info = getQueryString('complete_info');
+			if (complete_info==1)
+				$('#editProfileModal').modal('show');
+    });
+	
+	
+	
+	function getRoundedCanvas(sourceCanvas) {
+      var canvas = document.createElement('canvas');
+      var context = canvas.getContext('2d');
+      var width = sourceCanvas.width;
+      var height = sourceCanvas.height;
+
+      canvas.width = width;
+      canvas.height = height;
+      context.imageSmoothingEnabled = true;
+      context.drawImage(sourceCanvas, 0, 0, width, height);
+      context.globalCompositeOperation = 'destination-in';
+      context.beginPath();
+      context.arc(width / 2, height / 2, Math.min(width, height) / 2, 0, 2 * Math.PI, true);
+      context.fill();
+      return canvas;
+    }
+
+	function base64ToBlob(base64, mime){
+		mime = mime || '';
+		var sliceSize = 1024;
+		var byteChars = window.atob(base64);
+		var byteArrays = [];
+
+		for (var offset = 0, len = byteChars.length; offset < len; offset += sliceSize) {
+			var slice = byteChars.slice(offset, offset + sliceSize);
+
+			var byteNumbers = new Array(slice.length);
+			for (var i = 0; i < slice.length; i++) {
+				byteNumbers[i] = slice.charCodeAt(i);
+			}
+
+			var byteArray = new Uint8Array(byteNumbers);
+
+			byteArrays.push(byteArray);
+		}
+
+		return new Blob(byteArrays, {type: mime});
+	} 
+   
+   function cropper_destroy(type){//type=new means close modal and reopen again
+		var image = document.getElementById('current_thumbnail');
+		var cropper = new Cropper(image); 
+		cropper.destroy(); 
+		cropper = null;
+		
+		$('.cropper-container').remove();
+		//console.log(type)
+		//show current profile pic
+		if (type=='new'){
+			$('#current_thumbnail').removeClass('cropper-hidden');
+			$('#current_thumbnail').attr('src',window.localStorage.profile_thumbnail);
+			
+			$('#crop_button').css('display','none');
+			$('#cropped_preview_msg').css('display','none');
+			$('#result').css('display','none');
+			
+			$('#file').val('');
+		}
+   }
+   
+   function show_cropper(new_image_url){
+		var image = document.getElementById('current_thumbnail');
+		var button = document.getElementById('crop_button');
+		var result = document.getElementById('result');
+		var croppable = false;
+		
+		$('#crop_button').css('display','block');
+		
+		
+		
+		var cropper = new Cropper(image, {
+			aspectRatio: 1,
+			viewMode: 1,
+			ready: function () {
+			  croppable = true;
+			},
+		  });
+		
+		
+		button.onclick = function () {
+			var croppedCanvas;
+			var roundedCanvas;
+			var roundedImage;
+
+			if (!croppable) {
+			  return;
+			}
+
+			// Crop
+			croppedCanvas = cropper.getCroppedCanvas();
+
+			// Round
+			roundedCanvas = getRoundedCanvas(croppedCanvas);
+
+			// Show
+			//roundedImage = document.getElementById('cropped_image');
+			//roundedImage.src = roundedCanvas.toDataURL();
+			
+			
+			//console.log(roundedImage)
+			$('#result').css('display','block');
+			$('#cropped_image').attr('src',roundedCanvas.toDataURL())
+			$('#cropped_image').css('width','200px');
+			$('#cropped_image').css('padding-bottom','10px');
+			
+			$('#cropped_preview_msg').css('display','inline-block');
+			
+			
+			
+			
+				
+		
+      };
+	}
+	
+   //call local media ajax here(media-meta)
+    $("#upload_button").click(function(){
+		var url = "url/action";                
+			var image = $('#cropped_image').attr('src');
+			
+			
+			var base64ImageContent = image.replace(/^data:image\/(png|jpg);base64,/, "");
+			var blob = base64ToBlob(base64ImageContent, 'image/png');     
+	
+			var formData = new FormData();
+			formData.append('upload', blob);
+			formData.append('folder', 'user_image');
+			
+	
+
+			$.ajax({
+				url: getHost() +'/assets/php/media-meta.php',
+				type: "POST", 
+				cache: false,
+				contentType: false,
+				processData: false,
+				data: formData, 
+				success: function (response, status, xhr) {
+					//console.log(response);
+					obj = response; 
+					
+					after_media_meta(	
+									{
+										media_meta_data: obj,
+										extra:obj.extra,
+										params: {
+											extra: response.extra,
+										}
+									}
+					);
+				}
+			})
+	});
+	
+	/*
+    $("#file").change(function(){
+		//$('.cropper-container').remove();
+		//$('#current_thumbnail').removeClass('cropper-hidden');
+		local_media_ajax_submit() 
+		
+		
+		
+    });*/
+	
+
+  </script>

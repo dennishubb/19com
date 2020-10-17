@@ -1,0 +1,908 @@
+
+
+2020-06-10 10:14:33:
+php://input:
+
+
+2020-06-10 10:14:33:
+php://input:
+
+
+2020-06-10 10:14:33:
+2020-06-10 10:14:33:
+POST:
+array (
+  'type' => 'sitemap',
+  'tempfile' => '',
+)array (
+  'type' => 'robots',
+  'tempfile' => '',
+)2020-06-10 10:14:33:
+GET:
+06-10 10:14:33:
+GET:
+array (
+)
+
+2020-06-10 10:14:33:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '2018',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundary3cgaIQWQuyFFUBkt',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/sitemap.xml',
+    'name' => 'sitemap',
+    'type' => 'xml',
+    'filesize' => 170,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_101433',
+    'extension' => '.xml',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\sitemap.xml',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/robots.txt',
+    'name' => 'robots',
+    'type' => 'text',
+    'filesize' => 1643,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_101433',
+    'extension' => '.txt',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\robots.txt',
+)
+
+2020-06-10 10:14:34:
+php://input:
+
+
+2020-06-10 10:14:34:
+POST:
+array (
+  'type' => 'robots',
+  'tempfile' => '',
+)
+
+2020-06-10 10:14:34:
+GET:
+array (
+)
+
+2020-06-10 10:14:34:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '2018',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundaryMeO1XXM24eCUQyOd',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/robots.txt',
+    'name' => 'robots',
+    'type' => 'text',
+    'filesize' => 1643,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_101434',
+    'extension' => '.txt',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\robots.txt',
+)
+
+2020-06-10 10:14:38:
+php://input:
+
+
+2020-06-10 10:14:38:
+POST:
+array (
+  'type' => 'sitemap',
+  'tempfile' => 'C:/19com_back/newfrontend\\\\root\\\\_temp\\\\sitemap.xml',
+)
+
+2020-06-10 10:14:38:
+GET:
+array (
+)
+
+2020-06-10 10:14:38:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '594',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundaryWHnUAhEZZ5lnQew5',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/sitemap.xml',
+    'name' => 'sitemap',
+    'type' => 'xml',
+    'filesize' => 170,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_101438',
+    'extension' => '.xml',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\sitemap.xml',
+)
+
+2020-06-10 10:14:38:
+php://input:
+
+
+2020-06-10 10:14:38:
+POST:
+array (
+  'type' => 'robots',
+  'tempfile' => '',
+)
+
+2020-06-10 10:14:38:
+GET:
+array (
+)
+
+2020-06-10 10:14:38:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '2018',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundaryJU9UwmPeSuijtsTl',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/robots.txt',
+    'name' => 'robots',
+    'type' => 'text',
+    'filesize' => 1643,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_101438',
+    'extension' => '.txt',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\robots.txt',
+)
+
+2020-06-10 10:14:39:
+php://input:
+
+
+2020-06-10 10:14:39:
+POST:
+array (
+  'type' => 'robots',
+  'tempfile' => '',
+)
+
+2020-06-10 10:14:39:
+GET:
+array (
+)
+
+2020-06-10 10:14:39:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '2018',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundaryq8AxyAYso7OUl0tx',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/robots.txt',
+    'name' => 'robots',
+    'type' => 'text',
+    'filesize' => 1643,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_101439',
+    'extension' => '.txt',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\robots.txt',
+)
+
+2020-06-10 10:14:39:
+php://input:
+
+
+2020-06-10 10:14:39:
+POST:
+array (
+  'type' => 'robots',
+  'tempfile' => 'C:/19com_back/newfrontend\\\\root\\\\_temp\\\\robots.txt',
+)
+
+2020-06-10 10:14:39:
+GET:
+array (
+)
+
+2020-06-10 10:14:39:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '2068',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundaryoIiaFHBJA5VBHo8k',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/robots.txt',
+    'name' => 'robots',
+    'type' => 'text',
+    'filesize' => 1643,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_101439',
+    'extension' => '.txt',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\robots.txt',
+)
+
+2020-06-10 10:24:20:
+php://input:
+
+
+2020-06-10 10:24:20:
+POST:
+array (
+  'type' => 'sitemap',
+  'tempfile' => '',
+)
+
+2020-06-10 10:24:20:
+GET:
+array (
+)
+
+2020-06-10 10:24:20:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '658',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundarypA39qDrpUZencz0B',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html?id=190&alert-success=%E6%88%90%E5%8A%9F%E5%82%A8%E5%AD%98',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/sitemap.xml',
+    'name' => 'sitemap',
+    'type' => 'xml',
+    'filesize' => 285,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_102420',
+    'extension' => '.xml',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\sitemap.xml',
+)
+
+2020-06-10 10:24:20:
+php://input:
+
+
+2020-06-10 10:24:20:
+POST:
+array (
+  'type' => 'sitemap',
+  'tempfile' => 'C:/19com_back/newfrontend\\\\root\\\\_temp\\\\sitemap.xml',
+)
+
+2020-06-10 10:24:20:
+GET:
+array (
+)
+
+2020-06-10 10:24:20:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '709',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundaryVIN1tGOIrdN0cNsC',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html?id=190&alert-success=%E6%88%90%E5%8A%9F%E5%82%A8%E5%AD%98',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/sitemap.xml',
+    'name' => 'sitemap',
+    'type' => 'xml',
+    'filesize' => 285,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_102420',
+    'extension' => '.xml',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\sitemap.xml',
+)
+
+2020-06-10 10:24:25:
+php://input:
+
+
+2020-06-10 10:24:25:
+POST:
+array (
+  'type' => 'sitemap',
+  'tempfile' => 'C:/19com_back/newfrontend\\\\root\\\\_temp\\\\sitemap.xml',
+)
+
+2020-06-10 10:24:25:
+GET:
+array (
+)
+
+2020-06-10 10:24:25:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '709',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundaryQffAtRhjGAZhgqTZ',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html?id=190&alert-success=%E6%88%90%E5%8A%9F%E5%82%A8%E5%AD%98',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/sitemap.xml',
+    'name' => 'sitemap',
+    'type' => 'xml',
+    'filesize' => 285,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_102425',
+    'extension' => '.xml',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\sitemap.xml',
+)
+
+2020-06-10 10:24:25:
+php://input:
+
+
+2020-06-10 10:24:25:
+POST:
+array (
+  'type' => 'robots',
+  'tempfile' => '',
+)
+
+2020-06-10 10:24:25:
+GET:
+array (
+)
+
+2020-06-10 10:24:25:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '2018',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundarywsZfGN8sAIzAd7an',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html?id=190&alert-success=%E6%88%90%E5%8A%9F%E5%82%A8%E5%AD%98',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/robots.txt',
+    'name' => 'robots',
+    'type' => 'text',
+    'filesize' => 1643,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_102425',
+    'extension' => '.txt',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\robots.txt',
+)
+
+2020-06-10 10:24:25:
+php://input:
+
+
+2020-06-10 10:24:25:
+POST:
+array (
+  'type' => 'robots',
+  'tempfile' => '',
+)
+
+2020-06-10 10:24:25:
+GET:
+array (
+)
+
+2020-06-10 10:24:25:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '2018',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundary15za2jB4tXr9l1g3',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html?id=190&alert-success=%E6%88%90%E5%8A%9F%E5%82%A8%E5%AD%98',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/robots.txt',
+    'name' => 'robots',
+    'type' => 'text',
+    'filesize' => 1643,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_102425',
+    'extension' => '.txt',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\robots.txt',
+)
+
+2020-06-10 10:24:25:
+php://input:
+
+
+2020-06-10 10:24:25:
+POST:
+array (
+  'type' => 'robots',
+  'tempfile' => 'C:/19com_back/newfrontend\\\\root\\\\_temp\\\\robots.txt',
+)
+
+2020-06-10 10:24:25:
+GET:
+array (
+)
+
+2020-06-10 10:24:25:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '2068',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundary2sLpbQstsJT5nBY3',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html?id=190&alert-success=%E6%88%90%E5%8A%9F%E5%82%A8%E5%AD%98',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/robots.txt',
+    'name' => 'robots',
+    'type' => 'text',
+    'filesize' => 1643,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_102425',
+    'extension' => '.txt',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\robots.txt',
+)
+
+2020-06-10 10:24:50:
+php://input:
+
+
+2020-06-10 10:24:50:
+POST:
+array (
+  'type' => 'sitemap',
+  'tempfile' => 'C:/19com_back/newfrontend\\\\root\\\\_temp\\\\sitemap.xml',
+)
+
+2020-06-10 10:24:50:
+GET:
+array (
+)
+
+2020-06-10 10:24:50:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '709',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundaryAXhDvZepypPwoDnC',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html?id=190&alert-success=%E6%88%90%E5%8A%9F%E5%82%A8%E5%AD%98',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/sitemap.xml',
+    'name' => 'sitemap',
+    'type' => 'xml',
+    'filesize' => 285,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_102450',
+    'extension' => '.xml',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\sitemap.xml',
+)
+
+2020-06-10 10:24:50:
+php://input:
+
+
+2020-06-10 10:24:50:
+POST:
+array (
+  'type' => 'robots',
+  'tempfile' => 'C:/19com_back/newfrontend\\\\root\\\\_temp\\\\robots.txt',
+)
+
+2020-06-10 10:24:50:
+GET:
+array (
+)
+
+2020-06-10 10:24:50:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '2068',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundaryMK1dVFa17a7qH1IC',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html?id=190&alert-success=%E6%88%90%E5%8A%9F%E5%82%A8%E5%AD%98',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/robots.txt',
+    'name' => 'robots',
+    'type' => 'text',
+    'filesize' => 1643,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_102450',
+    'extension' => '.txt',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\robots.txt',
+)
+
+2020-06-10 10:24:50:
+php://input:
+
+
+2020-06-10 10:24:50:
+POST:
+array (
+  'type' => 'robots',
+  'tempfile' => 'C:/19com_back/newfrontend\\\\root\\\\_temp\\\\robots.txt',
+)
+
+2020-06-10 10:24:50:
+GET:
+array (
+)
+
+2020-06-10 10:24:50:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '2068',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundaryISjoYHLBb4YwsHTA',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html?id=190&alert-success=%E6%88%90%E5%8A%9F%E5%82%A8%E5%AD%98',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/robots.txt',
+    'name' => 'robots',
+    'type' => 'text',
+    'filesize' => 1643,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_102450',
+    'extension' => '.txt',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\robots.txt',
+)
+
+2020-06-10 10:24:50:
+php://input:
+
+
+2020-06-10 10:24:50:
+POST:
+array (
+  'type' => 'robots',
+  'tempfile' => 'C:/19com_back/newfrontend\\\\root\\\\_temp\\\\robots.txt',
+)
+
+2020-06-10 10:24:50:
+GET:
+array (
+)
+
+2020-06-10 10:24:50:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '2068',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundary0I2oXX6tSWkH9e68',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html?id=190&alert-success=%E6%88%90%E5%8A%9F%E5%82%A8%E5%AD%98',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/robots.txt',
+    'name' => 'robots',
+    'type' => 'text',
+    'filesize' => 1643,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_102450',
+    'extension' => '.txt',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\robots.txt',
+)
+
+2020-06-10 10:24:58:
+php://input:
+
+
+2020-06-10 10:24:58:
+POST:
+array (
+  'type' => 'sitemap',
+  'tempfile' => '',
+)
+
+2020-06-10 10:24:58:
+GET:
+array (
+)
+
+2020-06-10 10:24:58:
+header:
+array (
+  'Host' => 'local19com_front',
+  'Connection' => 'keep-alive',
+  'Content-Length' => '658',
+  'Pragma' => 'no-cache',
+  'Cache-Control' => 'no-cache',
+  'Accept' => '*/*',
+  'X-Requested-With' => 'XMLHttpRequest',
+  'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTkxMzMyNTU1LCJpc3MiOiIxOWNvbSIsImlhdCI6MTU5MTMyNTM1NX0.OC93a78Zjag_ONAJ0_NS6GMqU7zuDdxPsL6BVG4So2Q',
+  'User-Agent' => 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+  'Content-Type' => 'multipart/form-data; boundary=----WebKitFormBoundaryxG4cETX6ZUXRzCrU',
+  'Origin' => 'http://local19com_front',
+  'Referer' => 'http://local19com_front/cn/backend-admin/seo.html?id=190&alert-success=%E6%88%90%E5%8A%9F%E5%82%A8%E5%AD%98',
+  'Accept-Encoding' => 'gzip, deflate',
+  'Accept-Language' => 'en,en-GB;q=0.9,en-US;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5',
+  'Cookie' => 'kt_aside_menu=0',
+)
+
+array (
+  'code' => 1,
+  'data' => 
+  array (
+    'url' => 'root/sitemap.xml',
+    'name' => 'sitemap',
+    'type' => 'xml',
+    'filesize' => 285,
+    'resolution' => 'N/AxN/A',
+    'alt' => '2020_06_10_102458',
+    'extension' => '.xml',
+  ),
+  'move' => true,
+  'extra' => 'C:/19com_back/newfrontend\\root\\_temp\\sitemap.xml',
+)

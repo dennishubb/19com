@@ -1,0 +1,21 @@
+{{ each type_news item index }}
+<a class="category_item" href="article.php?id={{ item.id }}">
+
+    {{ if $imports.detectMedia(item.upload_url, 0, 0) }}
+    <img src={{ "../../" + item.upload_url }} style="width: 200px !important;height: 115px !important;" alt="{{
+    item.title }}">
+    {{ else }}
+    <video style="width: 200px;height: 115px;">
+        <source src={{
+        "../../" + item.upload_url }} type="video/mp4">
+    </video>
+    {{ /if }}
+
+    <div class="text">
+        {{ item.title }}
+    </div>
+    <div class="sub_text">
+        {{ item.active_at }} {{ item.sub_category }}
+    </div>
+</a>
+{{ /each }}

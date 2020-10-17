@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>19.com-九鼎体育-体育新闻网</title>
+    <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/art-template-master/lib/template-web.js"></script>
+    <script src="/assets/js/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/slick/slick-theme.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <script src="/assets/js/toggle.js"></script>
+    <script src="/assets/js/shared.js"></script>
+    <script src="/assets/js/common/utility.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/images/icon/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+</head>
+<body>
+    <div id="header"></div>
+    <div class="container clearfix">
+		<div class="row">
+			<div class="col-md-12">
+                <div class="tabs-bar">
+                    <div class="tabs-title clearfix" id="schedule_shared_header">
+                    </div> <!-- class.tabs-title -->
+                </div>
+                <div class="breadcrumbs" id="breadcrumbs"></div>
+                <div id="content"></div>
+            </div>
+        </div>
+    </div>
+    <div id="float_menu"></div>
+    <div id="footer"></div>
+
+<!--content-->
+<script type="text/javascript">
+    $(document).ready(function() {
+        var variable = "page_number";
+        var page_number = getQueryString(variable);
+
+        var season_id = getQueryString("id");
+        var season_title = getSeasonDetail(season_id, 'season_detail', 'title');
+        var tabValue = "射手榜";
+
+
+        header();//Display website header
+        scheduleSharedHeader(season_title, season_id, 'shooter');//Display schedule shared header
+        scheduleSharedBreadcrumbs(season_title, tabValue);//Display Breadcrumbs
+        shooterContent(season_id, page_number);//Display shooter content
+		
+		
+    });
+
+</script>
+
+</body>
+</html>

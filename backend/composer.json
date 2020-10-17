@@ -1,0 +1,6 @@
+{
+    "require": {
+        "rbdwllr/reallysimplejwt": "^3.0",
+        "thingengineer/mysqli-database-class": "dev-master"
+    }
+}

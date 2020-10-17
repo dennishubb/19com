@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+    <head >
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+        <!-- <meta content="yes" name="apple-mobile-web-app-capable"> -->
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="email=no" name="format-detection">
+        <link rel="shortcut icon" href="/assets/branding/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">        
+       
+        <script type="text/javascript" src="/assets/js/fo_common/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="/assets/js/fo_common/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/assets/js/fo_common/swiper.min.js"></script>
+        <link rel="stylesheet" href="/assets/css/swiper.min.css" />
+        <link rel="stylesheet" href="/assets/css/main.css" />
+        <link rel="stylesheet" href="/assets/fontawesome-free-5.13.0-web/css/all.css" />
+        
+        <link rel="stylesheet" href="/assets/css/bootstrap-datepicker.min.css"/>
+        <script src="/assets/js/fo_common/bootstrap-datepicker.min.js"></script>
+
+        <script type="text/javascript" src="/assets/js/art-template-master/lib/template-web.js"></script>
+        <script src="/assets/js/fo_common/plugins.bundle.js" type="text/javascript"></script>
+        <script src="/assets/js/common/utility.js"></script>
+        <script src="/assets/js/fo_common/shared.js"></script>
+      
+     
+         <title>19资讯</title>
+        
+    </head>
+    
+    
+    <body>
+        
+        <div class="header" ></div>
+        
+        <div class="main_area" style='padding-bottom: 0px'>
+            
+            <div class="profile_bg"> 
+                <img src="/assets/images/profile_bg.jpg" style='width: 100%;'>
+
+            </div>
+            <div class="layout1200 static_page">
+                <div class="title" >常见问题</div>
+               
+                 <div>Ｑ：网站注册会员需要充值或缴费吗？<br>
+                  Ａ：本网站完全免费，无须充值或缴交任何费用。
+                </div>
+                 <div>Ｑ：会员注册是否有上限？<br>
+                      Ａ：一个电子邮箱只能绑定一个会员账号，不可重复使用。
+                </div>
+                 <div>Ｑ：忘记账号或密码，如何处理？<br>
+                      Ａ：可在登入界面按下忘记密码/账号，将有操作提示帮助您自助查询哟。
+
+                </div>
+                 <div>Ｑ：兑换礼品是否额外负担运费或其他费用？<br>
+                      Ａ：无须额外负担任何费用！
+
+                </div>
+                 <div>Ｑ：战数（积分）是否可转让或贩售？<br>
+                      Ａ：网站战数不可转让、赠送、贩售。
+
+                </div>
+                 <div>Ｑ：战数等同于现金吗？<br>
+                      Ａ︰不是，战数不等于现金，只用于本站礼品兑换使用，无任何金钱相关之交易。
+
+                </div>
+                 <div>Ｑ：战数除了兑换礼品是否还有其他使用方式？<br>
+                      Ａ：除了兑换礼品外，还可兑换神准预测券，来查看神准预言家的赛事预测。
+
+                </div>
+               
+                
+            
+            </div>
+        <div class="footer">
+            
+        </div>
+        </div>
+       
+        
+		<div class="modal fade middle" id="login_popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+			 style="display: none;" aria-hidden="true">
+		</div>
+		<div class="modal fade" id="forgotpw" tabindex="-1" role="dialog" aria-hidden="true"></div>
+		<div class="modal fade" id="forgotac" tabindex="-1" role="dialog" aria-hidden="true"></div>
+        
+    </body>
+   
+   
+    <script>
+    
+    $(document).ready(function() {
+         //embed_login_popup()	
+       
+        
+        
+        
+        //get_member_info();
+        
+    });
+    //get user profile(){
+/*
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView:'2.1',
+       
+      spaceBetween: 0,
+       navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+     
+    });
+     var swiper = new Swiper('.match_prediction-swiper-container', {
+      navigation: {
+        nextEl: '.match_prediction-swiper-button-next',
+        prevEl: '.match_prediction-swiper-button-prev',
+      },
+    });
+
+
+
+     var marksData = {
+  labels: ["English", "Maths", "Physics", "Chemistry", "Biology", "History"],
+  datasets: [{
+    label: "Student A",
+    backgroundColor: "rgba(255,74,96,0.3)",
+    pointBorderWidth:"1",
+    pointBackgroundColor:"rgba(255,108,126)",
+    borderColor:"rgba(255,121,136,1)",
+    data: [65, 75, 70, 80, 60, 80]
+  }]
+};
+    var ctx = $('#myChart');
+      var myChart = new Chart(ctx, {
+              type: 'radar',
+               data: marksData,
+              options: {
+                    legend: {
+                        display: false,
+                        labels: {
+                            fontColor: 'rgb(255, 99, 132)'
+                        }
+                    },
+                    tooltips: {
+                        enabled: true,
+                        callbacks: {
+                            title: function(context,data) {
+                                console.log();
+                                return data.labels[context[0].index];
+                            },
+                            label: function(tooltipItem, data) {
+                            var label = '';
+
+                           
+                            label += Math.round(tooltipItem.yLabel * 100) / 100;
+                            return label;
+                        }
+
+                        }
+                    }
+                }
+
+
+                
+
+
+
+      });*/
+
+  </script>
+
+
+</html>

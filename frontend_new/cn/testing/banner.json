@@ -1,0 +1,84 @@
+{
+  "status": "success",
+  "code": 0,
+  "banners": [
+    {
+      "id": 8,
+      "rank": 1,
+      "date": "2019-12-12",
+      "title": "“火箭”再度升起！4:0零封卡希尔晋三轮",
+      "tags": [
+        "奥沙利文",
+        "火箭",
+        "苏格兰",
+        "公开赛"
+      ],
+      "image": {
+        "normal": "/upload/banner/home/banner_05a.jpg",
+        "mobile": "/upload/banner/home/banner_05a_mobile.jpg"
+      }
+    },
+    {
+      "id": 6,
+      "rank": 2,
+      "date": "2019-12-05",
+      "title": "足球-12月2日-英超第14轮-莱斯特城v埃弗顿",
+      "tags": [
+        "英超第14轮",
+        "莱斯特城",
+        "埃弗顿"
+      ],
+      "image": {
+        "normal": "/upload/banner/home/banner_03a.jpg",
+        "mobile": "/upload/banner/home/banner_03a_mobile.jpg"
+      }
+    },
+    {
+      "id": 5,
+      "rank": 3,
+      "date": "2019-12-03",
+      "title": "台球-英锦赛第二轮-“火箭”奥沙利文横扫田鹏飞，连续两轮零封对手",
+      "tags": [
+        "英锦赛",
+        "罗尼",
+        "奥沙利文",
+        "田鹏飞"
+      ],
+      "image": {
+        "normal": "/upload/banner/home/banner_04a.jpg",
+        "mobile": "/upload/banner/home/banner_04a_mobile.jpg"
+      }
+    },
+    {
+      "id": 1,
+      "rank": 4,
+      "date": "2019-11-27",
+      "title": "台球-“火箭”奥沙利文将挑战生涯第20座的大满贯冠军",
+      "tags": [
+        "斯诺克",
+        "英国锦标赛",
+        "奥沙利文",
+        "九鼎体育"
+      ],
+      "image": {
+        "normal": "/upload/banner/home/banner-Ronnie.jpg",
+        "mobile": "/upload/banner/home/banner-Ronnie_m.jpg"
+      }
+    },
+    {
+      "id": 4,
+      "rank": 5,
+      "date": "2019-11-27",
+      "title": "足球-九鼎体育首次与英超球队成为官方合作伙伴",
+      "tags": [
+        "九鼎体育",
+        "官方合作",
+        "莱斯特城"
+      ],
+      "image": {
+        "normal": "/upload/banner/home/banner_02a.jpg",
+        "mobile": "/upload/banner/home/banner_02a_mobile.jpg"
+      }
+    }
+  ]
+}

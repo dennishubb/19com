@@ -1,0 +1,171 @@
+<style>
+    #toggle-icon {
+            color: #ed1b34;
+            text-align: center;
+        }
+
+</style>
+<div class="main_area">
+    <div class="index_p8 layout1200">
+        <div class="member_list_area" id="top-ten">
+        </div>
+
+        <div class="match_detail_area">
+            <div class="match_prediction ">
+                <div class="title">{{league_data.name_zh}}</div>
+                <div class="date">{{match_at}}</div>
+                <div class="team">
+                    <div class="team_logo">
+                    {{if (home_team_upload_data)}}
+                    <img src="/{{home_team_upload_data.url}}" style="height: 90px; width: 90px;" onError="this.onerror=null;this.src='/assets/images/default_no_image.png';"/>
+                    {{else}}
+                    <img src="/assets/images/default_no_image.png" style="height: 90px; width: 90px;">
+                    {{/if}}
+                    <span>{{home_team_data.name_zh}}</span>
+                    </div>
+                    <div>
+                        {{if (category_id == 1)}}
+                            第{{round}}轮<br>
+                        {{else}}
+                            {{round}}<br>
+                        {{/if}}
+                        VS<br>
+                        {{match_at}}
+                    </div>
+                    <div class="team_logo">
+                    {{if (away_team_upload_data)}}
+                    <img src="/{{away_team_upload_data.url}}" style="height: 90px; width: 90px;" onError="this.onerror=null;this.src='/assets/images/default_no_image.png';"/>
+                    {{else}}
+                    <img src="/assets/images/default_no_image.png" style="height: 90px; width: 90px;">
+                    {{/if}}
+                    <span>{{away_team_data.name_zh}}</span>
+                    </div>
+                </div>  
+            </div>
+            <div class="match_prediction_p2_wrapper">
+                <div class="match_prediction_p2">
+                    <div>
+                        <div>
+                            {{home_team_data.name_zh}} (主队)</div>
+                        <div>{{away_team_data.name_zh}} (客队)</div>
+
+                    </div>
+
+                    <div class="right_item">
+                        {{if ((category_id == 1) || (category_id == 2))}}
+                        <div>让球</div>
+                        <div class="handicap-bet" id="handicap_home" style='cursor:pointer;'>{{handicap_home_bet}} <span>{{handicap_home_odds}}</span> </div>
+                        <div class="handicap-bet" id="handicap_away" style='cursor:pointer;'>{{handicap_away_bet}} <span>{{handicap_away_odds}}</span> </div>
+                        {{/if}}
+                    </div>
+                    <div class="right_item">
+                        {{if ((category_id == 1) || (category_id == 2))}}
+                        <div>大小</div>
+                        <div class="over_under-bet" id="over_under_home" style='cursor:pointer;'>{{over_under_home_bet}} <span>{{over_under_home_odds}}</span> </div>
+                        <div class="over_under-bet" id="over_under_away" style='cursor:pointer;'>{{over_under_away_bet}} <span>{{over_under_away_odds}}</span> </div>
+                        {{/if}}
+                    </div>
+                    {{if (category_id == 1)}}
+                    <div class="right_item win">
+                        <div style="line-height:50px">独赢</div>
+                        <div class="single-bet" id="single_home" style='cursor:pointer;'>主 <span>{{single_home}}</span> </div>
+                        <div class="single-bet" id="single_tie" style='cursor:pointer;'>和 <span>{{single_tie}}</span> </div>
+                        <div class="single-bet" id="single_away" style='cursor:pointer;'>客 <span>{{single_away}}</span> </div>
+                    </div>
+                    {{else}}
+                    <div class="right_item">
+                        <div>独赢</div>
+                        <div class="single-bet" id="single_home" style='cursor:pointer;'>主 <span>{{single_home}}</span> </div>
+                        <div class="single-bet" id="single_away" style='cursor:pointer;'>客 <span>{{single_away}}</span> </div>
+                    </div>
+                    {{/if}}
+                </div>
+                <div style="text-align:right;color:grey;">
+                    <small>此预测功能为提供体育爱好者休闲抒心之目的，切勿以此作任何违法用途。</small>
+                </div>
+            </div>
+
+            <div class="text" id="editor">
+                <div id="editor_note">{{@editor_note}}</div>
+                <div id="toggle-icon">预测分析<i class="fas fa-chevron-up" style='cursor:pointer;'></i></div>
+            </div>
+
+            <div class="comments">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        
+        var selectedOptions = []
+        var userPredictedResAry = {{@resultAry}}
+
+        var flag = {
+            handicap : "",
+            over_under : "",
+            single : ""
+        }
+
+        const isEdit = !!userPredictedResAry
+        if (isEdit) {
+            userPredictedResAry.forEach(function (eachResult){
+                eachResData = eachResult.split(":")
+                if (eachResData[1] == "1") {
+                    selectedOptions.push(eachResData[0])
+                    var record = eachResData[0].split("_")
+                    if (record[0] == "handicap") {
+                        flag.handicap = eachResData[0]
+                    }else if (record[0] == "over") {
+                        flag.over_under = eachResData[0]
+                    }else if (record[0] == "single") {
+                        flag.single = eachResData[0]
+                    }
+                }
+            })
+        }
+
+        if (selectedOptions) {
+            selectedOptions.forEach(function (option){
+                $("#"+option).addClass("active");
+            })
+        }
+
+        //message()
+        //setInterval(() => message(), 5000)
+        $('#editor').children().css('display','block');
+        $("#toggle-icon").click(function(){
+            $(this).children('.fas').toggleClass('fa-chevron-down fa-chevron-up');
+            var content = this.previousElementSibling;
+            if (content.style.display == "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        })
+        //when handicap is predicted
+        $(".handicap-bet").click(function(){
+            $(".handicap-bet").removeClass("active");
+            $("#"+this.id).addClass("active");
+            flag.handicap = this.id
+            updateUserPrediction(flag)
+        })
+        //when over-under is predicted
+        $(".over_under-bet").click(function(){
+            $(".over_under-bet").removeClass("active");
+            $("#"+this.id).addClass("active");
+            flag.over_under = this.id
+            updateUserPrediction(flag)
+        })
+        //when single is predicted
+        $(".single-bet").click(function(){
+            $(".single-bet").removeClass("active");
+            $("#"+this.id).addClass("active");
+            flag.single = this.id
+            updateUserPrediction(flag)
+        })
+    });
+
+</script>

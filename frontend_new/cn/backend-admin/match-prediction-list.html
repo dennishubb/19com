@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="">
+    <meta charset="utf-8">
+    <title>19com | 後端管理系統</title>
+    <meta name="description" content="Latest updates and statistic charts">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--begin::Fonts -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
+
+    <!--end::Fonts -->
+
+    <!--begin::Page Vendors Styles(used by this page) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css"
+          rel="stylesheet" type="text/css">
+
+    <!--end::Page Vendors Styles -->
+
+    <!--begin::Global Theme Styles(used by all pages) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.css" rel="stylesheet"
+          type="text/css">
+    <link href="../../assets/template/metronic/demo12/assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+
+    <!--end::Global Theme Styles -->
+
+    <!--begin::Layout Skins(used by all pages) -->
+
+    <!--end::Layout Skins -->
+    <link rel="shortcut icon" href="../../assets/branding/favicon.ico">
+	
+	<style>
+	.table thead th td{
+	 vertical-align : middle;
+	 text-align:center;
+	}
+	
+	.one-third {
+		float: right;
+		height: 33%;
+		width: 100%;
+		border-bottom: 1px solid #ebedf2;
+		display: block;
+		padding: 2px;
+	}
+	.one-third-last {
+		float: right;
+		height: 33%;
+		width: 100%;
+			display: block;
+		padding: 2px;
+	}
+	
+	#predictionlist_tbody td {
+	  vertical-align : middle;
+	 text-align:center;
+	}
+	
+	#win_preset_tbody td {
+	  vertical-align : middle;
+	 text-align:center;
+	}
+	
+	#predict_user_datatable   tbody,th,tr td{
+		
+		border: 1px solid #ebedf2;
+		color:black;
+		vertical-align : middle;
+		text-align:center;
+		padding: 16px 10px;
+	}
+	
+	.wp_correct{
+		color: limegreen;
+	}
+	.wp_false{
+		color: red;
+	}
+	option {
+		color: #000000;
+	}
+	
+}
+</style>
+</head>
+
+<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
+
+<!-- begin:: Header Mobile -->
+<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+    <div class="kt-header-mobile__logo">
+        <a href="index.html">
+            <img id="branding_mobile" style="width: 82px;" alt="Logo" src="../../assets/branding/logo.png">
+        </a>
+    </div>
+    <div class="kt-header-mobile__toolbar">
+        <button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left"
+                id="kt_aside_mobile_toggler">
+            <span></span>
+        </button>
+        <button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler">
+            <i class="flaticon-more"></i>
+        </button>
+    </div>
+</div>
+<!-- end:: Header Mobile -->
+
+<div class="kt-grid kt-grid--hor kt-grid--root">
+
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+        <!-- begin:: Aside -->
+
+        <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop"
+             id="kt_aside">
+
+            <!-- begin:: Aside -->
+
+            <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
+
+            <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand" kt-hidden-height="65" style="">
+                <div class="kt-aside__brand-logo">
+                    <a href="index.html">
+                        <img id="branding_pc" style="width: 112px;" alt="Logo" src="../../assets/branding/logo.png">
+                    </a>
+                </div>
+                <div class="kt-aside__brand-tools">
+                    <button class="kt-aside__brand-aside-toggler" id="kt_aside_toggler"><span></span></button>
+                </div>
+            </div>
+
+            <!-- end:: Aside -->
+
+            <!-- begin:: SideNav -->
+
+            <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+                <div id="kt_aside_menu" class="kt-aside-menu kt-scroll ps ps--active-y" data-ktmenu-vertical="1"
+                     data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500" style="height: 512px; overflow: hidden;">
+                    <ul class="kt-menu__nav"></ul>
+                </div>
+            </div>
+
+            <!-- end:: SideNav -->
+
+        </div>
+
+        <!-- end:: Aside -->
+
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+            <!-- begin:: Header -->
+
+            <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed">
+
+                <!-- begin: Header Menu -->
+
+                <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn">
+                    <i class="la la-close"></i>
+                </button>
+                <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper"></div>
+
+                <!-- end: Header Menu -->
+
+                <div class="kt-header__topbar">
+
+                    <!--begin: Language bar -->
+
+                    <div id="kt-language" class="kt-header__topbar-item kt-header__topbar-item--langs"></div>
+
+                    <!--end: Language bar -->
+
+                    <!--begin: User Bar -->
+
+                    <div class="kt-header__topbar-item kt-header__topbar-item--user">
+                        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+                            <div id="kt-user" class="kt-header__topbar-user"></div>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+
+                            <!--begin: Head -->
+                            <div id="kt-user-dropdown"
+                                 class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
+                                 style="background-image: url(../../assets/template/metronic/demo12/assets/media/misc/bg-1.jpg)">
+                            </div>
+                            <!--end: Head -->
+
+                            <!--begin: Navigation -->
+                            <div class="kt-notification">
+                                <div class="kt-notification__custom kt-space-between">
+                                    <a href="../auth/logout.html"
+                                       class="btn btn-label btn-label-brand btn-sm btn-bold">
+                                        登出
+                                    </a>
+                                </div>
+                            </div>
+                            <!--end: Navigation -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- end:: Header -->
+
+            <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+                <!-- begin:: Subheader -->
+
+                <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                    <div class="kt-container  kt-container--fluid ">
+                        <div class="kt-subheader__main">
+                            <h3 class="kt-subheader__title">
+                                赛事预测
+                            </h3>
+                            <span class="kt-subheader__separator kt-hidden"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end:: Subheader -->
+
+                <!-- begin:: Content -->
+
+                <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+
+                    <div class="row">
+
+                        <div class="col-12">
+
+                            <div class="kt-portlet">
+                                <div class="kt-portlet__head">
+                                    <div class="kt-portlet__head-label">
+                                        <span class="kt-portlet__head-icon">
+                                            <i class="fa fa-users"></i>
+                                        </span>
+                                        <h3 class="kt-portlet__head-title font-weight-bold">
+                                            预测列表
+                                            <small>Match Prediction List</small>
+                                        </h3>
+                                    </div>
+                                    <div class="kt-portlet__head-toolbar">
+									
+                                        <label class="col-form-label">胜数预设：</label>
+										<label class="col-form-label">
+											1 胜100
+										</label>
+										
+										<a href="match-win-preset.html" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#win_preset_modal"  
+											onclick="refreshPredictionPointTable();">
+											更改
+										</a>
+                                           <!-- <a href="" class="btn btn-primary" data-toggle="modal" data-target="#topten_preset_modal" 
+                                               aria-haspopup="true" aria-expanded="false" onclick="topTenInit();">
+                                                <i class="fa fa-plus"></i>
+                                                top 10 prediction table
+                                            </a>-->
+                                       
+                                    </div>
+                                </div>
+								
+                                <div class="kt-portlet__body">
+									<form id="main_form" action="/api/cn/event" method="GET"
+											data-redirect="match-prediction-list.html">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="input-group ">
+													
+													<input type="text" class="form-control" placeholder='开始时段' readonly="" value="" name="match_at_from" id="kt_datepicker_1" data-date-format="yyyy-mm-dd">
+													<label class="col-form-label">&nbsp; - &nbsp;</label>
+													<input type="text" class="form-control" placeholder='结束时段' readonly="" value="" name="match_at_to" id="kt_datepicker_2" data-date-format="yyyy-mm-dd">
+													
+													<!--<label class="col-form-label">&nbsp; 编号：</label>-->
+													<input type="text" class="form-control"  placeholder='编号' value="" name="event.id" id="编号" style='margin-left:20px'>
+													
+													<select class="form-control bootstrap-select " name='event.category_id' id="category_list" onchange='getLeagueDropdown($(this).val());selectedUIColorCheck()' style='border: 1px solid #e2e5ec;margin-left:20px;color: gray;'>
+														<!--<option value="0">请选择类别</option>
+														<option value="1">足球</option>
+														<option value="2">篮球</option>
+														<option value="3">台球</option>
+														<option value="4">电竞</option>-->
+													</select>
+													
+													<select class="form-control bootstrap-select " name='event.league_id' id="league_list" onchange='selectedUIColorCheck()'style='border: 1px solid #e2e5ec;margin-left:20px;color: gray;'>
+														
+													</select>
+													
+														<a href="#" id="topten_filter_btn" class="btn btn-primary " aria-haspopup="true" aria-expanded="false" 
+														onclick="$('#main_form').trigger('reset');selectedUIColorCheck()" style='margin-left:20px'>
+														清空
+													</a> &nbsp;
+													<a href="#" id='search_btn' class="btn btn-primary "
+													   aria-haspopup="true" aria-expanded="false" onclick="filterEvent($('#main_form'));" style='margin-left:15px'>
+														搜索
+													</a>
+												</div>
+											</div>
+											<div class="col-lg-6">
+													<!--<div class="kt-radio-inline" style='float: right;'>
+													<label class="col-form-label">派发预设：</label>
+														<label class="kt-radio kt-radio--success">
+															<input type="radio" name="distribute_preset">自动
+															<span></span>
+														</label>
+														<label class="kt-radio kt-radio--success">
+															<input type="radio" name="distribute_preset">手动
+															<span></span>
+														</label>
+													</div>		-->
+											</div>
+											
+										</div>
+										
+										<!--<div class="row" style='margin-top: 5px;'>
+											<div class="col-lg-7">&nbsp;</div>
+											<div class="col-lg-5">
+													<div style='float: right;'>
+													<label class="col-form-label">胜数预设：</label>
+														<label class="col-form-label">
+															1 胜100
+														</label>
+														
+														<a href="match-win-preset.html" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#win_preset_modal"  
+															onclick="refreshPredictionPointTable();">
+															更改
+														</a>
+													</div>		
+											</div>
+											
+										</div>-->
+										
+										
+									</form>
+			
+                                </div>
+								
+                                <div class="kt-portlet__body kt-portlet__body--fit">
+
+                                    <!--begin: Datatable -->
+                                     <form class="kt-form kt-form--label-right" method="PATCH"
+													action="/api/cn/user" data-redirect="admin-list.html"
+													accept-charset="UTF-8" id="form">
+													<div class="row" style='margin-top: 5px;'>
+											<div class="col-lg-12">
+												<div style='float: right;margin-right:10px;'>
+													<a href="#" class="btn btn-primary btn-sm" onclick="export_csv()"
+													   aria-haspopup="true" aria-expanded="false">
+														Export CSV
+													</a>
+												</div>
+											</div>
+										</div>
+										
+										<div class="row">
+											<div class="col-lg-12" style='padding: 20px;'>
+											<div class='message_output'></div>		
+												
+											<table class="table table-striped- table-bordered table-hover table-checkable" id="predictionlist_table">
+												<thead style='vertical-align : middle;text-align: center;'>
+													<tr>
+														<th rowspan='2' width='1%'>编号</th>
+														<th rowspan='2' width='15%'>创建日期时间</th>
+														<th rowspan='2' width='15%'>比赛日期时间</th>
+														<th rowspan='2' width='10%'>联赛名称</th>
+														<th rowspan='2' width='5%'>体育类别</th>
+														<th colspan="4">赛事结果</th>
+														<th rowspan='2' width='5%'>会员列表</th>
+														<!--<th rowspan='2' width='1%'>点击索取</th>-->
+													</tr>
+													<tr>
+														<th width='10%'>队伍</th>
+														<th width='10%'>让球</th>
+														<th width='10%'>大小</th>
+														<th width='10%'>独赢</th>
+													</tr>
+												</thead>
+												
+												<tbody id='predictionlist_tbody'>
+													
+												</tbody>
+											</table>
+											<div id='prediction_pagination' class='pagination'>
+												
+											</div>
+											</div>
+										</div>
+									
+									<!--<input type="text" class="form-control" placeholder="搜尋会员" id="generalSearch">
+													<span class="kt-input-icon__icon kt-input-icon__icon--left">
+															<span><i class="la la-search"></i></span>
+													</span>-->
+									</form>
+                                    <!--end: Datatable -->
+                                </div>
+
+								
+								 <div class="modal fade" id="prediction_member_list_modal" tabindex="-1" role="dialog"
+                                     aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="predictionlist_title">会员列表</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                </button>
+                                            </div>
+											
+                                            <div class="modal-body">
+                                                <div class="modal-message_output"></div>
+												<!--<div class="col-lg-5 kt-input-icon kt-input-icon--left" style='float:right'>
+													<input type="text" class="form-control" placeholder="搜尋会员" id="dddgeneralSearch">
+													<span class="kt-input-icon__icon kt-input-icon__icon--left">
+															<span><i class="la la-search"></i></span>
+													</span>
+														
+												</div>
+												<div  class="col-lg-5">
+													<input type="text"  placeholder="搜尋会员" id="generalSearch">
+														<span class="kt-input-icon__icon kt-input-icon__icon--left">
+															<span><i class="la la-search"></i></span>
+													</span>
+												</div>-->
+												<div class="col-lg-12">
+													<div id='predict_user_datatable' ></div>
+													
+												</div>
+											   
+                                            </div>
+                                           <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                        onclick="$('#predict_user_datatable').html('')" data-dismiss="modal">
+                                                    关闭
+                                                </button>
+                                               </div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								
+								
+								<div class="modal fade" id="topten_preset_modal" tabindex="-1" role="dialog"
+                                     aria-hidden="true" style="display: none;">
+										<div class="modal-dialog modal-lg" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+												   <h5 class="modal-title" id="exampleModalLabel">Top Ten Prediction Table</h5>
+												   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												   </button>
+												  
+												</div>
+												
+												 <div class="modal-body">
+													 <div class="modal-message_output"></div>
+													
+													<div class="form-group row">
+														<label class="col-xl-1 col-lg-1 col-form-label">
+                                                            类别：
+                                                        </label>
+														
+                                                        <div class="col-lg-6 col-xl-6 input-group " style='float: right;margin-top: 0px;'>
+															<select class="form-control bootstrap-select " name='topten_category' id="topten_category"></select>
+															
+															<label class="col-form-label">&nbsp; 月份 &nbsp;</label>
+															<select class="form-control bootstrap-select " name='topten_month_list' id="topten_month_list"></select>
+														   
+															<label class="col-form-label">&nbsp; 年份 &nbsp;</label>
+															<select class="form-control bootstrap-select " name='topten_year_list' id="topten_year_list"></select>
+														   
+														   <a href="#" id="topten_filter_btn" class="btn btn-primary " aria-haspopup="true" aria-expanded="false" onclick="buildTopTenTable();">
+														搜索
+													</a>
+														</div>
+														
+														
+													</div>
+													
+													<div class="col-lg-12 col-xl-12">
+														<form id="main_form" action="/api/cn/event" method="GET"
+															data-redirect="match-prediction-list.html">
+															
+														<h5 id='topten_preset_label'></h5>
+														<table class="table table-striped- table-bordered table-hover table-checkable" id="win_preset_table">
+															<thead style='vertical-align : middle;text-align: center;'>
+																<tr>
+																	<th>编号</th>
+																	<th>用户名</th>
+																	<th>预测次数</th>
+																	<th>分数</th>
+																</tr>
+																
+															</thead>
+															
+															<tbody id='topten_preset_tbody'>
+																
+															</tbody>
+														</table>
+														</form>
+													</div>
+												 </div>
+											</div>
+										</div>
+								</div>
+								
+								<div class="modal fade" id="topten_user_preset_modal" tabindex="-1" role="dialog"
+                                     aria-hidden="true" style="display: none;">
+										<div class="modal-dialog modal-lg" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+												   <h5 class="modal-title" id="exampleModalLabel">用户预测记录</h5>
+												   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												   </button>
+												  
+												</div>
+												
+												 <div class="modal-body">
+													 <div class="modal-message_output"></div>
+													
+													<div class="col-lg-12 col-xl-12">
+															
+														<h5 id='topten_user_label'></h5>
+														<table class="table table-striped- table-bordered table-hover table-checkable" id="win_preset_table">
+															<thead style='vertical-align : middle;text-align: center;'>
+																<tr>
+																	<th>编号</th>
+																	<th>联赛名称</th>
+																	<th>让球</th>
+																	<th>大小</th>
+																	<th>独赢</th>
+																	<!--<th>胜利次数</th>-->
+																	<th>获胜金额</th> 
+																</tr>
+																
+															</thead>
+															
+															<tbody id='topten_user_preset_tbody'>
+																
+															</tbody>
+														</table>
+														
+													</div>
+												 </div>
+											</div>
+										</div>
+								</div>
+								
+								<div class="modal fade" id="win_preset_modal" tabindex="-1" role="dialog"
+                                     aria-hidden="true" style="display: none;">
+									
+									<div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="predictionlist_title">胜数Setting</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                </button>
+                                            </div>
+											
+                                            <div class="modal-body">
+                                                <div class="modal-message_output"></div>
+												
+												<div class="col-lg-12">
+													<form id="prediction_point_form" action="/api/cn/prediction_points" method="PATCH"
+														data-redirect="#">
+													<table class="table table-striped- table-bordered table-hover table-checkable" id="win_preset_table">
+														<thead style='vertical-align : middle;text-align: center;'>
+															<tr>
+																<th rowspan='2'>胜数</th>
+																<th colspan="3">结果范例</th>
+																<th rowspan='2'>分数</th>
+															</tr>
+															<tr>
+																<th>让球</th>
+																<th>大小</th>
+																<th>独赢</th>
+															</tr>
+														</thead>
+														
+														<tbody id='win_preset_tbody'>
+															<tr>
+																<td>3</td>
+																<td class="wp_correct"><i class="fa fa-circle"></i></td>
+																<td class="wp_correct"><i class="fa fa-circle"></i></td>
+																<td class="wp_correct"><i class="fa fa-circle"></i></td>
+																<td><input type='text' name='1' style='width: 50px;' value=''> 分</td>
+															</tr>
+															
+															<tr>
+																<td rowspan=3>2</td>
+																<td class="wp_correct"><i class="fa fa-circle"></i></td>
+																<td class="wp_correct"><i class="fa fa-circle"></i></td>
+																<td class="wp_false"><i class="flaticon2-cross"></i></td>
+																<td ><input type='text' name='2' style='width: 50px;' value=''> 分</td>
+															</tr>
+															
+															<tr>
+																
+																<td class="wp_correct"><i class="fa fa-circle"></i></td>
+																<td class="wp_false"><i class="flaticon2-cross"></i></td>
+																<td class="wp_correct"><i class="fa fa-circle"></i></td>
+																<td ><input type='text' name='3' style='width: 50px;' value=''> 分</td>
+															</tr>
+															<tr>
+																<td class="wp_false"><i class="flaticon2-cross"></i></td>
+																<td class="wp_correct"><i class="fa fa-circle"></i></td>
+																<td class="wp_correct"><i class="fa fa-circle"></i></td>
+																<td ><input type='text' name='4' style='width: 50px;' value=''> 分</td>
+															</tr>
+															
+															<tr>
+																<td rowspan=3>1</td>
+																<td class="wp_false"><i class="flaticon2-cross"></i></td>
+																<td class="wp_false"><i class="flaticon2-cross"></i></td>
+																<td class="wp_correct"><i class="fa fa-circle"></i></td>
+																<td ><input type='text' name='5' style='width: 50px;' value=''> 分</td>
+															</tr>
+															
+															<tr>
+																
+																<td class="wp_false"><i class="flaticon2-cross"></i></td>
+																<td class="wp_correct"><i class="fa fa-circle"></i></td>
+																<td class="wp_false"><i class="flaticon2-cross"></i></td>
+																<td ><input type='text' name='6' style='width: 50px;' value=''> 分</td>
+															</tr>
+															
+															<tr>
+																<td class="wp_correct"><i class="fa fa-circle"></i></td>
+																<td class="wp_false"><i class="flaticon2-cross"></i></td>
+																<td class="wp_false"><i class="flaticon2-cross"></i></td>
+																<td ><input type='text' name='7' style='width: 50px;' value=''> 分</td>
+															</tr>
+														
+															
+														</tbody>
+													</table>
+													</form>
+												</div>
+											   
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="javascript: void(0);" class="btn btn-success"
+													   onclick="SavePredictionPoint($('#prediction_point_form'));"
+													   aria-haspopup="true" aria-expanded="false">
+														<i class="fa fa-check"></i>
+														儲存
+													</a>
+												<button type="button" class="btn btn-secondary"
+                                                        onclick="clearAlert();" data-dismiss="modal">
+                                                    关闭
+                                                </button>
+                                               </div>
+                                        </div>
+                                    </div>
+                                </div>									
+									
+								
+								
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+				
+												
+                <!-- end:: Content -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+<!-- begin::Global Config(global config for global JS sciprts) -->
+<script>
+    var KTAppOptions = {
+        "colors": {
+            "state": {
+                "brand": "#2c77f4",
+                "light": "#ffffff",
+                "dark": "#282a3c",
+                "primary": "#5867dd",
+                "success": "#34bfa3",
+                "info": "#36a3f7",
+                "warning": "#ffb822",
+                "danger": "#fd3995"
+            },
+            "base": {
+                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+            }
+        }
+    };
+</script>
+<!-- end::Global Config -->
+
+<!--begin::Global Theme Bundle(used by all pages) -->
+<script src="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.js"
+        type="text/javascript"></script>
+<script src="../../assets/template/metronic/demo12/assets/js/scripts.bundle.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    document.write("<script type='text/javascript' src='../../assets/js/common/utility.js?v=" + Date.now() + "'><\/script>");
+   // document.write("<script type='text/javascript' src='../../assets/js/admin-component.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-logic.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-common.js?v=" + Date.now() + "'><\/script>");
+     document.write("<script type='text/javascript' src='../../assets/js/common/bootstrap-datepicker.js?v=" + Date.now() + "'><\/script>");
+	 document.write("<script type='text/javascript' src='../../assets/js/logic/match-prediction-list.js?v=" + Date.now() + "'><\/script>");
+</script>
+<!--end::Global Theme Bundle -->
+
+<!--begin::Page Scripts(used by this page) -->
+<script src="../../assets/template/metronic/demo12/assets/js/pages/dashboard.js" type="text/javascript"></script>
+
+<!--end::Page Scripts -->
+
+<script type="text/javascript">
+	var temp;
+	
+	function removeFilter(datatable,paramName) {	
+		delete datatable.API.params[paramName];
+	}
+	
+	//to prevent select box show grey color for selected option with value>0
+	function selectedUIColorCheck(){
+		if ($("#category_list").val()!=0)
+			$("#category_list").css('color','#000000');
+		else
+			$("#category_list").css('color','gray');
+			
+		if ($("#league_list").val()!=0)
+			$("#league_list").css('color','#000000');
+		else
+			$("#league_list").css('color','gray');
+	}
+	
+    $(document).ready(function () {//localStorage.clear()
+		//getPredictionUserList(1);
+        getAlert();
+		getCategoryDropdown();
+		//getLeagueDropdown(1); //generate league dropdown list, default set 1 - 足球
+		getPredictionListTable(1, 20); //generate main table
+			
+		
+    });
+	
+	
+
+	function removeFilter(paramName) {
+		var datatable = $("#admin_datatable").KTDatatable();
+		delete datatable.API.params[paramName]
+		}
+</script>
+
+</body>
+
+<!-- end::Body -->
+
+</html>

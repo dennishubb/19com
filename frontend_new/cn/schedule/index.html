@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>19.com-九鼎体育</title>
+
+    <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/art-template-master/lib/template-web.js"></script>
+    <script src="/assets/js/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/slick/slick-theme.css">
+
+    <script src="/assets/js/toggle.js"></script>
+    <script src="/assets/js/common/utility.js"></script>
+    <script src="/assets/js/shared.js"></script>
+
+<!--    <script src="/assets/js/subcall.js"></script>-->
+
+</head>
+
+<body >
+<div id="header"></div>
+<!--<div id="livescore"></div>-->
+
+
+<div class="container clearfix">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tabs-bar">
+                <div class="tabs-title clearfix" id="schedule_shared_header"></div>
+                <div class="tab-main clearfix" id="schedule_carousel"></div>
+            </div>
+
+            <div class="breadcrumbs" id="breadcrumbs"></div>
+            <div id="table_schedule"></div>
+
+        </div>
+    </div>
+</div>
+<div id="float_menu"></div>
+<div id="footer"></div>
+
+<!--GENERAL-->
+<script type="text/javascript">
+    $(document).ready(function() {
+        var variable = "id";
+        var season_id = getQueryString(variable);
+        var season_title = getSeasonDetail(season_id, 'season_detail', 'title');
+        var tabValue = "赛程";
+
+
+        header();//Display website header
+        scheduleSharedHeader(season_title, season_id, 'main');//Display schedule shared header
+        scheduleCarousel(season_id); //Display Carousel
+        scheduleSharedBreadcrumbs(season_title, tabValue); //Display Breadcrumbs
+        scheduleTableSchedule(season_id, season_title); //Display Table Schedule
+		
+		
+    });
+
+</script>
+
+
+
+</body>

@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="">
+    <meta charset="utf-8">
+    <title>19com | 後端管理系統</title>
+    <meta name="description" content="Latest updates and statistic charts">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--begin::Fonts -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
+
+    <!--end::Fonts -->
+
+    <!--begin::Page Vendors Styles(used by this page) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css"
+          rel="stylesheet" type="text/css">
+
+    <!--end::Page Vendors Styles -->
+
+    <!--begin::Global Theme Styles(used by all pages) -->
+    <link href="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.css" rel="stylesheet"
+          type="text/css">
+    <link href="../../assets/template/metronic/demo12/assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+
+    <!--end::Global Theme Styles -->
+
+    <!--begin::Layout Skins(used by all pages) -->
+
+    <!--end::Layout Skins -->
+    <link rel="shortcut icon" href="../../assets/branding/favicon.ico">
+	
+	<style>
+	.radio_margin{
+		margin-left: 10px;
+		margin-top: 0px;
+	}
+	
+	</style>
+</head>
+
+<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
+
+<!-- begin:: Header Mobile -->
+<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+    <div class="kt-header-mobile__logo">
+        <a href="index.html">
+            <img id="branding_mobile" style="width: 82px;" alt="Logo" src="../../assets/branding/logo.png">
+        </a>
+    </div>
+    <div class="kt-header-mobile__toolbar">
+        <button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left"
+                id="kt_aside_mobile_toggler">
+            <span></span>
+        </button>
+        <button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler">
+            <i class="flaticon-more"></i>
+        </button>
+    </div>
+</div>
+<!-- end:: Header Mobile -->
+
+<div class="kt-grid kt-grid--hor kt-grid--root">
+
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+        <!-- begin:: Aside -->
+
+        <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop"
+             id="kt_aside">
+
+            <!-- begin:: Aside -->
+
+            <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
+
+            <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand" kt-hidden-height="65" style="">
+                <div class="kt-aside__brand-logo">
+                    <a href="index.html">
+                        <img id="branding_pc" style="width: 112px;" alt="Logo" src="../../assets/branding/logo.png">
+                    </a>
+                </div>
+                <div class="kt-aside__brand-tools">
+                    <button class="kt-aside__brand-aside-toggler" id="kt_aside_toggler"><span></span></button>
+                </div>
+            </div>
+
+            <!-- end:: Aside -->
+
+            <!-- begin:: SideNav -->
+
+            <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+                <div id="kt_aside_menu" class="kt-aside-menu kt-scroll ps ps--active-y" data-ktmenu-vertical="1"
+                     data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500" style="height: 512px; overflow: hidden;">
+                    <ul class="kt-menu__nav"></ul>
+                </div>
+            </div>
+
+            <!-- end:: SideNav -->
+
+        </div>
+
+        <!-- end:: Aside -->
+
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+            <!-- begin:: Header -->
+
+            <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed">
+
+                <!-- begin: Header Menu -->
+
+                <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn">
+                    <i class="la la-close"></i>
+                </button>
+                <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper"></div>
+
+                <!-- end: Header Menu -->
+
+                <div class="kt-header__topbar">
+
+                    <!--begin: Language bar -->
+
+                    <div id="kt-language" class="kt-header__topbar-item kt-header__topbar-item--langs"></div>
+
+                    <!--end: Language bar -->
+
+                    <!--begin: User Bar -->
+
+                    <div class="kt-header__topbar-item kt-header__topbar-item--user">
+                        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+                            <div id="kt-user" class="kt-header__topbar-user"></div>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+
+                            <!--begin: Head -->
+                            <div id="kt-user-dropdown"
+                                 class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
+                                 style="background-image: url(../../assets/template/metronic/demo12/assets/media/misc/bg-1.jpg)">
+                            </div>
+                            <!--end: Head -->
+
+                            <!--begin: Navigation -->
+                            <div class="kt-notification">
+                                <div class="kt-notification__custom kt-space-between">
+                                    <a href="../auth/logout.html"
+                                       class="btn btn-label btn-label-brand btn-sm btn-bold">
+                                        登出
+                                    </a>
+                                </div>
+                            </div>
+                            <!--end: Navigation -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- end:: Header -->
+
+            <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+                <!-- begin:: Subheader -->
+
+                <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                    <div class="kt-container  kt-container--fluid ">
+                        <div class="kt-subheader__main">
+                            <h3 class="kt-subheader__title">
+                                活动专区
+                            </h3>
+                            <span class="kt-subheader__separator kt-hidden"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end:: Subheader -->
+
+                <!-- begin:: Content -->
+
+                <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+
+                    <!-- begin:: Dynamic Content -->
+
+                    <div class="row">
+
+                        <div class="col-12">
+
+                            <div class="kt-portlet">
+								<div class="message_output"></div>
+                                <div class="kt-portlet__head">
+                                    <div class="kt-portlet__head-label">
+                                        <span class="kt-portlet__head-icon">
+                                            <i class="fa fa-plus"></i>
+                                        </span>
+                                        <h3 class="kt-portlet__head-title font-weight-bold">
+                                            编辑活动
+                                            <small>Edit Promotion</small>
+                                        </h3>
+                                    </div>
+                                    <div class="kt-portlet__head-toolbar">
+                                        <div class="dropdown dropdown-inline">
+                                            <a href="promotion-list.html" class="btn btn-primary"
+                                               aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-angle-left"></i>
+                                                返回
+                                            </a>
+                                            <a href="javascript: void(0);" class="btn btn-success"
+                                               onclick="editPromo($('form'));"
+                                               aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-plus"></i>
+                                                储存
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="kt-portlet__body">
+									<form class="kt-form kt-form--label-right" method="PUT"
+                                          action="/api/cn/promotion" data-redirect="promotion-edit.html"
+                                          accept-charset="UTF-8" id="form">
+										 <input type="hidden" name="folder" id='folder' value="promotion">
+                                        <div class="kt-form__body">
+                                            <div class="kt-section kt-section--first">
+                                                <div class="kt-section__body">
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-2 col-lg-2 col-form-label">
+                                                           排序：
+                                                        </label>
+                                                        <div class="col-lg-6 col-xl-6 " style='margin-left: -10px;'>
+                                                            <div class="col-lg-6 col-xl-6 input-group" style='margin-top: 0px;'>
+															   <input class="form-control" type="text" name="sorting">
+															</div>
+                                                        </div>
+                                                    </div>
+													<div class="form-group row">
+														<label class="col-xl-2 col-lg-2 col-form-label">活动名称：</label>
+														<div class="input-group col-lg-9 col-xl-9" >
+															<div class="col-lg-6 col-xl-6 " style='margin-left: -7px;'>
+															<input name="name" class="form-control system-promo-disabled" type="text" value="">
+															</div>
+															
+															
+															<label class="col-form-label">
+																状态：
+															</label>
+															<div class="col-lg-4 col-xl-4" >
+															<span class="kt-switch kt-switch--success">
+																<label>
+																	<input name="disabled" type="checkbox" checked="checked">
+
+
+																	<span></span>
+																</label>
+															</span>
+															</div>
+														</div>
+														
+													</div>
+													
+													<div class="form-group row">
+														<label class="col-xl-2 col-lg-2 col-form-label">活动类型：</label>
+														<div class="input-group col-lg-9 col-xl-9" >
+															 <div class="col-lg-4 col-xl-4">
+																<select class="form-control bootstrap-select system-promo-disabled" name='type' id="promo_type">
+																<option value="0">---请选一个---</option>
+																<option value="sign in">签到</option>
+																<option value="task">任务</option>
+																<option value="other">其他</option>
+															</select>
+															</div>
+															
+														</div>
+													</div>
+													
+													<div class="form-group row">
+														<label class="col-xl-2 col-lg-2 col-form-label">
+                                                            参加方式：
+                                                        </label>
+                                                        <div class="col-lg-9 col-xl-9 kt-radio-inline radio_margin" style='float: right'>
+                                                           <label class="kt-radio kt-radio--bold kt-radio--success">
+																<input class="system-promo-disabled" type="radio" name="sign_up" value='0'>会员手动申请
+																<span></span>
+															</label>
+															<label class="kt-radio kt-radio--bold kt-radio--success">
+																<input class="system-promo-disabled" type="radio" name="sign_up" value='1'>系统自动申请
+																<span></span>
+															</label>
+                                                       
+															
+															
+															
+                                                         </div>
+														
+													</div>
+													
+													<div class="form-group row">
+                                                        <label class="col-xl-2 col-lg-2 col-form-label">
+                                                            参与等级：
+                                                        </label>
+														
+                                                        <div class="col-lg-9 col-xl-9" >
+															<label class="kt-checkbox kt-checkbox--bold kt-checkbox--success">
+																<input class="system-promo-disabled" type="checkbox" name='level_id' value='0'> 全部
+																<span class="system-promo-disabled"></span>
+															</label>
+															<div style='width:10px;display: inline-block;'>&nbsp;</div>
+															
+															<label class="kt-checkbox kt-checkbox--bold kt-checkbox--success">
+																<input class="system-promo-disabled" type="checkbox" name='level_id' value=1> 1
+																<span class="system-promo-disabled"></span>
+															</label>
+															<div style='width:10px;display: inline-block;'>&nbsp;</div>
+															
+															<label class="kt-checkbox kt-checkbox--bold kt-checkbox--success">
+																<input class="system-promo-disabled" type="checkbox" name='level_id' value=2> 2
+																<span></span>
+															</label>
+															<div style='width:10px;display: inline-block;'>&nbsp;</div>
+															
+															<label class="kt-checkbox kt-checkbox--bold kt-checkbox--success">
+																<input class="system-promo-disabled" type="checkbox" name='level_id' value=3> 3
+																<span></span>
+															</label>
+															<div style='width:10px;display: inline-block;'>&nbsp;</div>
+															
+															<label class="kt-checkbox kt-checkbox--bold kt-checkbox--success">
+																<input class="system-promo-disabled" type="checkbox" name='level_id' value=4> 4
+																<span></span>
+															</label>
+															<div style='width:10px;display: inline-block;'>&nbsp;</div>
+															
+															<label class="kt-checkbox kt-checkbox--bold kt-checkbox--success">
+																<input class="system-promo-disabled" type="checkbox" name='level_id' value=5> 5
+																<span></span>
+															</label>
+															<div style='width:10px;display: inline-block;'>&nbsp;</div>
+															
+															
+															<label class="kt-checkbox kt-checkbox--bold kt-checkbox--success">
+																<input class="system-promo-disabled" type="checkbox" name='level_id' value=6> 6
+																<span></span>
+															</label>
+															<div style='width:10px;display: inline-block;'>&nbsp;</div>
+															
+															
+															<label class="kt-checkbox kt-checkbox--bold kt-checkbox--success">
+																<input class="system-promo-disabled" type="checkbox" name='level_id' value=7> 7
+																<span></span>
+															</label>
+															<div style='width:10px;display: inline-block;'>&nbsp;</div>
+															
+															<label class="kt-checkbox kt-checkbox--bold kt-checkbox--success">
+																<input class="system-promo-disabled" type="checkbox" name='level_id' value=8> 8
+																<span></span>
+															</label>
+															<div style='width:10px;display: inline-block;'>&nbsp;</div>
+															
+															<label class="kt-checkbox kt-checkbox--bold kt-checkbox--success">
+																<input class="system-promo-disabled" type="checkbox" name='level_id' value=9> 9
+																<span></span>
+															</label>
+															<div style='width:10px;display: inline-block;'>&nbsp;</div>
+															 
+                                                        </div>
+                                                    </div>
+													
+													<div class="form-group row">
+														<label class="col-xl-2 col-lg-2 col-form-label">
+                                                            展现方式：
+                                                        </label>
+                                                        <div class="col-lg-9 col-xl-9 kt-radio-inline radio_margin" style='float: right;margin-top: 0px;'>
+                                                           <label class="kt-radio kt-radio--bold kt-radio--success">
+																<input class="system-promo-disabled" type="radio" name="display_method" value='popup'>PopUp
+																<span></span>
+															</label>
+															<label class="kt-radio kt-radio--bold kt-radio--success">
+																<input class="system-promo-disabled" type="radio" name="display_method" value='url'>URL
+																<span></span>
+															</label>
+                                                       
+															<div style='display: inline-block;' >
+															 <input class="system-promo-disabled" name="url" class="form-control" type="text" value="">
+															
+															</div>
+														</div>
+														
+													</div>
+													
+													<div class="form-group row">
+														<label class="col-xl-2 col-lg-2 col-form-label">
+                                                            活动图片：
+                                                        </label>
+														
+														<div class="" style='margin-left: 10px;'>
+                                                            <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_1">
+                                                                <img class="avatar__holder" id="elm-image1" name="elm-image1"
+                                                                     style="height: 120px; width: 120px;"
+                                                                     src="http://www.placehold.it/120x120/EFEFEF/AAAAAA&text=574+X+390">
+                                                                <label class="kt-avatar__upload"
+                                                                       data-toggle="kt-tooltip"
+                                                                       data-original-title="Upload / Change Image"
+                                                                       onclick="toggle_ckfinder($('#elm-image1'),$('input[name=upload_url_big]'))">
+                                                                    <i class="fa fa-pen"></i>
+                                                                    <input type="hidden" name="upload_url_big" value="">
+                                                                </label>
+                                                                <span class="kt-avatar__cancel"
+                                                                      data-toggle="kt-tooltip"
+                                                                      title="" data-original-title="Cancel avatar">
+                                                                            <i class="fa fa-times"></i>
+                                                                        </span>
+
+                                                                <span class="form-text text-muted" style='text-align:center'>
+                                                                            Web 574 x 390
+                                                                        </span>
+
+                                                            </div>
+
+
+                                                            <!--<div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_2">
+                                                                <img class="avatar__holder" id="elm-image2" name="elm-image2"
+                                                                     style="height: 120px; width: 120px;"
+                                                                     src="http://www.placehold.it/120x120/EFEFEF/AAAAAA&text=405+X+150">
+                                                                <label class="kt-avatar__upload"
+                                                                       data-toggle="kt-tooltip"
+                                                                       data-original-title="Upload / Change Image"
+                                                                       onclick="toggle_ckfinder($('#elm-image2'),$('input[name=upload_url_medium]'))">
+                                                                    <i class="fa fa-pen"></i>
+                                                                    <input type="hidden" name="upload_url_medium" value="">
+                                                                </label>
+                                                                <span class="kt-avatar__cancel"
+                                                                      data-toggle="kt-tooltip"
+                                                                      title="" data-original-title="Cancel avatar">
+                                                                            <i class="fa fa-times"></i>
+                                                                        </span>
+                                                                <span class="form-text text-muted" style='text-align:center'>
+                                                                            Web 405 x 150
+                                                                        </span>
+                                                            </div>-->
+
+                                                            <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_3">
+                                                                <img class="avatar__holder" id="elm-image3" name="elm-image3"
+                                                                     style="height: 120px; width: 120px;"
+                                                                     src="http://www.placehold.it/120x120/EFEFEF/AAAAAA&text=H5">
+                                                                <label class="kt-avatar__upload"
+                                                                       data-toggle="kt-tooltip"
+                                                                       data-original-title="Upload / Change Image"
+                                                                       onclick="toggle_ckfinder($('#elm-image3'),$('input[name=upload_url_small]'))">
+                                                                    <i class="fa fa-pen"></i>
+                                                                    <input type="hidden" name="upload_url_small" value="">
+                                                                </label>
+                                                                <span class="kt-avatar__cancel"
+                                                                      data-toggle="kt-tooltip"
+                                                                      title="" data-original-title="Cancel avatar">
+                                                                            <i class="fa fa-times"></i>
+                                                                        </span>
+                                                                <span class="form-text text-muted" style='text-align:center'>
+                                                                           H5
+                                                                        </span>
+                                                            </div>
+                                                        </div>
+																
+                                                        <!--<div class="col-lg-3 col-xl-3 kt-radio-inline" style='float: right;'>
+                                                          1
+                                                         </div> <div class="col-lg-3 col-xl-3 kt-radio-inline" style='float: right;'>
+                                                          1
+                                                         </div> <div class="col-lg-3 col-xl-3 kt-radio-inline" style='float: right;'>
+                                                          1
+                                                         </div>-->
+														
+													</div>
+													
+													<div class="form-group row">
+														<label class="col-xl-2 col-lg-2 col-form-label">
+                                                            时间限制：
+                                                        </label>
+														
+                                                        <div class="col-lg-6 col-xl-6 input-group " style='float: right;margin-top: 0px;'>
+                                                           <input name="start_at" class="form-control datetimepicker_format" type="text" value="" id="kt_datetimepicker_1" data-date-format="DD-MM-YYYY HH:mm:ss">
+														   <label class="col-form-label">&nbsp; - &nbsp;</label>
+														   <input name="end_at" class="form-control datetimepicker_format" type="text" value="" id="kt_datetimepicker_2" data-datetime-format="yyyy-mm-dd hh:ii:ss">
+														</div>
+														
+														 <div class="col-lg-2 col-xl-2 " style='padding: 0.65rem 1rem;'>
+														<label class="kt-checkbox kt-checkbox--bold kt-checkbox--success">
+															<input name="permanent" type="checkbox" > 长久
+															
+															<span></span>
+														</label>
+														</div>
+													</div>
+														
+													<div class="form-group row">
+														<label class="col-xl-2 col-lg-2 col-form-label">
+                                                            限制次数：
+                                                        </label>
+                                                        <div class="col-lg-9 col-xl-9 kt-radio-inline radio_margin" style='float: right;'>
+                                                           <label class="kt-radio kt-radio--bold kt-radio--success">
+																<input class="system-promo-disabled" type="radio" name="limitation" value="daily">每日
+																<span></span>
+															</label>
+															<label class="kt-radio kt-radio--bold kt-radio--success">
+																<input class="system-promo-disabled" type="radio" name="limitation" value="monthly">每月
+																<span></span>
+															</label>
+															<label class="kt-radio kt-radio--bold kt-radio--success">
+																<input class="system-promo-disabled" type="radio" name="limitation" value="once">单次
+																<span></span> 
+															</label>
+<!--
+															<label class="kt-radio kt-radio--bold kt-radio--success">
+																<input class="system-promo-disabled" type="radio" name="limitation" value="sign up">注册
+																<span></span> 
+															</label>
+-->
+															<label>次数：</label>
+															<div style='display: inline-block;' >
+																<input class="system-promo-disabled" name="limitation_count" class="form-control" type="text" value="" >
+															</div>
+                                                         </div>
+														
+													</div>
+													
+													<div class="form-group row">
+														
+														<label class="col-xl-2 col-lg-2 col-form-label">
+																结算方式：
+														</label>
+                                                       
+														<div class="col-lg-9 col-xl-9 kt-radio-inline radio_margin" style='float: right;'>
+															<label class="kt-radio kt-radio--bold kt-radio--success">
+																<input class="system-promo-disabled" type="radio" name="settle_type" value='manual'>手动结算
+																<span></span>
+															</label>
+															<label class="kt-radio kt-radio--bold kt-radio--success">
+																<input class="system-promo-disabled" type="radio" name="settle_type" value='auto'>系统自动结算
+																<span></span>
+															</label>
+														 </div>
+														
+													</div>
+													
+													
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-2 col-lg-2 col-form-label">
+                                                           结算时间：
+                                                        </label>
+                                                        <div class="col-lg-6 col-xl-6 " style='margin-left: -10px;'>
+                                                            <div class="col-lg-6 col-xl-6 input-group" style='margin-top: 0px;'>
+															   <input class="system-promo-disabled" name="settle_at" class="form-control datetimepicker_format" type="text" value="" id='kt_datetimepicker_3'>
+															   <!--<label class="col-form-label">时</label>
+															   <input name="settle_at_" class="form-control" type="text" value="">
+															   <label class="col-form-label">分</label>-->
+															</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-2 col-lg-2 col-form-label">
+                                                           礼券：
+                                                        </label>
+                                                        <div class="col-lg-6 col-xl-6 " style='margin-left: -10px;'>
+                                                            <div class="col-lg-6 col-xl-6 input-group" style='margin-top: 0px;'>
+															   <input class="form-control" type="number" id="quantity" name="voucher" min='1'>
+															</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-2 col-lg-2 col-form-label">
+                                                           分数：
+                                                        </label>
+                                                        <div class="col-lg-6 col-xl-6 " style='margin-left: -10px;'>
+                                                            <div class="col-lg-6 col-xl-6 input-group" style='margin-top: 0px;'>
+															   <input class="form-control" type="number" id="quantity" name="points" min='1'>
+															</div>
+                                                        </div>
+                                                    </div>
+													
+													<div class="form-group row">
+														<label class="col-xl-2 col-lg-2 col-form-label">
+                                                            活动简介：
+                                                        </label>
+                                                       
+                                                           <textarea name="introduction" rows="8" cols="68" style='margin-left: 10px;'></textarea>	
+													</div>
+													
+													<div class="form-group row" style='text-align:center'>
+														<label class="col-xl-2 col-lg-2 col-form-label">
+                                                            
+                                                        </label>
+														
+														 <a href="javascript: void(0);" class="btn btn-success"
+															   onclick="editPromo($('form'));"
+															   aria-haspopup="true" aria-expanded="false" style='margin-left: 10px;'>
+																<i class="fa fa-plus"></i>
+																储存
+															</a>
+														&nbsp;	
+														<a href="#" id="deletePromoButton" class="kt-nav__link btn btn-warning" onclick="deletePromo($('delete_form'));">
+															<i class="fa fa-trash-alt"></i>
+															<span class="kt-nav__link-text">删除活动</span>
+														</a>
+													</div>
+                                                    
+                                                </div>
+												
+                                            </div>
+                                        </div>
+                                    </form>
+									
+									<form id="delete_form" action="/api/cn/promotion" method="DELETE"
+                                          data-redirect="promotion-list.html">
+                                        <input type="hidden" name="id" value="">
+                                    </form>
+
+                                </div>
+                                <div class="kt-portlet__body kt-portlet__body--fit">
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- end:: Dynamic Content -->
+
+                </div>
+
+                <!-- end:: Content -->
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- begin::Global Config(global config for global JS sciprts) -->
+<script>
+    var KTAppOptions = {
+        "colors": {
+            "state": {
+                "brand": "#2c77f4",
+                "light": "#ffffff",
+                "dark": "#282a3c",
+                "primary": "#5867dd",
+                "success": "#34bfa3",
+                "info": "#36a3f7",
+                "warning": "#ffb822",
+                "danger": "#fd3995"
+            },
+            "base": {
+                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+            }
+        }
+    };
+</script>
+<!-- end::Global Config -->
+
+<!--begin::Global Theme Bundle(used by all pages) -->
+<script src="../../assets/template/metronic/demo12/assets/plugins/global/plugins.bundle.js"
+        type="text/javascript"></script>
+<script src="../../assets/template/metronic/demo12/assets/js/scripts.bundle.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    document.write("<script type='text/javascript' src='../../assets/js/common/utility.js?v=" + Date.now() + "'><\/script>");
+    //document.write("<script type='text/javascript' src='../../assets/js/admin-component.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-logic.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/common/admin-common.js?v=" + Date.now() + "'><\/script>");
+	document.write("<script type='text/javascript' src='../../assets/js/common/bootstrap-datetimepicker.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/logic/promotion.js?v=" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='../../assets/js/ckfinder/ckfinder.js?v=" + Date.now() + "'><\/script>");
+</script>
+<!--end::Global Theme Bundle -->
+
+<!--begin::Page Scripts(used by this page) -->
+<script src="../../assets/template/metronic/demo12/assets/js/pages/dashboard.js" type="text/javascript"></script>
+
+
+<!--end::Page Scripts -->
+
+<script type="text/javascript">
+    function toggle_ckfinder($img_selector = 0, $input_selector = 0) {
+
+        console.log("---");
+
+        CKFinder.modal({
+            chooseFiles: true,
+            width: 800,
+            height: 600,
+            resourceType: "Images(bmp,gif,jpeg,jpg,png)",
+            onInit: function (finder) {
+                finder.on('files:choose', function (evt) {
+                    var file = evt.data.files.first();
+                    var formatted_url = file.getUrl().substr(1);
+
+                    if($img_selector) {
+                        $($img_selector).attr('src', "../../" + formatted_url);
+                    } else {
+                        $('#elm-image').attr('src', "../../" + formatted_url);
+                    }
+
+                    if($input_selector) {
+                        $($input_selector).attr('value', formatted_url);
+                    } else {
+                        $('#file_input').attr('value', formatted_url);
+                    }
+
+                });
+            }
+        });
+    }
+
+	$('.datetimepicker_format').datetimepicker({
+		format: 'yyyy-mm-dd HH:ii:00'
+	});
+		
+	$(document).ready(function () {
+        
+		getAlert();
+		blockUI();
+		var promo_id= getQueryString('id');
+		var getPromo=getPromoDetail(promo_id);
+      
+		$.when(getPromo).done(function (response) {
+			unblockUI();
+            if(response.data.upload_big_url) {
+                $('input[name=upload_url_big]').attr('value', response.data.upload_big_url);
+                $('#elm-image1').attr('src', "../../" + response.data.upload_big_url);
+            }
+
+            if(response.data.upload_medium_url) {
+                $('input[name=upload_url_medium]').attr('value', response.data.upload_medium_url);
+                $('#elm-image2').attr('src', "../../" + response.data.upload_medium_url);
+            }
+
+            if(response.data.upload_small_url) {
+                $('input[name=upload_url_small]').attr('value', response.data.upload_small_url);
+                $('#elm-image3').attr('src', "../../" + response.data.upload_small_url);
+            }
+
+            if((response.data.limitation == 'once') || (response.data.limitation == 'sign up')) {
+                $('input[name="limitation_count"]').attr('disabled',true); 		
+				$('input[name="limitation_count"]').val('');
+            }
+
+            if (response.data.system == 1 ){
+                $(".system-promo-disabled").attr('disabled',true);
+                $("#deletePromoButton").hide();
+            }
+		});
+
+
+		$('input[name="settle_type"]').on('click', function () {
+			var curr_value=$(this).val();
+			
+			if (curr_value=='auto') 
+				$('input[name="settle_at"]').attr('disabled',false); 
+			else
+				$('input[name="settle_at"]').attr('disabled',true); 
+        });
+		
+		$('input[name="permanent"]').on('click', function () {
+			var disabled_status=$('input[name="end_at"]').attr('disabled');
+			
+			if (disabled_status=='disabled') 
+				$('input[name="end_at"]').attr('disabled',false); 
+			else
+				$('input[name="end_at"]').attr('disabled',true); 
+        });
+		
+		
+		$('input[name="level_id"]').on('click', function () {
+		
+			if ($(this).val()=='0'){
+				if ($(this).prop('checked')==true)
+					$("input[name=level_id]").prop('checked', true);				
+				else
+					$("input[name=level_id]").prop('checked', false);	
+			}				
+			
+		
+        });
+
+        $('input[name="limitation"]').on('change', function () {
+			if (($(this).val()=='once') || ($(this).val()=='sign up')){
+				$('input[name="limitation_count"]').attr('disabled',true); 		
+				$('input[name="limitation_count"]').val('');
+			}				
+			else				
+				$('input[name="limitation_count"]').attr('disabled',false); 
+		
+        });
+		
+    });
+</script>
+
+<style>
+.displaynone{
+	display:none;
+}
+.displayblock{
+	display:block;
+}
+input:disabled, .form-control:disabled {
+    background-color: #a2a5b9;
+    opacity: 0.5;
+}
+</style>
+</body>
+
+<!-- end::Body -->
+
+</html>

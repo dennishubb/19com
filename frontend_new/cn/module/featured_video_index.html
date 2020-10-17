@@ -1,0 +1,12 @@
+{{ each featured_video data index }}
+{{ if data.article_data }}
+<a href="article.php?id={{ data.article_data.id }}" class="video_item">
+    <video style="width: 384px;height: 216px;">
+        <source src="{{ "../../" + data.url }}" type="video/mp4">
+    </video>
+    <div class="text">
+        {{ data.article_data.title }}
+    </div>
+</a>
+{{ /if }}
+{{ /each }}

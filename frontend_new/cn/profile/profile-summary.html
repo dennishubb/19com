@@ -1,0 +1,113 @@
+<script>
+$( ".target" ).click(function() {
+  alert( "Handler for .click() called." );
+});
+
+$(document).ready(function() {
+	var fullUri = getCurrentFullUri();
+	var div_id='_div';
+	var temp='';
+	
+	if (fullUri.indexOf("/cn/profile/") >= 0)
+		temp='profile';
+	else if (fullUri.indexOf("/cn/prediction-history/") >= 0)
+		temp='prediction-history';
+	else if (fullUri.indexOf("/cn/promotion") >= 0)
+		temp='promotion';
+	else if (fullUri.indexOf("/cn/message-collect/") >= 0)
+		temp='message-collect';
+	else if (fullUri.indexOf("/cn/exchange") >= 0)
+		temp='exchange';
+	else if (fullUri.indexOf("/cn/pending") >= 0)//chao xing tian tang
+		temp='pending';
+		
+	div_id=temp+div_id;
+	$("#"+div_id).addClass('active');
+	
+	
+	$('#profile_summary_thumbnail').attr('src',window.localStorage.profile_thumbnail);
+	
+});
+</script>
+
+<style>
+rect.btn {
+  stroke:#fff;
+  fill:#fff;
+  fill-opacity:0;
+  stroke-opacity:0;
+  z-index: 2;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  //background-color:red;
+}
+</style>
+  			<div class="profile_popup_inner profile_popup_hide">
+  				<div class="profile_popup_header" >
+  					<div class="username"><img  id='profile_summary_thumbnail' style='width:50px;height:50px' src="">{{user_data.username}}</div>
+  					<div class="user_detail">
+  						<div>等级：{{user_data.level}} <img src="{{user_data.level_icon_white}}" style='width:25px;height:25px;margin-bottom: 5px;'></div>
+  						<div><img src="/assets/images/point_icon.png">券数：{{ $imports.toInt(user_data.voucher) }}</div>
+  						<div><img src="/assets/images/point_icon.png">总战数：{{ $imports.toInt(user_data.total_points) }}</div>
+  						<div><img src="/assets/images/point_icon.png">现有战数：{{ $imports.toInt(user_data.points) }}</div>
+						<div id='logout_div' style="padding-left: 5px" ><a onclick="logout()">登出</a></div>
+  					</div>
+  				</div>
+  				<div class="profile_popup_menu_area">
+      				<div class="profile_popup_menu">
+      					<div id='profile_div' style="position: relative" class="" onclick="location.href = '/cn/profile/';">
+							<embed  src="/assets/images/user_icon.svg" type="image/svg+xml" /> 
+							<embed  src="/assets/images/user_icon_over.svg" type="image/svg+xml" /> 
+							<rect style="left:70px;top:15px" class="btn" onclick="location.href = '/cn/profile.html';" />
+      						<div class="profile_popup_menu_title">
+								我的首页
+							</div>
+						</div>
+						<div id='prediction-history_div' style="position: relative" class="" onclick="location.href = '/cn/prediction-history/';">
+							<embed src="/assets/images/cup_icon.svg" type="image/svg+xml" /> 
+							<embed src="/assets/images/cup_icon_over.svg" type="image/svg+xml" /> 
+							<rect style="left:70px;top:15px" class="btn" onclick="location.href = '/cn/prediction-history/';" />
+							<div class="profile_popup_menu_title">
+								预测历史
+							</div>
+						</div>
+						<div id='promotion_div' style="position: relative"  class="" onclick="location.href = '/cn/promotion.html';">
+							<embed src="/assets/images/diamond_icon.svg" type="image/svg+xml" /> 
+							<embed src="/assets/images/diamond_icon_over.svg" type="image/svg+xml" /> 
+							<rect style="left:70px;top:15px" class="btn" onclick="location.href = '/cn/promotion.html';" />
+							<div class="profile_popup_menu_title">
+								活动专区
+							</div>
+						</div>
+						<div id='message-collect_div' style="position: relative"  class="" onclick="location.href = '/cn/message-collect/';">
+							<embed src="/assets/images/collect_icon.svg" type="image/svg+xml" /> 
+							<embed src="/assets/images/collect_icon_over.svg" type="image/svg+xml" /> 
+							<rect style="left:70px;top:15px" class="btn" onclick="location.href = '/cn/message-collect/';" />
+							<div class="profile_popup_menu_title">
+								留言收藏
+							</div>
+						</div>
+						<div id='exchange_div' style="position: relative"  class="" onclick="location.href = '/cn/exchange.html';">
+
+							<embed src="/assets/images/gift_icon.svg" type="image/svg+xml" /> 
+							<embed src="/assets/images/gift_icon_over.svg" type="image/svg+xml" /> 
+							<rect style="left:70px;top:15px" class="btn" onclick="location.href = '/cn/exchange.html';" />
+							<div class="profile_popup_menu_title">
+								礼品兑换
+							</div>
+						</div>
+						<div id='chaoxing_div' class="disabled" style="position: relative"  class=""><!--remember to change id also for class active when have link-->
+							
+							<embed src="/assets/images/star_icon.svg" type="image/svg+xml" /> 
+							<embed src="/assets/images/star_icon_over.svg" type="image/svg+xml" />
+							<rect style="left:70px;top:15px" class="btn" onclick="location.href = '#';" />
+							<div class="profile_popup_menu_title">
+							潮星天堂</div>
+						</div>
+      					
+      				</div>
+      			</div>
+  			</div>
+
+  	

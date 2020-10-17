@@ -1,0 +1,8 @@
+{{ each more_news data index }}
+<div>
+    <a href="article.php?id={{ data.id }}">
+        {{ $imports.html2String(data.title,15) + "..." }}
+    </a>
+</div>
+{{ /each }}
+

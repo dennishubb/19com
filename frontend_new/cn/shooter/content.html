@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="/assets/css/bootstrap.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="/assets/js/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="/assets/js/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+<script src="/assets/js/template-native.js" type="text/javascript" charset="utf-8"></script>
+<script src="/assets/js/common/utility.js"></script>
+<script>
+    $(document).ready(function(){
+        var href = getCurrentFullUri();
+        var turns = "{{totalPage}}"
+        for (j= 2; j < turns; j++) {
+            if(href == "/cn/shooter/?id={{season_id}}&page_number="+j){
+                $('#page'+j).addClass('active');
+                $('#page1').removeClass('active');
+                break;
+            }else if(href == "/cn/shooter/?id={{season_id}}&page_number=1"){
+                $('#page1').addClass('active');
+                break;
+            }
+        }
+        for (i= 1; i <= 3; i++) {
+            $("span[data-id="+"balls" + i + "]").addClass('balls');   
+        }
+    });
+</script>
+<div class="table-wrap">
+    <table class="table shooter-table table-bordered table-dark">
+        <thead>
+        <tr>
+            <th class="sort">排序</th>
+            <th class="player">球员</th>
+            <th class="team">球队</th>
+            <th class="goal">进球（点球）</th>
+            <th class="number-of-appearances hidden-xs">出场次数</th>
+            <th class="playing-time hidden-xs">出场时间</th>
+            <th class="shot hidden-xs">射门</th>
+            <th class="shot-positive hidden-xs">射正</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{each items as value j}}
+        <tr>
+            <td class="sort"><span data-id="balls{{value.sort}}">{{value.sort}}</span></td>
+            <td class="player">{{value.name_zh}}</td>
+            <th class="team"> <div><img class="team-logo hidden-xs" src={{value.team_logo}} alt="{{value.team_name_zh}}" /> {{value.team_name_zh}}</div> </th>
+            <td class="goal">{{value.goals}}({{value.penalty}})</td>
+            <td class="number-of-appearances hidden-xs">{{value.matches}}</td>
+            <td class="playing-time hidden-xs">{{value.minutes_played}}</td>
+            <td class="shot hidden-xs">{{value.shots}}</td>
+            <td class="shot-positive hidden-xs">{{value.shots_on_target}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+<!-- Pagination -->
+<nav class="navigation clearfix" aria-label="Page navigation">
+    <ul class="pagination clearfix page">
+
+        <% for(var i = 1; i < totalPage; i++){ %>
+            {{if i==1}}
+            <li id=page{{i}} class='active'><a href="/cn/shooter/?id={{season_id}}&page_number={{i}}"><%= i %></a></li>
+            {{else}}
+            <li id=page{{i}}><a href="/cn/shooter/?id={{season_id}}&page_number={{i}}"><%= i %></a></li>
+            {{/if}}
+        <% } %>
+        <!-- <li>
+            <a href="/cn/" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li> -->
+    </ul>
+</nav>
+
+
+
